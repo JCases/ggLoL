@@ -17,4 +17,4 @@ The application will have the option to download all data (images and videos) lo
 
 ### Contact
 
-Email.
+[Email](mailto:javiercasessempere@gmail.com)
