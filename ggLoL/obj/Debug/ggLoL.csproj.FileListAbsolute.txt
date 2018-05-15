@@ -12,3 +12,17 @@ C:\Users\Javier\source\repos\ggLoLGit\ggLoL\obj\Debug\ggLoL.csproj.CoreCompileIn
 C:\Users\Javier\source\repos\ggLoLGit\ggLoL\obj\Debug\ggLoL.csproj.CopyComplete
 C:\Users\Javier\source\repos\ggLoLGit\ggLoL\obj\Debug\ggLoL.exe
 C:\Users\Javier\source\repos\ggLoLGit\ggLoL\obj\Debug\ggLoL.pdb
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\ggLoL.exe.config
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\ggLoL.exe
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\ggLoL.pdb
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\MaterialSkin.dll
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csprojAssemblyReference.cache
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.ggLoL.resources
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.Properties.Resources.resources
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.GenerateResource.cache
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CoreCompileInputs.cache
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CopyComplete
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.exe
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.pdb

@@ -32,12 +32,12 @@
             this.cntrlSignLogin = new MaterialSkin.Controls.MaterialTabControl();
             this.tbLogin = new System.Windows.Forms.TabPage();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.chckBxStayConnected = new MaterialSkin.Controls.MaterialCheckBox();
             this.lblLPassword = new MaterialSkin.Controls.MaterialLabel();
             this.txtLPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblLUserName = new MaterialSkin.Controls.MaterialLabel();
             this.txtLUserName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnLogin = new MaterialSkin.Controls.MaterialFlatButton();
             this.tbSignIn = new System.Windows.Forms.TabPage();
             this.pnlSingIn = new System.Windows.Forms.Panel();
             this.btnSingIn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -111,16 +111,32 @@
             // pnlLogin
             // 
             this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.chckBxStayConnected);
             this.pnlLogin.Controls.Add(this.lblLPassword);
             this.pnlLogin.Controls.Add(this.txtLPassword);
             this.pnlLogin.Controls.Add(this.lblLUserName);
             this.pnlLogin.Controls.Add(this.txtLUserName);
-            this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Location = new System.Drawing.Point(430, 126);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(400, 400);
             this.pnlLogin.TabIndex = 5;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogin.Depth = 0;
+            this.btnLogin.Icon = null;
+            this.btnLogin.Location = new System.Drawing.Point(257, 254);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Primary = true;
+            this.btnLogin.Size = new System.Drawing.Size(61, 36);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // chckBxStayConnected
             // 
@@ -202,20 +218,6 @@
             this.txtLUserName.TabIndex = 3;
             this.txtLUserName.TabStop = false;
             this.txtLUserName.UseSystemPasswordChar = false;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.AutoSize = true;
-            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLogin.Depth = 0;
-            this.btnLogin.Icon = null;
-            this.btnLogin.Location = new System.Drawing.Point(0, 0);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Primary = false;
-            this.btnLogin.Size = new System.Drawing.Size(16, 36);
-            this.btnLogin.TabIndex = 7;
             // 
             // tbSignIn
             // 
@@ -429,12 +431,12 @@
             this.cntrlIndex.Controls.Add(this.tbGameInfo);
             this.cntrlIndex.Controls.Add(this.tabPage1);
             this.cntrlIndex.Depth = 0;
-            this.cntrlIndex.Location = new System.Drawing.Point(0, 115);
+            this.cntrlIndex.Location = new System.Drawing.Point(0, 609);
             this.cntrlIndex.Margin = new System.Windows.Forms.Padding(0);
             this.cntrlIndex.MouseState = MaterialSkin.MouseState.HOVER;
             this.cntrlIndex.Name = "cntrlIndex";
             this.cntrlIndex.SelectedIndex = 0;
-            this.cntrlIndex.Size = new System.Drawing.Size(1280, 607);
+            this.cntrlIndex.Size = new System.Drawing.Size(1280, 113);
             this.cntrlIndex.TabIndex = 4;
             this.cntrlIndex.Visible = false;
             // 
@@ -443,7 +445,7 @@
             this.tbNews.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbNews.Location = new System.Drawing.Point(4, 22);
             this.tbNews.Name = "tbNews";
-            this.tbNews.Size = new System.Drawing.Size(1272, 581);
+            this.tbNews.Size = new System.Drawing.Size(1272, 87);
             this.tbNews.TabIndex = 2;
             this.tbNews.Text = "News";
             // 
@@ -454,7 +456,7 @@
             this.tbSummoner.Location = new System.Drawing.Point(4, 22);
             this.tbSummoner.Name = "tbSummoner";
             this.tbSummoner.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSummoner.Size = new System.Drawing.Size(1272, 581);
+            this.tbSummoner.Size = new System.Drawing.Size(1272, 87);
             this.tbSummoner.TabIndex = 0;
             this.tbSummoner.Text = "Summoners Profile";
             // 
@@ -464,7 +466,7 @@
             this.tbChampions.Location = new System.Drawing.Point(4, 22);
             this.tbChampions.Name = "tbChampions";
             this.tbChampions.Padding = new System.Windows.Forms.Padding(3);
-            this.tbChampions.Size = new System.Drawing.Size(1272, 581);
+            this.tbChampions.Size = new System.Drawing.Size(1272, 87);
             this.tbChampions.TabIndex = 1;
             this.tbChampions.Text = "Champions";
             // 
@@ -473,7 +475,7 @@
             this.tbTeams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbTeams.Location = new System.Drawing.Point(4, 22);
             this.tbTeams.Name = "tbTeams";
-            this.tbTeams.Size = new System.Drawing.Size(1272, 581);
+            this.tbTeams.Size = new System.Drawing.Size(1272, 87);
             this.tbTeams.TabIndex = 3;
             this.tbTeams.Text = "Teams";
             // 
@@ -482,7 +484,7 @@
             this.tbTournaments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbTournaments.Location = new System.Drawing.Point(4, 22);
             this.tbTournaments.Name = "tbTournaments";
-            this.tbTournaments.Size = new System.Drawing.Size(1272, 581);
+            this.tbTournaments.Size = new System.Drawing.Size(1272, 87);
             this.tbTournaments.TabIndex = 4;
             this.tbTournaments.Text = "Tournaments";
             // 
@@ -491,7 +493,7 @@
             this.tbGameInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbGameInfo.Location = new System.Drawing.Point(4, 22);
             this.tbGameInfo.Name = "tbGameInfo";
-            this.tbGameInfo.Size = new System.Drawing.Size(1272, 581);
+            this.tbGameInfo.Size = new System.Drawing.Size(1272, 87);
             this.tbGameInfo.TabIndex = 5;
             this.tbGameInfo.Text = "Game Information";
             // 
@@ -500,7 +502,7 @@
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1272, 581);
+            this.tabPage1.Size = new System.Drawing.Size(1272, 87);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Overlay";
             // 
@@ -590,7 +592,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtLPassword;
         private MaterialSkin.Controls.MaterialLabel lblLUserName;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtLUserName;
-        private MaterialSkin.Controls.MaterialFlatButton btnLogin;
         private MaterialSkin.Controls.MaterialLabel lblSIConfirmPassword;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private MaterialSkin.Controls.MaterialLabel lblSIEmail;
@@ -607,6 +608,7 @@
         private System.Windows.Forms.TabPage tbTournaments;
         private System.Windows.Forms.TabPage tbGameInfo;
         private System.Windows.Forms.TabPage tabPage1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
     }
 }
 
