@@ -1,43 +1,46 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using Newtonsoft.Json.Linq;
 
 namespace ggLoL
 {
-    abstract public class ConnectionAPI
+    abstract public class ConnectionAPI : ggLoLMain
     {
         protected Stream stream;
         protected WebClient client;
         protected StreamReader reader;
-        // Delete
-        protected JObject jObject;
+        
+        public string json { get; set; }
 
         protected string apiKey;
 
         // If you need a parameter
-        public ConnectionAPI(string apiKey, string parameter, string region, 
-            string link)
+        public ConnectionAPI(string apiKey, string parameter, string link)
         {
-            this.apiKey = apiKey;
+            try
+            {
 
-            client = new WebClient();
+                this.apiKey = apiKey;
 
-            stream = client.OpenRead("https://" + region + ".api.riotgames.com" 
-                + link + parameter + "?api_key=" + apiKey);
+                client = new WebClient();
 
-            reader = new StreamReader(stream);
-            
-            // CHANGE TO READ TO END IN STRING "JSON"
-            jObject = JObject.Parse(reader.ReadLine());
+                stream = client.OpenRead("https://" + region + ".api.riotgames.com"
+                    + link + parameter + "?api_key=" + apiKey);
 
-            reader.Close();
-            stream.Close();
+                reader = new StreamReader(stream);
+
+                // CHANGE TO READ TO END IN STRING "JSON"
+                json = reader.ReadToEnd();
+
+                reader.Close();
+                stream.Close();
+            }
+            catch (Exception) { }
         }
 
-        // FOR CREATE A OBJECT - OBJECT o = JsonConvert.DeserializeObject<Account>(connection.json)
-
         // If you don't need a parameter
-        public ConnectionAPI(string apiKey, string region,
-            string link) : this(apiKey, "", region, link) { }
+        public ConnectionAPI(string apiKey, string link) : 
+            this(apiKey, "", link) { }
     }
 }

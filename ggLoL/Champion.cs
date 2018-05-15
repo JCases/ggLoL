@@ -23,6 +23,14 @@ namespace ggLoL
             public List<ChampionSpellDto> spells;
         }
 
+        public struct InfoDto
+        {
+            public int difficulty;
+            public int attack;
+            public int defense;
+            public int magic;
+        }
+
         public struct StatsDto
         {
             public double armorperlevel;
@@ -47,36 +55,79 @@ namespace ggLoL
             public double critperlevel;
         }
 
-        public struct InfoDto
+        public struct ImageDto
         {
-            public int difficulty;
-            public int attack;
-            public int defense;
-            public int magic;
+            public string full;
+            public string group;
+            public string sprite;
+            public int h;
+            public int w;
+            public int y;
+            public int x;
+        }
+
+        public struct SkinDto
+        {
+            public int num;
+            public int name;
+            public int id;
         }
 
         public struct PassiveDto
         {
+            public ImageDto image;
             public string sanitizedDescription;
             public string name;
             public string description;
         }
 
-        // TO DO -> RECOMMEND ITEMS IN ANOTHER SEASON
-
         public struct RecommendedDto
         {
+            public string map;
+            public List<BlockDto> blocks;
+            public string champion;
+            public string title;
+            public bool priority;
+            public string mode;
+            public string type;
+        }
 
+        public struct BlockDto
+        {
+            public List<BlockItemDto> item;
+            public bool recMath;
+            public string type;
         }
 
         public struct BlockItemDto
         {
-
+            public int count;
+            public int id;
         }
 
         public struct ChampionSpellDto
         {
-
+            public string cooldownBurn;
+            public string resource;
+            public string leveltip;
+            public List<SpellVarsDto> vars;
+            public string costType;
+            public ImageDto image;
+            public string sanitizedDescription;
+            public string sanitizedTooltip;
+            public List<List<double>> effect;
+            public string tooltip;
+            public int maxrank;
+            public string costBurn;
+            public string rangeBurn;
+            public object range;
+            public List<double> cooldown;
+            public List<int> cost;
+            public string key;
+            public string description;
+            public List<string> effectBurn;
+            public List<ImageDto> altimages;
+            public string name;
         }
 
         public struct LevelTipDto
@@ -91,28 +142,18 @@ namespace ggLoL
 
         // TO DO -> SKINS IN ANOTHER SEASON
 
-        // FOR FREE CHAMPIONS
-        public bool rankedPlayEnabled;
-        public bool botEnabled;
-        public bool botMmEnabled;
-        public bool active;
-        public bool freeToPlay;
-        public long id;
-
-        public Champion(string region)
-        {
-            // TO DO
-            APIObject connection = new APIObject(region, link);
-            connection.GetData();
-        }
 
         const string link = "/lol/summoner/v3/champions";
 
-        // Return Free Rotate Champions from News
-        public List<Champion> GetFreeChampions()
-        {
-            List<Champion> free = new List<Champion>();
-            return free;
-        }
+        public List<string, string> keys { get; set; }
+        public List<string, ChampionDto> data { get; set; }
+        public string version { get; set; }
+        public string type { get; set; }
+        public string format { get; set; }
+    }
+
+    // New Type
+    public class List<T1, T2>
+    {
     }
 }

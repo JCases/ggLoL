@@ -55,13 +55,16 @@
     <Compile Include="APIKey.cs" />
     <Compile Include="APIObject.cs" />
     <Compile Include="Champion.cs" />
+    <Compile Include="Champions.cs" />
     <Compile Include="ConnectionAPI.cs" />
+    <Compile Include="FreeChampions.cs" />
     <Compile Include="ggLoL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ggLoL.Designer.cs">
       <DependentUpon>ggLoL.cs</DependentUpon>
     </Compile>
+    <Compile Include="ggLoLMain.cs" />
     <Compile Include="News.cs" />
     <Compile Include="Overlay.cs">
       <SubType>Form</SubType>
