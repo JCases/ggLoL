@@ -9,6 +9,7 @@ namespace ggLoL
         protected Stream stream;
         protected WebClient client;
         protected StreamReader reader;
+        // Delete
         protected JObject jObject;
 
         protected string apiKey;
@@ -25,12 +26,15 @@ namespace ggLoL
                 + link + parameter + "?api_key=" + apiKey);
 
             reader = new StreamReader(stream);
-
+            
+            // CHANGE TO READ TO END IN STRING "JSON"
             jObject = JObject.Parse(reader.ReadLine());
 
             reader.Close();
             stream.Close();
         }
+
+        // FOR CREATE A OBJECT - OBJECT o = JsonConvert.DeserializeObject<Account>(connection.json)
 
         // If you don't need a parameter
         public ConnectionAPI(string apiKey, string region,

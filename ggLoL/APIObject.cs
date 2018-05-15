@@ -11,6 +11,7 @@ namespace ggLoL
             string link) : base(APIKey.GetKey(), region, link) { }
 
         // Only return List of Objects
+        // RETURN STRING
         public JObject GetData()
         {
             return jObject;

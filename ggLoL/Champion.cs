@@ -91,6 +91,7 @@ namespace ggLoL
 
         // TO DO -> SKINS IN ANOTHER SEASON
 
+        // FOR FREE CHAMPIONS
         public bool rankedPlayEnabled;
         public bool botEnabled;
         public bool botMmEnabled;
