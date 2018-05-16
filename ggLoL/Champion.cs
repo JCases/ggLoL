@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ggLoL
 {
@@ -142,18 +143,15 @@ namespace ggLoL
 
         // TO DO -> SKINS IN ANOTHER SEASON
 
-
-        const string link = "/lol/summoner/v3/champions";
-
-        public List<string, string> keys { get; set; }
-        public List<string, ChampionDto> data { get; set; }
+        public Dictionary<string, string> keys { get; set; }
+        public Dictionary<string, ChampionDto> data { get; set; }
         public string version { get; set; }
         public string type { get; set; }
         public string format { get; set; }
-    }
 
-    // New Type
-    public class List<T1, T2>
-    {
+        public static string GetLink()
+        {
+            return "/lol/summoner/v3/champions";
+        }
     }
 }

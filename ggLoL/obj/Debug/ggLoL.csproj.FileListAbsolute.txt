@@ -26,3 +26,4 @@ C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CoreComp
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CopyComplete
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.exe
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.pdb
+C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.Profile.resources

@@ -11,17 +11,9 @@ namespace ggLoL
         public long id { get; set; }
         public long accountId { get; set; }
 
-        const string link = "/lol/summoner/v3/summoners/by-name/";
-
-        public ProfileInfo(string name, string region)
+        public static string GetLink()
         {
-            APIItem item = new APIItem(name, region, link);
-            profileIconId = Convert.ToInt32(item.GetData("profileIconId"));
-            name = item.GetData("name");
-            summonerLevel = Convert.ToInt64(item.GetData("summonerLevel"));
-            revisionDate = Convert.ToInt64(item.GetData("revisionDate"));
-            id = Convert.ToInt64(item.GetData("id"));
-            accountId = Convert.ToInt64(item.GetData("accountId"));
+            return "/lol/summoner/v3/summoners/by-name/";
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.slctrHeader = new MaterialSkin.Controls.MaterialTabSelector();
             this.cntrlSignLogin = new MaterialSkin.Controls.MaterialTabControl();
             this.tbLogin = new System.Windows.Forms.TabPage();
@@ -62,6 +63,8 @@
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.lblLoading = new System.Windows.Forms.Label();
             this.progressBar = new MaterialSkin.Controls.MaterialProgressBar();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.animationTime = new System.Windows.Forms.Timer(this.components);
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
             this.pnlLogin.SuspendLayout();
@@ -254,12 +257,13 @@
             this.btnSingIn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSingIn.Depth = 0;
             this.btnSingIn.Icon = null;
-            this.btnSingIn.Location = new System.Drawing.Point(0, 0);
+            this.btnSingIn.Location = new System.Drawing.Point(251, 324);
             this.btnSingIn.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSingIn.Name = "btnSingIn";
             this.btnSingIn.Primary = true;
-            this.btnSingIn.Size = new System.Drawing.Size(16, 36);
+            this.btnSingIn.Size = new System.Drawing.Size(83, 36);
             this.btnSingIn.TabIndex = 0;
+            this.btnSingIn.Text = "Register";
             // 
             // lblSIConfirmPassword
             // 
@@ -431,12 +435,12 @@
             this.cntrlIndex.Controls.Add(this.tbGameInfo);
             this.cntrlIndex.Controls.Add(this.tabPage1);
             this.cntrlIndex.Depth = 0;
-            this.cntrlIndex.Location = new System.Drawing.Point(0, 609);
+            this.cntrlIndex.Location = new System.Drawing.Point(0, 115);
             this.cntrlIndex.Margin = new System.Windows.Forms.Padding(0);
             this.cntrlIndex.MouseState = MaterialSkin.MouseState.HOVER;
             this.cntrlIndex.Name = "cntrlIndex";
             this.cntrlIndex.SelectedIndex = 0;
-            this.cntrlIndex.Size = new System.Drawing.Size(1280, 113);
+            this.cntrlIndex.Size = new System.Drawing.Size(1280, 607);
             this.cntrlIndex.TabIndex = 4;
             this.cntrlIndex.Visible = false;
             // 
@@ -445,7 +449,7 @@
             this.tbNews.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbNews.Location = new System.Drawing.Point(4, 22);
             this.tbNews.Name = "tbNews";
-            this.tbNews.Size = new System.Drawing.Size(1272, 87);
+            this.tbNews.Size = new System.Drawing.Size(1272, 581);
             this.tbNews.TabIndex = 2;
             this.tbNews.Text = "News";
             // 
@@ -544,6 +548,11 @@
             this.progressBar.Step = 2;
             this.progressBar.TabIndex = 0;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            // 
             // ggLoL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,6 +618,8 @@
         private System.Windows.Forms.TabPage tbGameInfo;
         private System.Windows.Forms.TabPage tabPage1;
         private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer animationTime;
     }
 }
 
