@@ -26,18 +26,5 @@ namespace ggLoL
                 JsonConvert.DeserializeObject<Champions>(connection.json);
             return champions;
         }
-
-        public void SaveChampion(Champion c)
-        {
-            string champion = JsonConvert.SerializeObject(c);
-            StreamWriter writer = new StreamWriter(c.keys.Item2 + ".json");
-        }
-
-        public Champion LoadChampion(string nameFile)
-        {
-            StreamReader reader = new StreamReader(nameFile);
-            string champion = reader.ReadToEnd();
-            return JsonConvert.DeserializeObject<Champion>(champion);
-        }
     }
 }
