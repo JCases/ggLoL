@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ggLoL
             {
                 WebClient client = new WebClient();
 
-                APIItem patch = new APIItem(region, link);
+                APIObject patch = new APIObject(region, link);
 
                 // Get First Result
                 string numberPatch = patch.json.Split('\"')[1];
@@ -30,20 +31,14 @@ namespace ggLoL
 
         public void SetFreeChampions()
         {
-            APIObject connection = new APIObject(region, Champions.GetLink() 
-                + "?freeToPlay=true");
-            FreeChampions fc =
-                JsonConvert.DeserializeObject<FreeChampions>(connection.json);
-
-            // Get all info to Champion and save in List
-            freeChampions = new List<Champion>();
-
-            foreach (Champion c in champions.listChamp)
+            // TO DO: NOT WORK - NOT DESERIALIZE OBJECTS
+            try
             {
-                for (int i = 0; i < fc.lFreeCham.Count; i++)
-                    if (fc.lFreeCham[0].id.ToString() == c.keys.Item1)
-                        freeChampions.Add(c);
+                APIObject connection = new APIObject(region, FreeChampions.GetLink());
+                FreeChampions fc =
+                    JsonConvert.DeserializeObject<FreeChampions>(connection.json);
             }
+            catch (Exception) { }
         }
 
         public string Patch()
@@ -51,7 +46,7 @@ namespace ggLoL
             string code = GetPatchCode();
 
             // Use Linq for Replace
-            code = code.Replace(@"<(.|\\n)*?>", "");
+            code = code.Replace("<(.|\\n)*?>", "");
 
             return code;
         }

@@ -27,3 +27,18 @@ C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CopyComp
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.exe
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.pdb
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.Profile.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.csprojAssemblyReference.cache
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.ggLoL.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.Profile.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.Properties.Resources.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.GenerateResource.cache
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CoreCompileInputs.cache
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.exe
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.pdb
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\ggLoL.exe.config
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\ggLoL.exe
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\ggLoL.pdb
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\MaterialSkin.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CopyComplete

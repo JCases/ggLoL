@@ -51,10 +51,15 @@
             this.txtSIPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblSIUserName = new MaterialSkin.Controls.MaterialLabel();
             this.txtSIUserName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.tbOffline = new System.Windows.Forms.TabPage();
+            this.lblOffline = new MaterialSkin.Controls.MaterialLabel();
+            this.btnOffline = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblTime = new MaterialSkin.Controls.MaterialLabel();
             this.cntrlIndex = new MaterialSkin.Controls.MaterialTabControl();
             this.tbNews = new System.Windows.Forms.TabPage();
+            this.txtPatch = new System.Windows.Forms.TextBox();
             this.tbSummoner = new System.Windows.Forms.TabPage();
+            this.pnlSearchPlayer = new System.Windows.Forms.Panel();
             this.tbChampions = new System.Windows.Forms.TabPage();
             this.tbTeams = new System.Windows.Forms.TabPage();
             this.tbTournaments = new System.Windows.Forms.TabPage();
@@ -65,21 +70,19 @@
             this.progressBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.animationTime = new System.Windows.Forms.Timer(this.components);
-            this.tbOffline = new System.Windows.Forms.TabPage();
-            this.btnOffline = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lblOffline = new MaterialSkin.Controls.MaterialLabel();
-            this.pnlSearchPlayer = new System.Windows.Forms.Panel();
-            this.txtPatch = new System.Windows.Forms.TextBox();
+            this.txtChampion = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnChampion = new MaterialSkin.Controls.MaterialRaisedButton();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.tbSignIn.SuspendLayout();
             this.pnlSingIn.SuspendLayout();
+            this.tbOffline.SuspendLayout();
             this.cntrlIndex.SuspendLayout();
             this.tbNews.SuspendLayout();
             this.tbSummoner.SuspendLayout();
+            this.tbChampions.SuspendLayout();
             this.pnlLoading.SuspendLayout();
-            this.tbOffline.SuspendLayout();
             this.SuspendLayout();
             // 
             // slctrHeader
@@ -422,6 +425,48 @@
             this.txtSIUserName.TabStop = false;
             this.txtSIUserName.UseSystemPasswordChar = false;
             // 
+            // tbOffline
+            // 
+            this.tbOffline.Controls.Add(this.lblOffline);
+            this.tbOffline.Controls.Add(this.btnOffline);
+            this.tbOffline.Location = new System.Drawing.Point(4, 22);
+            this.tbOffline.Name = "tbOffline";
+            this.tbOffline.Size = new System.Drawing.Size(1272, 581);
+            this.tbOffline.TabIndex = 2;
+            this.tbOffline.Text = "Offline Mode";
+            this.tbOffline.UseVisualStyleBackColor = true;
+            // 
+            // lblOffline
+            // 
+            this.lblOffline.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOffline.AutoSize = true;
+            this.lblOffline.Depth = 0;
+            this.lblOffline.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblOffline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblOffline.Location = new System.Drawing.Point(437, 276);
+            this.lblOffline.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblOffline.Name = "lblOffline";
+            this.lblOffline.Size = new System.Drawing.Size(454, 19);
+            this.lblOffline.TabIndex = 1;
+            this.lblOffline.Text = "You need a previous download and save data for use Offline Mode.";
+            // 
+            // btnOffline
+            // 
+            this.btnOffline.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOffline.AutoSize = true;
+            this.btnOffline.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOffline.Depth = 0;
+            this.btnOffline.Icon = null;
+            this.btnOffline.Location = new System.Drawing.Point(620, 179);
+            this.btnOffline.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnOffline.Name = "btnOffline";
+            this.btnOffline.Primary = true;
+            this.btnOffline.Size = new System.Drawing.Size(63, 36);
+            this.btnOffline.TabIndex = 0;
+            this.btnOffline.Text = "Enter";
+            this.btnOffline.UseVisualStyleBackColor = true;
+            this.btnOffline.Click += new System.EventHandler(this.ClickOfflineMode);
+            // 
             // lblTime
             // 
             this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -467,6 +512,16 @@
             this.tbNews.TabIndex = 2;
             this.tbNews.Text = "News";
             // 
+            // txtPatch
+            // 
+            this.txtPatch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatch.Location = new System.Drawing.Point(3, 3);
+            this.txtPatch.Multiline = true;
+            this.txtPatch.Name = "txtPatch";
+            this.txtPatch.ReadOnly = true;
+            this.txtPatch.Size = new System.Drawing.Size(1266, 575);
+            this.txtPatch.TabIndex = 0;
+            // 
             // tbSummoner
             // 
             this.tbSummoner.AutoScroll = true;
@@ -479,9 +534,18 @@
             this.tbSummoner.TabIndex = 0;
             this.tbSummoner.Text = "Summoners Profile";
             // 
+            // pnlSearchPlayer
+            // 
+            this.pnlSearchPlayer.Location = new System.Drawing.Point(0, 0);
+            this.pnlSearchPlayer.Name = "pnlSearchPlayer";
+            this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 581);
+            this.pnlSearchPlayer.TabIndex = 0;
+            // 
             // tbChampions
             // 
             this.tbChampions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbChampions.Controls.Add(this.btnChampion);
+            this.tbChampions.Controls.Add(this.txtChampion);
             this.tbChampions.Location = new System.Drawing.Point(4, 22);
             this.tbChampions.Name = "tbChampions";
             this.tbChampions.Padding = new System.Windows.Forms.Padding(3);
@@ -494,7 +558,7 @@
             this.tbTeams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbTeams.Location = new System.Drawing.Point(4, 22);
             this.tbTeams.Name = "tbTeams";
-            this.tbTeams.Size = new System.Drawing.Size(1272, 87);
+            this.tbTeams.Size = new System.Drawing.Size(1272, 581);
             this.tbTeams.TabIndex = 3;
             this.tbTeams.Text = "Teams";
             // 
@@ -503,7 +567,7 @@
             this.tbTournaments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbTournaments.Location = new System.Drawing.Point(4, 22);
             this.tbTournaments.Name = "tbTournaments";
-            this.tbTournaments.Size = new System.Drawing.Size(1272, 87);
+            this.tbTournaments.Size = new System.Drawing.Size(1272, 581);
             this.tbTournaments.TabIndex = 4;
             this.tbTournaments.Text = "Tournaments";
             // 
@@ -512,7 +576,7 @@
             this.tbGameInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbGameInfo.Location = new System.Drawing.Point(4, 22);
             this.tbGameInfo.Name = "tbGameInfo";
-            this.tbGameInfo.Size = new System.Drawing.Size(1272, 87);
+            this.tbGameInfo.Size = new System.Drawing.Size(1272, 581);
             this.tbGameInfo.TabIndex = 5;
             this.tbGameInfo.Text = "Game Information";
             // 
@@ -573,64 +637,37 @@
             this.animationTime.Interval = 60;
             this.animationTime.Tick += new System.EventHandler(this.AnimationTimer);
             // 
-            // tbOffline
+            // txtChampion
             // 
-            this.tbOffline.Controls.Add(this.lblOffline);
-            this.tbOffline.Controls.Add(this.btnOffline);
-            this.tbOffline.Location = new System.Drawing.Point(4, 22);
-            this.tbOffline.Name = "tbOffline";
-            this.tbOffline.Size = new System.Drawing.Size(1272, 581);
-            this.tbOffline.TabIndex = 2;
-            this.tbOffline.Text = "Offline Mode";
-            this.tbOffline.UseVisualStyleBackColor = true;
+            this.txtChampion.Depth = 0;
+            this.txtChampion.Hint = "";
+            this.txtChampion.Location = new System.Drawing.Point(359, 224);
+            this.txtChampion.MaxLength = 32767;
+            this.txtChampion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtChampion.Name = "txtChampion";
+            this.txtChampion.PasswordChar = '\0';
+            this.txtChampion.SelectedText = "";
+            this.txtChampion.SelectionLength = 0;
+            this.txtChampion.SelectionStart = 0;
+            this.txtChampion.Size = new System.Drawing.Size(237, 23);
+            this.txtChampion.TabIndex = 0;
+            this.txtChampion.TabStop = false;
+            this.txtChampion.UseSystemPasswordChar = false;
             // 
-            // btnOffline
+            // btnChampion
             // 
-            this.btnOffline.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOffline.AutoSize = true;
-            this.btnOffline.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnOffline.Depth = 0;
-            this.btnOffline.Icon = null;
-            this.btnOffline.Location = new System.Drawing.Point(620, 179);
-            this.btnOffline.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnOffline.Name = "btnOffline";
-            this.btnOffline.Primary = true;
-            this.btnOffline.Size = new System.Drawing.Size(63, 36);
-            this.btnOffline.TabIndex = 0;
-            this.btnOffline.Text = "Enter";
-            this.btnOffline.UseVisualStyleBackColor = true;
-            this.btnOffline.Click += new System.EventHandler(this.ClickOfflineMode);
-            // 
-            // lblOffline
-            // 
-            this.lblOffline.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblOffline.AutoSize = true;
-            this.lblOffline.Depth = 0;
-            this.lblOffline.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblOffline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblOffline.Location = new System.Drawing.Point(437, 276);
-            this.lblOffline.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblOffline.Name = "lblOffline";
-            this.lblOffline.Size = new System.Drawing.Size(454, 19);
-            this.lblOffline.TabIndex = 1;
-            this.lblOffline.Text = "You need a previous download and save data for use Offline Mode.";
-            // 
-            // pnlSearchPlayer
-            // 
-            this.pnlSearchPlayer.Location = new System.Drawing.Point(0, 0);
-            this.pnlSearchPlayer.Name = "pnlSearchPlayer";
-            this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 581);
-            this.pnlSearchPlayer.TabIndex = 0;
-            // 
-            // txtPatch
-            // 
-            this.txtPatch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatch.Location = new System.Drawing.Point(3, 3);
-            this.txtPatch.Multiline = true;
-            this.txtPatch.Name = "txtPatch";
-            this.txtPatch.ReadOnly = true;
-            this.txtPatch.Size = new System.Drawing.Size(1266, 575);
-            this.txtPatch.TabIndex = 0;
+            this.btnChampion.AutoSize = true;
+            this.btnChampion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnChampion.Depth = 0;
+            this.btnChampion.Icon = null;
+            this.btnChampion.Location = new System.Drawing.Point(442, 270);
+            this.btnChampion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnChampion.Name = "btnChampion";
+            this.btnChampion.Primary = true;
+            this.btnChampion.Size = new System.Drawing.Size(73, 36);
+            this.btnChampion.TabIndex = 1;
+            this.btnChampion.Text = "Search";
+            this.btnChampion.UseVisualStyleBackColor = true;
             // 
             // ggLoL
             // 
@@ -648,7 +685,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ggLoL";
-            this.Load += new System.EventHandler(this.Time);
+            this.Load += new System.EventHandler(this.LoadApp);
             this.cntrlSignLogin.ResumeLayout(false);
             this.tbLogin.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
@@ -656,14 +693,16 @@
             this.tbSignIn.ResumeLayout(false);
             this.pnlSingIn.ResumeLayout(false);
             this.pnlSingIn.PerformLayout();
+            this.tbOffline.ResumeLayout(false);
+            this.tbOffline.PerformLayout();
             this.cntrlIndex.ResumeLayout(false);
             this.tbNews.ResumeLayout(false);
             this.tbNews.PerformLayout();
             this.tbSummoner.ResumeLayout(false);
+            this.tbChampions.ResumeLayout(false);
+            this.tbChampions.PerformLayout();
             this.pnlLoading.ResumeLayout(false);
             this.pnlLoading.PerformLayout();
-            this.tbOffline.ResumeLayout(false);
-            this.tbOffline.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -710,6 +749,8 @@
         private MaterialSkin.Controls.MaterialLabel lblOffline;
         private System.Windows.Forms.Panel pnlSearchPlayer;
         private System.Windows.Forms.TextBox txtPatch;
+        private MaterialSkin.Controls.MaterialRaisedButton btnChampion;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtChampion;
     }
 }
 

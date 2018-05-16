@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIItem.cs" />
     <Compile Include="APIKey.cs" />
     <Compile Include="APIObject.cs" />
     <Compile Include="Champion.cs" />

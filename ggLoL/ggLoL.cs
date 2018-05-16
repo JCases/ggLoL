@@ -37,6 +37,13 @@ namespace ggLoL
             lblTime.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
+        private void LoadApp(object sender, EventArgs e)
+        {
+            Time(sender, e);
+            ggLoLMain ggLoL = new ggLoLMain();
+            Champions champions = ggLoL.GetListChampions();
+        }
+
         private void ClickUserSignIn(object sender, EventArgs e)
         {
             ShowIndexScreen();
@@ -69,7 +76,8 @@ namespace ggLoL
             Loading();
 
             News nw = new News();
-            txtPatch.Text = nw.Patch();
+            nw.SetFreeChampions();
+            //txtPatch.Text = nw.freeChampions[0].type.ToString();
         }
 
         // Start Animation

@@ -6,9 +6,14 @@ namespace ggLoL
     {
         public List<Champion> listChamp { get; set; }
 
+        public Champions()
+        {
+            listChamp = new List<Champion>();
+        }
+
         public static string GetLink()
         {
-            return "/lol/summoner/v3/champions";
+            return "lol/static-data/v3/champions";
         }
     }
 }
