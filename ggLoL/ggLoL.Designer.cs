@@ -43,7 +43,7 @@
             this.pnlSingIn = new System.Windows.Forms.Panel();
             this.btnSingIn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblSIConfirmPassword = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.xtSIConfirmPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblSIEmail = new MaterialSkin.Controls.MaterialLabel();
             this.txtSIEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.chckBxTerms = new MaterialSkin.Controls.MaterialCheckBox();
@@ -59,19 +59,27 @@
             this.tbTeams = new System.Windows.Forms.TabPage();
             this.tbTournaments = new System.Windows.Forms.TabPage();
             this.tbGameInfo = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbOverlay = new System.Windows.Forms.TabPage();
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.lblLoading = new System.Windows.Forms.Label();
             this.progressBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.animationTime = new System.Windows.Forms.Timer(this.components);
+            this.tbOffline = new System.Windows.Forms.TabPage();
+            this.btnOffline = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblOffline = new MaterialSkin.Controls.MaterialLabel();
+            this.pnlSearchPlayer = new System.Windows.Forms.Panel();
+            this.txtPatch = new System.Windows.Forms.TextBox();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.tbSignIn.SuspendLayout();
             this.pnlSingIn.SuspendLayout();
             this.cntrlIndex.SuspendLayout();
+            this.tbNews.SuspendLayout();
+            this.tbSummoner.SuspendLayout();
             this.pnlLoading.SuspendLayout();
+            this.tbOffline.SuspendLayout();
             this.SuspendLayout();
             // 
             // slctrHeader
@@ -91,6 +99,7 @@
             this.cntrlSignLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cntrlSignLogin.Controls.Add(this.tbLogin);
             this.cntrlSignLogin.Controls.Add(this.tbSignIn);
+            this.cntrlSignLogin.Controls.Add(this.tbOffline);
             this.cntrlSignLogin.Depth = 0;
             this.cntrlSignLogin.Location = new System.Drawing.Point(0, 115);
             this.cntrlSignLogin.Margin = new System.Windows.Forms.Padding(0);
@@ -98,7 +107,8 @@
             this.cntrlSignLogin.Name = "cntrlSignLogin";
             this.cntrlSignLogin.SelectedIndex = 0;
             this.cntrlSignLogin.Size = new System.Drawing.Size(1280, 607);
-            this.cntrlSignLogin.TabIndex = 2;
+            this.cntrlSignLogin.TabIndex = 0;
+            this.cntrlSignLogin.TabStop = false;
             // 
             // tbLogin
             // 
@@ -137,9 +147,10 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
             this.btnLogin.Size = new System.Drawing.Size(61, 36);
-            this.btnLogin.TabIndex = 8;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.ClickUserLogin);
             // 
             // chckBxStayConnected
             // 
@@ -154,7 +165,7 @@
             this.chckBxStayConnected.Name = "chckBxStayConnected";
             this.chckBxStayConnected.Ripple = true;
             this.chckBxStayConnected.Size = new System.Drawing.Size(127, 30);
-            this.chckBxStayConnected.TabIndex = 6;
+            this.chckBxStayConnected.TabIndex = 3;
             this.chckBxStayConnected.Text = "Stay Connected";
             this.chckBxStayConnected.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +197,7 @@
             this.txtLPassword.SelectionLength = 0;
             this.txtLPassword.SelectionStart = 0;
             this.txtLPassword.Size = new System.Drawing.Size(260, 23);
-            this.txtLPassword.TabIndex = 4;
+            this.txtLPassword.TabIndex = 2;
             this.txtLPassword.TabStop = false;
             this.txtLPassword.UseSystemPasswordChar = true;
             // 
@@ -218,7 +229,7 @@
             this.txtLUserName.SelectionLength = 0;
             this.txtLUserName.SelectionStart = 0;
             this.txtLUserName.Size = new System.Drawing.Size(260, 23);
-            this.txtLUserName.TabIndex = 3;
+            this.txtLUserName.TabIndex = 1;
             this.txtLUserName.TabStop = false;
             this.txtLUserName.UseSystemPasswordChar = false;
             // 
@@ -238,7 +249,7 @@
             this.pnlSingIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlSingIn.Controls.Add(this.btnSingIn);
             this.pnlSingIn.Controls.Add(this.lblSIConfirmPassword);
-            this.pnlSingIn.Controls.Add(this.materialSingleLineTextField2);
+            this.pnlSingIn.Controls.Add(this.xtSIConfirmPassword);
             this.pnlSingIn.Controls.Add(this.lblSIEmail);
             this.pnlSingIn.Controls.Add(this.txtSIEmail);
             this.pnlSingIn.Controls.Add(this.chckBxTerms);
@@ -261,9 +272,10 @@
             this.btnSingIn.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSingIn.Name = "btnSingIn";
             this.btnSingIn.Primary = true;
-            this.btnSingIn.Size = new System.Drawing.Size(83, 36);
-            this.btnSingIn.TabIndex = 0;
-            this.btnSingIn.Text = "Register";
+            this.btnSingIn.Size = new System.Drawing.Size(69, 36);
+            this.btnSingIn.TabIndex = 6;
+            this.btnSingIn.Text = "Sign In";
+            this.btnSingIn.Click += new System.EventHandler(this.ClickUserSignIn);
             // 
             // lblSIConfirmPassword
             // 
@@ -279,23 +291,23 @@
             this.lblSIConfirmPassword.Text = "Confirm Password";
             this.lblSIConfirmPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialSingleLineTextField2
+            // xtSIConfirmPassword
             // 
-            this.materialSingleLineTextField2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(74, 280);
-            this.materialSingleLineTextField2.MaxLength = 100;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(260, 23);
-            this.materialSingleLineTextField2.TabIndex = 5;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = true;
+            this.xtSIConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xtSIConfirmPassword.Depth = 0;
+            this.xtSIConfirmPassword.Hint = "";
+            this.xtSIConfirmPassword.Location = new System.Drawing.Point(74, 280);
+            this.xtSIConfirmPassword.MaxLength = 100;
+            this.xtSIConfirmPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.xtSIConfirmPassword.Name = "xtSIConfirmPassword";
+            this.xtSIConfirmPassword.PasswordChar = '\0';
+            this.xtSIConfirmPassword.SelectedText = "";
+            this.xtSIConfirmPassword.SelectionLength = 0;
+            this.xtSIConfirmPassword.SelectionStart = 0;
+            this.xtSIConfirmPassword.Size = new System.Drawing.Size(260, 23);
+            this.xtSIConfirmPassword.TabIndex = 4;
+            this.xtSIConfirmPassword.TabStop = false;
+            this.xtSIConfirmPassword.UseSystemPasswordChar = true;
             // 
             // lblSIEmail
             // 
@@ -325,7 +337,7 @@
             this.txtSIEmail.SelectionLength = 0;
             this.txtSIEmail.SelectionStart = 0;
             this.txtSIEmail.Size = new System.Drawing.Size(260, 23);
-            this.txtSIEmail.TabIndex = 5;
+            this.txtSIEmail.TabIndex = 2;
             this.txtSIEmail.TabStop = false;
             this.txtSIEmail.UseSystemPasswordChar = false;
             // 
@@ -342,7 +354,7 @@
             this.chckBxTerms.Name = "chckBxTerms";
             this.chckBxTerms.Ripple = true;
             this.chckBxTerms.Size = new System.Drawing.Size(116, 30);
-            this.chckBxTerms.TabIndex = 6;
+            this.chckBxTerms.TabIndex = 5;
             this.chckBxTerms.Text = "Accept Terms";
             this.chckBxTerms.UseVisualStyleBackColor = true;
             // 
@@ -374,7 +386,7 @@
             this.txtSIPassword.SelectionLength = 0;
             this.txtSIPassword.SelectionStart = 0;
             this.txtSIPassword.Size = new System.Drawing.Size(260, 23);
-            this.txtSIPassword.TabIndex = 4;
+            this.txtSIPassword.TabIndex = 3;
             this.txtSIPassword.TabStop = false;
             this.txtSIPassword.UseSystemPasswordChar = true;
             // 
@@ -406,7 +418,7 @@
             this.txtSIUserName.SelectionLength = 0;
             this.txtSIUserName.SelectionStart = 0;
             this.txtSIUserName.Size = new System.Drawing.Size(260, 23);
-            this.txtSIUserName.TabIndex = 3;
+            this.txtSIUserName.TabIndex = 1;
             this.txtSIUserName.TabStop = false;
             this.txtSIUserName.UseSystemPasswordChar = false;
             // 
@@ -433,7 +445,7 @@
             this.cntrlIndex.Controls.Add(this.tbTeams);
             this.cntrlIndex.Controls.Add(this.tbTournaments);
             this.cntrlIndex.Controls.Add(this.tbGameInfo);
-            this.cntrlIndex.Controls.Add(this.tabPage1);
+            this.cntrlIndex.Controls.Add(this.tbOverlay);
             this.cntrlIndex.Depth = 0;
             this.cntrlIndex.Location = new System.Drawing.Point(0, 115);
             this.cntrlIndex.Margin = new System.Windows.Forms.Padding(0);
@@ -441,12 +453,14 @@
             this.cntrlIndex.Name = "cntrlIndex";
             this.cntrlIndex.SelectedIndex = 0;
             this.cntrlIndex.Size = new System.Drawing.Size(1280, 607);
-            this.cntrlIndex.TabIndex = 4;
+            this.cntrlIndex.TabIndex = 0;
+            this.cntrlIndex.TabStop = false;
             this.cntrlIndex.Visible = false;
             // 
             // tbNews
             // 
             this.tbNews.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbNews.Controls.Add(this.txtPatch);
             this.tbNews.Location = new System.Drawing.Point(4, 22);
             this.tbNews.Name = "tbNews";
             this.tbNews.Size = new System.Drawing.Size(1272, 581);
@@ -457,10 +471,11 @@
             // 
             this.tbSummoner.AutoScroll = true;
             this.tbSummoner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbSummoner.Controls.Add(this.pnlSearchPlayer);
             this.tbSummoner.Location = new System.Drawing.Point(4, 22);
             this.tbSummoner.Name = "tbSummoner";
             this.tbSummoner.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSummoner.Size = new System.Drawing.Size(1272, 87);
+            this.tbSummoner.Size = new System.Drawing.Size(1272, 581);
             this.tbSummoner.TabIndex = 0;
             this.tbSummoner.Text = "Summoners Profile";
             // 
@@ -470,7 +485,7 @@
             this.tbChampions.Location = new System.Drawing.Point(4, 22);
             this.tbChampions.Name = "tbChampions";
             this.tbChampions.Padding = new System.Windows.Forms.Padding(3);
-            this.tbChampions.Size = new System.Drawing.Size(1272, 87);
+            this.tbChampions.Size = new System.Drawing.Size(1272, 581);
             this.tbChampions.TabIndex = 1;
             this.tbChampions.Text = "Champions";
             // 
@@ -501,14 +516,14 @@
             this.tbGameInfo.TabIndex = 5;
             this.tbGameInfo.Text = "Game Information";
             // 
-            // tabPage1
+            // tbOverlay
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1272, 87);
-            this.tabPage1.TabIndex = 6;
-            this.tabPage1.Text = "Overlay";
+            this.tbOverlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbOverlay.Location = new System.Drawing.Point(4, 22);
+            this.tbOverlay.Name = "tbOverlay";
+            this.tbOverlay.Size = new System.Drawing.Size(1272, 581);
+            this.tbOverlay.TabIndex = 6;
+            this.tbOverlay.Text = "Overlay";
             // 
             // pnlLoading
             // 
@@ -550,17 +565,81 @@
             // 
             // timer
             // 
-            this.timer.Enabled = true;
             this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.Time);
+            // 
+            // animationTime
+            // 
+            this.animationTime.Interval = 60;
+            this.animationTime.Tick += new System.EventHandler(this.AnimationTimer);
+            // 
+            // tbOffline
+            // 
+            this.tbOffline.Controls.Add(this.lblOffline);
+            this.tbOffline.Controls.Add(this.btnOffline);
+            this.tbOffline.Location = new System.Drawing.Point(4, 22);
+            this.tbOffline.Name = "tbOffline";
+            this.tbOffline.Size = new System.Drawing.Size(1272, 581);
+            this.tbOffline.TabIndex = 2;
+            this.tbOffline.Text = "Offline Mode";
+            this.tbOffline.UseVisualStyleBackColor = true;
+            // 
+            // btnOffline
+            // 
+            this.btnOffline.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOffline.AutoSize = true;
+            this.btnOffline.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOffline.Depth = 0;
+            this.btnOffline.Icon = null;
+            this.btnOffline.Location = new System.Drawing.Point(620, 179);
+            this.btnOffline.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnOffline.Name = "btnOffline";
+            this.btnOffline.Primary = true;
+            this.btnOffline.Size = new System.Drawing.Size(63, 36);
+            this.btnOffline.TabIndex = 0;
+            this.btnOffline.Text = "Enter";
+            this.btnOffline.UseVisualStyleBackColor = true;
+            this.btnOffline.Click += new System.EventHandler(this.ClickOfflineMode);
+            // 
+            // lblOffline
+            // 
+            this.lblOffline.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOffline.AutoSize = true;
+            this.lblOffline.Depth = 0;
+            this.lblOffline.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblOffline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblOffline.Location = new System.Drawing.Point(437, 276);
+            this.lblOffline.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblOffline.Name = "lblOffline";
+            this.lblOffline.Size = new System.Drawing.Size(454, 19);
+            this.lblOffline.TabIndex = 1;
+            this.lblOffline.Text = "You need a previous download and save data for use Offline Mode.";
+            // 
+            // pnlSearchPlayer
+            // 
+            this.pnlSearchPlayer.Location = new System.Drawing.Point(0, 0);
+            this.pnlSearchPlayer.Name = "pnlSearchPlayer";
+            this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 581);
+            this.pnlSearchPlayer.TabIndex = 0;
+            // 
+            // txtPatch
+            // 
+            this.txtPatch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPatch.Location = new System.Drawing.Point(3, 3);
+            this.txtPatch.Multiline = true;
+            this.txtPatch.Name = "txtPatch";
+            this.txtPatch.ReadOnly = true;
+            this.txtPatch.Size = new System.Drawing.Size(1266, 575);
+            this.txtPatch.TabIndex = 0;
             // 
             // ggLoL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.pnlLoading);
             this.Controls.Add(this.cntrlIndex);
-            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.cntrlSignLogin);
             this.Controls.Add(this.slctrHeader);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -569,6 +648,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ggLoL";
+            this.Load += new System.EventHandler(this.Time);
             this.cntrlSignLogin.ResumeLayout(false);
             this.tbLogin.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
@@ -577,8 +657,13 @@
             this.pnlSingIn.ResumeLayout(false);
             this.pnlSingIn.PerformLayout();
             this.cntrlIndex.ResumeLayout(false);
+            this.tbNews.ResumeLayout(false);
+            this.tbNews.PerformLayout();
+            this.tbSummoner.ResumeLayout(false);
             this.pnlLoading.ResumeLayout(false);
             this.pnlLoading.PerformLayout();
+            this.tbOffline.ResumeLayout(false);
+            this.tbOffline.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -602,7 +687,7 @@
         private MaterialSkin.Controls.MaterialLabel lblLUserName;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtLUserName;
         private MaterialSkin.Controls.MaterialLabel lblSIConfirmPassword;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField xtSIConfirmPassword;
         private MaterialSkin.Controls.MaterialLabel lblSIEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSIEmail;
         private MaterialSkin.Controls.MaterialRaisedButton btnSingIn;
@@ -616,10 +701,15 @@
         private System.Windows.Forms.TabPage tbTeams;
         private System.Windows.Forms.TabPage tbTournaments;
         private System.Windows.Forms.TabPage tbGameInfo;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tbOverlay;
         private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Timer animationTime;
+        private System.Windows.Forms.TabPage tbOffline;
+        private MaterialSkin.Controls.MaterialRaisedButton btnOffline;
+        private MaterialSkin.Controls.MaterialLabel lblOffline;
+        private System.Windows.Forms.Panel pnlSearchPlayer;
+        private System.Windows.Forms.TextBox txtPatch;
     }
 }
 

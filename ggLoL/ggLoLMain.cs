@@ -8,16 +8,18 @@ namespace ggLoL
         protected Champions champions { get; set; }
         protected string region;
 
+        protected bool online { get; }
+
         public ggLoLMain()
         {
+            /*
             this.region = "euw1";
 
-            const string link = "/lol/summoner/v3/champions";
-
-            APIObject connection = new APIObject(region, link);
+            APIObject connection = new APIObject(region, Champions.GetLink());
             Champions champions =
                 JsonConvert.DeserializeObject<Champions>(connection.json);
             this.champions = champions;
+            */
         }
     }
 }

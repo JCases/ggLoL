@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -38,7 +32,7 @@ namespace ggLoL
         // Timers
         private void Time(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
             lblTime.BackColor = Color.FromArgb(55, 71, 79);
             lblTime.ForeColor = Color.FromArgb(255, 255, 255);
         }
@@ -49,6 +43,11 @@ namespace ggLoL
         }
 
         private void ClickUserLogin(object sender, EventArgs e)
+        {
+            ShowIndexScreen();
+        }
+
+        private void ClickOfflineMode(object sender, EventArgs e)
         {
             ShowIndexScreen();
         }
@@ -68,6 +67,9 @@ namespace ggLoL
             chckBxStayConnected.Checked = chckBxTerms.Checked = false;
 
             Loading();
+
+            News nw = new News();
+            txtPatch.Text = nw.Patch();
         }
 
         // Start Animation

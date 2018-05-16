@@ -131,7 +131,7 @@ namespace ggLoL
             public string name;
         }
 
-        public struct LevelTipDto
+        public struct LevelTipDto 
         {
 
         }
@@ -143,15 +143,10 @@ namespace ggLoL
 
         // TO DO -> SKINS IN ANOTHER SEASON
 
-        public Dictionary<string, string> keys { get; set; }
-        public Dictionary<string, ChampionDto> data { get; set; }
+        public Tuple<string, string> keys { get; set; }
+        public Tuple<string, ChampionDto> data { get; set; }
         public string version { get; set; }
         public string type { get; set; }
         public string format { get; set; }
-
-        public static string GetLink()
-        {
-            return "/lol/summoner/v3/champions";
-        }
     }
 }
