@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ggLoL
 {
-    abstract public class ConnectionAPI : ggLoLMain
+    public class ConnectionAPI : ggLoLMain
     {
         protected Stream stream { get; set; }
         private string key = APIKey.GetKey();

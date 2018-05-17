@@ -18,7 +18,7 @@ namespace ggLoL
             {
                 WebClient client = new WebClient();
 
-                APIObject patch = new APIObject(region, link);
+                ConnectionAPI patch = new ConnectionAPI(region, link);
 
                 // Get First Result
                 string numberPatch = patch.json.Split('\"')[1];
@@ -34,7 +34,7 @@ namespace ggLoL
             // TO DO: NOT WORK - NOT DESERIALIZE OBJECTS
             try
             {
-                APIObject connection = new APIObject(region, FreeChampions.GetLink());
+                ConnectionAPI connection = new ConnectionAPI(region, FreeChampions.GetLink());
                 FreeChampions fc =
                     JsonConvert.DeserializeObject<FreeChampions>(connection.json);
             }

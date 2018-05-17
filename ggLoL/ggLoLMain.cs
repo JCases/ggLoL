@@ -20,7 +20,8 @@ namespace ggLoL
 
         public Champions GetListChampions()
         {
-            APIObject connection = new APIObject(region, Champions.GetLink());
+            ConnectionAPI connection =
+                new ConnectionAPI(region, Champions.GetLink());
             Champions champions = new Champions();
             champions = 
                 JsonConvert.DeserializeObject<Champions>(connection.json);

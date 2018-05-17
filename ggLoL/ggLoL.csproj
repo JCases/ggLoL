@@ -52,10 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIKey.cs" />
-    <Compile Include="APIObject.cs" />
     <Compile Include="Champion.cs" />
     <Compile Include="Champions.cs" />
     <Compile Include="ConnectionAPI.cs" />
+    <Compile Include="DataBase.cs" />
     <Compile Include="FreeChampions.cs" />
     <Compile Include="ggLoL.cs">
       <SubType>Form</SubType>
@@ -64,6 +64,8 @@
       <DependentUpon>ggLoL.cs</DependentUpon>
     </Compile>
     <Compile Include="ggLoLMain.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="News.cs" />
     <Compile Include="Overlay.cs">
       <SubType>Form</SubType>
