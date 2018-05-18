@@ -1,111 +1,138 @@
-﻿using System;
+﻿using System.IO;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace ggLoL
 {
-    class Item
+    public class Item
     {
-        struct ItemListDto
+        public ItemListDto map { get; set; }
+
+        public static string GetLink()
         {
-            Dictionary<string, ItemDto> data;
-            string version;
-            List<ItemTreeDto> tree;
-            List<GroupDto> groups;
-            string type;
+            return "lol/static-data/v3/items";
         }
 
-        struct ItemTreeDto
+        private const string fileName = "items.json";
+
+        public void Save(Item c)
         {
-            string header;
-            List<string> tags;
+            string items = JsonConvert.SerializeObject(c);
+            StreamWriter writer = new StreamWriter(fileName);
+            writer.WriteLine(items);
+            writer.Close();
         }
 
-        struct ItemDto
+        public Item Load()
         {
-            GoldDto gold;
-            string plaintext;
-            bool hideFromAll;
-            bool inStore;
-            List<string> into;
-            int id;
-            InventoryDataStatsDto stats;
-            string colloq;
-            Dictionary<string, bool> maps;
-            int specialRecipe;
-            ImageDto image;
-            string description;
-            List<string> tags;
-            Dictionary<string, string> effect;
-            string requiredChampion;
-            List<string> from;
-            string group;
-            bool consumeOnFull;
-            string name;
-            bool consumed;
-            string sanitizedDescription;
-            int depth;
-            int stacks;
-        }
-        struct GoldDto
-        {
-            int sell;
-            int total;
-            int bases;
-            bool purchasable;
+            StreamReader reader = new StreamReader(fileName);
+            string items = reader.ReadToEnd();
+            reader.Close();
+            return JsonConvert.DeserializeObject<Item>(items);
         }
 
-        struct InventoryDataStatsDto
+        public struct ItemListDto
         {
-            double PercentCritDamageMod;
-            double PercentSpellBlockMod;
-            double PercentHPRegenMod;
-            double PercentMovementSpeedMod;
-            double FlatSpellBlockMod;
-            double FlatCritDamageMod;
-            double FlatEnergyPoolMod;
-            double PercentLifeStealMod;
-            double FlatMPPoolMod;
-            double FlatMovementSpeedMod;
-            double PercentAttackSpeedMod;
-            double FlatBlockMod;
-            double PercentBlockMod;
-            double FlatEnergyRegenMod;
-            double PercentSpellVampMod;
-            double FlatMPRegenMod;
-            double PercentDodgeMod;
-            double FlatAttackSpeedMod;
-            double FlatArmorMod;
-            double FlatHPRegenMod;
-            double PercentMagicDamageMod;
-            double PercentMPPoolMod;
-            double FlatMagicDamageMod;
-            double PercentMPRegenMod;
-            double PercentPhysicalDamageMod;
-            double FlatPhysicalDamageMod;
-            double PercentHPPoolMod;
-            double PercentArmorMod;
-            double PercentCritChanceMod;
-            double PercentEXPBonus;
-            double FlatHPPoolMod;
-            double FlatCritChanceMod;
-            double FlatEXPBonus;
+            public Dictionary<string, ItemDto> data;
+            public string version;
+            public List<ItemTreeDto> tree;
+            public List<GroupDto> groups;
+            public string type;
         }
 
-        struct ImageDto
+        public struct ItemTreeDto
         {
-            string full;
-            string group;
-            string sprite;
-            int h;
-            int w;
-            int y;
-            int x;
+            public string header;
+            public List<string> tags;
         }
 
-        struct GroupDto
+        public struct ItemDto
         {
-            string MaxGroupOwnable;
-            string key;
+            public GoldDto gold;
+            public string plaintext;
+            public bool hideFromAll;
+            public bool inStore;
+            public List<string> into;
+            public int id;
+            public InventoryDataStatsDto stats;
+            public string colloq;
+            public Dictionary<string, bool> maps;
+            public int specialRecipe;
+            public ImageDto image;
+            public string description;
+            public List<string> tags;
+            public Dictionary<string, string> effect;
+            public string requiredChampion;
+            public List<string> from;
+            public string group;
+            public bool consumeOnFull;
+            public string name;
+            public bool consumed;
+            public string sanitizedDescription;
+            public int depth;
+            public int stacks;
+        }
+
+        public struct GoldDto
+        {
+            public int sell;
+            public int total;
+            public int bases;
+            public bool purchasable;
+        }
+
+        public struct InventoryDataStatsDto
+        {
+            public double PercentCritDamageMod;
+            public double PercentSpellBlockMod;
+            public double PercentHPRegenMod;
+            public double PercentMovementSpeedMod;
+            public double FlatSpellBlockMod;
+            public double FlatCritDamageMod;
+            public double FlatEnergyPoolMod;
+            public double PercentLifeStealMod;
+            public double FlatMPPoolMod;
+            public double FlatMovementSpeedMod;
+            public double PercentAttackSpeedMod;
+            public double FlatBlockMod;
+            public double PercentBlockMod;
+            public double FlatEnergyRegenMod;
+            public double PercentSpellVampMod;
+            public double FlatMPRegenMod;
+            public double PercentDodgeMod;
+            public double FlatAttackSpeedMod;
+            public double FlatArmorMod;
+            public double FlatHPRegenMod;
+            public double PercentMagicDamageMod;
+            public double PercentMPPoolMod;
+            public double FlatMagicDamageMod;
+            public double PercentMPRegenMod;
+            public double PercentPhysicalDamageMod;
+            public double FlatPhysicalDamageMod;
+            public double PercentHPPoolMod;
+            public double PercentArmorMod;
+            public double PercentCritChanceMod;
+            public double PercentEXPBonus;
+            public double FlatHPPoolMod;
+            public double FlatCritChanceMod;
+            public double FlatEXPBonus;
+        }
+
+        public struct ImageDto
+        {
+            public string full;
+            public string group;
+            public string sprite;
+            public int h;
+            public int w;
+            public int y;
+            public int x;
+        }
+
+        public struct GroupDto
+        {
+            public string MaxGroupOwnable;
+            public string key;
         }
     }
 }   

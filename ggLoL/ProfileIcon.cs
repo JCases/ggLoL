@@ -4,46 +4,44 @@ using System.Collections.Generic;
 
 namespace ggLoL
 {
-    class Map
+    public class ProfileIcon
     {
-        public MapDataDto map { get; set; }
+        public ProfileIconDataDto profileIcon { get; set; }
 
         public static string GetLink()
         {
-            return "lol/static-data/v3/maps";
+            return "lol/static-data/v3/profile-icons";
         }
 
-        private const string fileName = "maps.json";
+        private const string fileName = "profileIcons.json";
 
-        public void Save(Map c)
+        public void Save(ProfileIcon c)
         {
-            string maps = JsonConvert.SerializeObject(c);
+            string profileIcons = JsonConvert.SerializeObject(c);
             StreamWriter writer = new StreamWriter(fileName);
-            writer.WriteLine(maps);
+            writer.WriteLine(profileIcons);
             writer.Close();
         }
 
-        public Map Load()
+        public ProfileIcon Load()
         {
             StreamReader reader = new StreamReader(fileName);
-            string maps = reader.ReadToEnd();
+            string profileIcons = reader.ReadToEnd();
             reader.Close();
-            return JsonConvert.DeserializeObject<Map>(maps);
+            return JsonConvert.DeserializeObject<ProfileIcon>(profileIcons);
         }
 
-        public struct MapDataDto
+        public struct ProfileIconDataDto
         {
-            public Dictionary<string,MapDetailsDto> data;
+            public Dictionary<string, ProfileIconDetailsDto> data;
             public string version;
             public string type;
         }
 
-        public struct MapDetailsDto
+        public struct ProfileIconDetailsDto
         {
-            public string mapName;
             public ImageDto image;
-            public long mapId;
-            public List<long> unpurchasableItemList;
+            public long id;
         }
 
         public struct ImageDto
@@ -53,8 +51,8 @@ namespace ggLoL
             public string sprite;
             public int h;
             public int w;
-            public int y;
             public int x;
+            public int y;
         }
     }
 }

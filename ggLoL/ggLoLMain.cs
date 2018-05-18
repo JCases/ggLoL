@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.Net;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace ggLoL
 {
@@ -13,11 +11,15 @@ namespace ggLoL
 
         public ggLoLMain()
         {
-            online = true;
+            // SELECT FROM CHECKBOX PREDEFINED VALUES
+            Region region = new Region("EUW");
+            this.region = region.linkRegion;
 
-            region = "euw1";
+            online = true;
         }
 
+        // Only 1 Search for Static Data -> CREATE CLASS STATIC DATA WHERE SAVE 
+        // ALL DATA
         public Champions GetListChampions()
         {
             ConnectionAPI connection =
@@ -26,6 +28,26 @@ namespace ggLoL
             champions = 
                 JsonConvert.DeserializeObject<Champions>(connection.json);
             return champions;
+        }
+
+        // DOWNLOAD FILE WITH ALL DATA (TEXTS AND IMAGES)
+        
+        public void DownloadData()
+        {
+            WebClient web = new WebClient();
+
+            web.DownloadFile(GetLinkFileData(), "dragontail");
+
+        }
+
+        public string GetLinkFileData()
+        {
+            const string link = "lol/static-data/v3/tarball-links";
+
+            ConnectionAPI connection =
+                new ConnectionAPI(region, link);
+
+            return connection.json;
         }
     }
 }

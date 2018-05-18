@@ -35,8 +35,9 @@ namespace ggLoL
             if (users > 0)
                 MessageBox.Show("Connection ok.");
             else
-                MessageBox.Show("Error connecting to the database");
+                MessageBox.Show("Error connecting to the database.");
         }
+
         public void SignIn(string username, string password, string email )
         {
             string command = "INSERT INTO users VALUES "+

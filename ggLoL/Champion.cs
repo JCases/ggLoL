@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ggLoL
 {
     public class Champion
     {
+        public Dictionary<string, string> keys { get; set; }
+        public Dictionary<string, ChampionDto> data { get; set; }
+        public string version { get; set; }
+        public string type { get; set; }
+        public string format { get; set; }
+
         public struct ChampionDto
         {
             public InfoDto info;
@@ -142,11 +147,5 @@ namespace ggLoL
         }
 
         // TO DO -> SKINS IN ANOTHER SEASON
-
-        public Tuple<string, string> keys { get; set; }
-        public Tuple<string, ChampionDto> data { get; set; }
-        public string version { get; set; }
-        public string type { get; set; }
-        public string format { get; set; }
     }
 }
