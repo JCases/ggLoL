@@ -23,17 +23,16 @@ namespace ggLoL
                 if (parameter.Length == 0)
                 {
                     stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
-                        + link + parameter + "?api_key=" + key);
+                        + link  + "?api_key=" + key);
                     MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                        + link + parameter + "?api_key=" + key);
-                }
-                    
+                        + link + "?api_key=" + key);
+                }   
                 else
                 {
                     stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
-                        + link + "?" + parameter + "&api_key=" + key);
+                        + link + parameter + "&api_key=" + key);
                     MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                        + link + "?" + parameter + "?api_key=" + key);
+                        + link + parameter + "&api_key=" + key);
                 }
 
                 StreamReader reader = new StreamReader(stream);
@@ -45,12 +44,7 @@ namespace ggLoL
                 reader.Close();
                 stream.Close();
             }
-            catch (Exception)
-            { 
-                // Show Link - DELETE IN FINAL VERSION - TO DO
-                MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                    + link + "?" + parameter + "?api_key=" + key + "CATCH DETECTED PROBLEMS!");
-            }
+            catch (Exception) { }
         }
 
         // If you don't need a parameter

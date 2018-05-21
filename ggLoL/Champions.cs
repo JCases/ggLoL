@@ -13,11 +13,6 @@ namespace ggLoL
         public string format { get; set; }
 
 
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/champions";
-        }
-
         private const string fileName = "champions.json";
 
         public void Save(Champions c)
@@ -166,14 +161,17 @@ namespace ggLoL
 
         public struct LevelTipDto
         {
-
+            public List<string> effect { get; set; }
+            public List<string> label { get; set; }
         }
 
         public struct SpellVarsDto
         {
-
+            public string ranksWith { get; set; }
+            public string dyn { get; set; }
+            public string link { get; set; }
+            public List<double> coeff { get; set; }
+            public string key { get; set; }
         }
-
-        // TO DO -> SKINS IN ANOTHER SEASON
     }
 }

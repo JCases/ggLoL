@@ -4,18 +4,13 @@ using System.Collections.Generic;
 
 namespace ggLoL
 {
-    public class Items // TO DO: FOR FIX
+    public class Items
     {
         public Dictionary<string, ItemDto> data { get; set; }
         public string version { get; set; }
         public List<ItemTreeDto> tree { get; set; }
         public List<GroupDto> groups { get; set; }
         public string type { get; set; }
-
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/items";
-        }
 
         private const string fileName = "items.json";
 
@@ -39,97 +34,97 @@ namespace ggLoL
 
         public struct ItemTreeDto
         {
-            public string header;
-            public List<string> tags;
+            public string header { get; set; }
+            public List<string> tags { get; set; }
         }
 
         public struct ItemDto
         {
-            public GoldDto gold;
-            public string plaintext;
-            public bool hideFromAll;
-            public bool inStore;
-            public List<string> into;
-            public int id;
-            public InventoryDataStatsDto stats;
-            public string colloq;
-            public Dictionary<string, bool> maps;
-            public int specialRecipe;
-            public ImageDto image;
-            public string description;
-            public List<string> tags;
-            public Dictionary<string, string> effect;
-            public string requiredChampion;
-            public List<string> from;
-            public string group;
-            public bool consumeOnFull;
-            public string name;
-            public bool consumed;
-            public string sanitizedDescription;
-            public int depth;
-            public int stacks;
+            public GoldDto gold { get; set; }
+            public string plaintext { get; set; }
+            public bool hideFromAll { get; set; }
+            public bool inStore { get; set; }
+            public List<string> into { get; set; }
+            public int id { get; set; }
+            public InventoryDataStatsDto stats { get; set; }
+            public string colloq { get; set; }
+            public Dictionary<string, bool> maps { get; set; }
+            public int specialRecipe { get; set; }
+            public ImageDto image { get; set; }
+            public string description { get; set; }
+            public List<string> tags { get; set; }
+            public Dictionary<string, string> effect { get; set; }
+            public string requiredChampion { get; set; }
+            public List<string> from { get; set; }
+            public string group { get; set; }
+            public bool consumeOnFull { get; set; }
+            public string name { get; set; }
+            public bool consumed { get; set; }
+            public string sanitizedDescription { get; set; }
+            public int depth { get; set; }
+            public int stacks { get; set; }
         }
 
         public struct GoldDto
         {
-            public int sell;
-            public int total;
-            public int bases;
-            public bool purchasable;
+            public int sell { get; set; }
+            public int total { get; set; }
+            public int @base { get; set; }
+            public bool purchasable { get; set; }
         }
 
         public struct InventoryDataStatsDto
         {
-            public double PercentCritDamageMod;
-            public double PercentSpellBlockMod;
-            public double PercentHPRegenMod;
-            public double PercentMovementSpeedMod;
-            public double FlatSpellBlockMod;
-            public double FlatCritDamageMod;
-            public double FlatEnergyPoolMod;
-            public double PercentLifeStealMod;
-            public double FlatMPPoolMod;
-            public double FlatMovementSpeedMod;
-            public double PercentAttackSpeedMod;
-            public double FlatBlockMod;
-            public double PercentBlockMod;
-            public double FlatEnergyRegenMod;
-            public double PercentSpellVampMod;
-            public double FlatMPRegenMod;
-            public double PercentDodgeMod;
-            public double FlatAttackSpeedMod;
-            public double FlatArmorMod;
-            public double FlatHPRegenMod;
-            public double PercentMagicDamageMod;
-            public double PercentMPPoolMod;
-            public double FlatMagicDamageMod;
-            public double PercentMPRegenMod;
-            public double PercentPhysicalDamageMod;
-            public double FlatPhysicalDamageMod;
-            public double PercentHPPoolMod;
-            public double PercentArmorMod;
-            public double PercentCritChanceMod;
-            public double PercentEXPBonus;
-            public double FlatHPPoolMod;
-            public double FlatCritChanceMod;
-            public double FlatEXPBonus;
+            public double PercentCritDamageMod { get; set; }
+            public double PercentSpellBlockMod { get; set; }
+            public double PercentHPRegenMod { get; set; }
+            public double PercentMovementSpeedMod { get; set; }
+            public double FlatSpellBlockMod { get; set; }
+            public double FlatCritDamageMod { get; set; }
+            public double FlatEnergyPoolMod { get; set; }
+            public double PercentLifeStealMod { get; set; }
+            public double FlatMPPoolMod { get; set; }
+            public double FlatMovementSpeedMod { get; set; }
+            public double PercentAttackSpeedMod { get; set; }
+            public double FlatBlockMod { get; set; }
+            public double PercentBlockMod { get; set; }
+            public double FlatEnergyRegenMod { get; set; }
+            public double PercentSpellVampMod { get; set; }
+            public double FlatMPRegenMod { get; set; }
+            public double PercentDodgeMod { get; set; }
+            public double FlatAttackSpeedMod { get; set; }
+            public double FlatArmorMod { get; set; }
+            public double FlatHPRegenMod { get; set; }
+            public double PercentMagicDamageMod { get; set; }
+            public double PercentMPPoolMod { get; set; }
+            public double FlatMagicDamageMod { get; set; }
+            public double PercentMPRegenMod { get; set; }
+            public double PercentPhysicalDamageMod { get; set; }
+            public double FlatPhysicalDamageMod { get; set; }
+            public double PercentHPPoolMod { get; set; }
+            public double PercentArmorMod { get; set; }
+            public double PercentCritChanceMod { get; set; }
+            public double PercentEXPBonus { get; set; }
+            public double FlatHPPoolMod { get; set; }
+            public double FlatCritChanceMod { get; set; }
+            public double FlatEXPBonus { get; set; }
         }
 
         public struct ImageDto
         {
-            public string full;
-            public string group;
-            public string sprite;
-            public int h;
-            public int w;
-            public int y;
-            public int x;
+            public string full { get; set; }
+            public string group { get; set; }
+            public string sprite { get; set; }
+            public int h { get; set; }
+            public int w { get; set; }
+            public int y { get; set; }
+            public int x { get; set; }
         }
 
         public struct GroupDto
         {
-            public string MaxGroupOwnable;
-            public string key;
+            public string MaxGroupOwnable { get; set; }
+            public string key { get; set; }
         }
     }
 }   

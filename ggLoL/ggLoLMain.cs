@@ -23,7 +23,7 @@ namespace ggLoL
         public static void GetListChampions()
         {
             ConnectionAPI connection =
-                new ConnectionAPI("lol/platform/v3/champions");
+                new ConnectionAPI(LinksAPI.GetLinksAPI(LinksAPI.Link.FreeChampions));
             FreeChampions champions = new FreeChampions();
             champions = JsonConvert.DeserializeObject<FreeChampions>(connection.json);
 
@@ -32,7 +32,7 @@ namespace ggLoL
 
         // DOWNLOAD FILE WITH ALL DATA (TEXTS AND IMAGES)
 
-        public static void DownloadData()
+        public static void DownloadFile()
         {
             WebClient web = new WebClient();
 
@@ -42,7 +42,7 @@ namespace ggLoL
 
         public static string GetLinkFileData()
         {
-            const string link = "lol/static-data/v3/tarball-links";
+            const string link = "";
 
             ConnectionAPI connection =
                 new ConnectionAPI(region, link);

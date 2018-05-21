@@ -10,11 +10,6 @@ namespace ggLoL
         public string version { get; set; }
         public string type { get; set; }
 
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/maps";
-        }
-
         private const string fileName = "maps.json";
 
         public void Save(Maps m)

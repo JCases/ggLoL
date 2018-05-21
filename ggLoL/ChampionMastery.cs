@@ -15,11 +15,6 @@ namespace ggLoL
         public long championPointsSinceLastLevel { get; set; }
         public long lastPlayTime { get; set; }
 
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/champion-masteries/by-summoner/";
-        }
-
         private string fileName = "runes.json";
 
         public void Save(ChampionMastery c)

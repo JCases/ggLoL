@@ -10,11 +10,6 @@ namespace ggLoL
         public string version;
         public string type;
 
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/profile-icons";
-        }
-
         private const string fileName = "profileIcons.json";
 
         public void Save(ProfileIcon c)

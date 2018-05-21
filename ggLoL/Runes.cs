@@ -8,11 +8,6 @@ namespace ggLoL
     {
         public List<ReforgedRuneDto> runes { get; set; }
 
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/reforged-runes";
-        }
-
         private const string fileName = "runes.json";
 
         public void Save(Runes r)

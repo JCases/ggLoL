@@ -10,11 +10,6 @@ namespace ggLoL
         public string version { get; set; }
         public Dictionary<string, SummonerSpellDto> data { get; set; }
 
-        public static string GetLink()
-        {
-            return "lol/static-data/v3/summoner-spells";
-        }
-
         private const string fileName = "spells.json";
 
         public void Save(Spells s)
