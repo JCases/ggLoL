@@ -8,9 +8,9 @@ namespace ggLoL
     {
         public List<Champion> listChamp { get; set; }
 
-        public Champions()
+        public Champions(List<Champion> listChamp)
         {
-            listChamp = new List<Champion>();
+            this.listChamp = listChamp;
         }
 
         public static string GetLink()

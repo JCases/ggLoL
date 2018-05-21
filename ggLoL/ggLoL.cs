@@ -40,8 +40,8 @@ namespace ggLoL
         private void LoadApp(object sender, EventArgs e)
         {
             Time(sender, e);
-            ggLoLMain ggLoL = new ggLoLMain();
-            Champions champions = ggLoL.GetListChampions();
+            ggLoLMain.setRegion("EUW");
+            MessageBox.Show(ggLoLMain.GetListChampions().spells[0].type.ToString());
         }
 
         private void ClickUserSignIn(object sender, EventArgs e)
@@ -74,10 +74,6 @@ namespace ggLoL
             chckBxStayConnected.Checked = chckBxTerms.Checked = false;
 
             Loading();
-
-            News nw = new News();
-            nw.SetFreeChampions();
-            //txtPatch.Text = nw.freeChampions[0].type.ToString();
         }
 
         // Start Animation

@@ -1,38 +1,36 @@
 ﻿using System.Net;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ggLoL
 {
-    public class ggLoLMain
+    abstract public class ggLoLMain
     {
-        protected string region { get; set; }
+        protected static string region { get; set; }
 
-        protected bool online { get; }
+        protected static bool online { get; set; }
 
-        public ggLoLMain()
+        public static void setRegion(string txtRegion)
         {
             // SELECT FROM CHECKBOX PREDEFINED VALUES
-            Region region = new Region("EUW");
-            this.region = region.linkRegion;
-
-            online = true;
+            Region r = new Region(txtRegion);
+            region = r.linkRegion;
         }
 
         // Only 1 Search for Static Data -> CREATE CLASS STATIC DATA WHERE SAVE 
         // ALL DATA
-        public Champions GetListChampions()
+        public static Spells GetListChampions()
         {
             ConnectionAPI connection =
-                new ConnectionAPI(region, Champions.GetLink());
-            Champions champions = new Champions();
-            champions = 
-                JsonConvert.DeserializeObject<Champions>(connection.json);
+                new ConnectionAPI("locale=en_US&spellListData=all&dataById=true&tags=all", Spells.GetLink());
+            Spells champions = 
+                JsonConvert.DeserializeObject<Spells>(connection.json);
             return champions;
         }
 
         // DOWNLOAD FILE WITH ALL DATA (TEXTS AND IMAGES)
         
-        public void DownloadData()
+        public static void DownloadData()
         {
             WebClient web = new WebClient();
 
@@ -40,7 +38,7 @@ namespace ggLoL
 
         }
 
-        public string GetLinkFileData()
+        public static string GetLinkFileData()
         {
             const string link = "lol/static-data/v3/tarball-links";
 

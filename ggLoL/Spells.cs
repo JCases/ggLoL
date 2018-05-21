@@ -69,6 +69,11 @@ namespace ggLoL
 
         public List<SummonerSpellListDto> spells;
 
+        public static string GetLink()
+        {
+            return "lol/static-data/v3/summoner-spells";
+        }
+
         private const string fileName = "spells.json";
 
         public void Save(Spells s)

@@ -29,18 +29,6 @@ namespace ggLoL
             catch (Exception) { return ""; }
         }
 
-        public void SetFreeChampions()
-        {
-            // TO DO: NOT WORK - NOT DESERIALIZE OBJECTS
-            try
-            {
-                ConnectionAPI connection = new ConnectionAPI(region, FreeChampions.GetLink());
-                FreeChampions fc =
-                    JsonConvert.DeserializeObject<FreeChampions>(connection.json);
-            }
-            catch (Exception) { }
-        }
-
         public string Patch()
         {
             string code = GetPatchCode();
