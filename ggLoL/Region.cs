@@ -9,40 +9,40 @@
             switch(region.ToUpper())
             {
                 case "BR":
-                    this.linkRegion = "BR1";
+                    this.linkRegion = "br1";
                     break;
                 case "EUNE":
-                    this.linkRegion = "EUN1";
+                    this.linkRegion = "eun1";
                     break;
                 case "EUW":
-                    this.linkRegion = "EUW1";
+                    this.linkRegion = "euw1";
                     break;
                 case "JP":
-                    this.linkRegion = "JP1";
+                    this.linkRegion = "jp1";
                     break;
                 case "KR":
-                    this.linkRegion = "KR";
+                    this.linkRegion = "kr";
                     break;
                 case "LAN":
-                    this.linkRegion = "LA1";
+                    this.linkRegion = "la1";
                     break;
                 case "LAS":
-                    this.linkRegion = "LA2";
+                    this.linkRegion = "la2";
                     break;
                 case "NA":
-                    this.linkRegion = "NA1";
+                    this.linkRegion = "na1";
                     break;
                 case "OCE":
-                    this.linkRegion = "OC1";
+                    this.linkRegion = "oc1";
                     break;
                 case "TR":
-                    this.linkRegion = "TR1";
+                    this.linkRegion = "tr1";
                     break;
                 case "RU":
-                    this.linkRegion = "RU";
+                    this.linkRegion = "ru";
                     break;
                 case "PBE":
-                    this.linkRegion = "PBE1";
+                    this.linkRegion = "pbe1";
                     break;
             }
         }

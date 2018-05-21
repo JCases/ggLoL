@@ -8,8 +8,6 @@ namespace ggLoL
 {
     public class News : ggLoLMain
     {
-        public List<Champion> freeChampions { get; set; }
-
         public string GetPatchCode()
         {
             const string link = "/lol/static-data/v3/versions";
@@ -18,7 +16,7 @@ namespace ggLoL
             {
                 WebClient client = new WebClient();
 
-                ConnectionAPI patch = new ConnectionAPI(region, link);
+                ConnectionAPI patch = new ConnectionAPI(link);
 
                 // Get First Result
                 string numberPatch = patch.json.Split('\"')[1];

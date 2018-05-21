@@ -4,23 +4,18 @@ namespace ggLoL
 {
     public class FreeChampions
     {
-        public struct FreeChampion
+        public List<ChampionDto> champions { get; set; }
+
+        public struct ChampionDto
         {
-            public bool rankedPlayEnabled;
-            public bool botEnabled;
-            public bool botMmEnabled;
-            public bool active;
-            public bool freeToPlay;
-            public long id;
+            public bool rankedPlayEnabled { get; set; }
+            public bool botEnabled { get; set; }
+            public bool botMmEnabled { get; set; }
+            public bool active { get; set; }
+            public bool freeToPlay { get; set; }
+            public long id { get; set; }
         }
-
-        public List<FreeChampion> lFreeCham { get; set; }
-
-        public FreeChampions()
-        {
-            lFreeCham = new List<FreeChampion>();
-        }
-
-        public static string GetLink() { return "lol/platform/v3/champions"; }
     }
+
+    
 }

@@ -15,9 +15,9 @@ namespace ggLoL
 
         private const string fileName = "runes.json";
 
-        public void Save(Runes c)
+        public void Save(Runes r)
         {
-            string runes = JsonConvert.SerializeObject(c);
+            string runes = JsonConvert.SerializeObject(r);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(runes);
             writer.Close();
@@ -33,14 +33,14 @@ namespace ggLoL
 
         public struct ReforgedRuneDto
         {
-            public string runePathName;
-            public int runePathId;
-            public string name;
-            public int id;
-            public string key;
-            public string shortDesc;
-            public string longDesc;
-            public string icon;
+            public string runePathName { get; set; }
+            public int runePathId { get; set; }
+            public string name { get; set; }
+            public int id { get; set; }
+            public string key { get; set; }
+            public string shortDesc { get; set; }
+            public string longDesc { get; set; }
+            public string icon { get; set; }
         }
     }
 }

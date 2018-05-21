@@ -18,21 +18,29 @@ namespace ggLoL
             try
             {
                 WebClient client = new WebClient();
-                
-                if (parameter.Length == 0)
-                    stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
-                        + link + parameter + "?api_key=" + key);
-                else
-                    stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
-                        + link + "?" + parameter + "&api_key=" + key);
 
                 // Show Link - DELETE IN FINAL VERSION - TO DO
-                MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                    + link + "?" + parameter + "?api_key=" + key);
+                if (parameter.Length == 0)
+                {
+                    stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
+                        + link + parameter + "?api_key=" + key);
+                    MessageBox.Show("https://" + region + ".api.riotgames.com/"
+                        + link + parameter + "?api_key=" + key);
+                }
+                    
+                else
+                {
+                    stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
+                        + link + "?" + parameter + "&api_key=" + key);
+                    MessageBox.Show("https://" + region + ".api.riotgames.com/"
+                        + link + "?" + parameter + "?api_key=" + key);
+                }
 
                 StreamReader reader = new StreamReader(stream);
 
                 json = reader.ReadToEnd();
+
+                MessageBox.Show(json);
 
                 reader.Close();
                 stream.Close();

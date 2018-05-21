@@ -6,7 +6,9 @@ namespace ggLoL
 {
     public class ProfileIcon
     {
-        public ProfileIconDataDto profileIcon { get; set; }
+        public Dictionary<string, ProfileIconDetailsDto> data;
+        public string version;
+        public string type;
 
         public static string GetLink()
         {
@@ -31,12 +33,7 @@ namespace ggLoL
             return JsonConvert.DeserializeObject<ProfileIcon>(profileIcons);
         }
 
-        public struct ProfileIconDataDto
-        {
-            public Dictionary<string, ProfileIconDetailsDto> data;
-            public string version;
-            public string type;
-        }
+        // -- STRUCTS -- // 
 
         public struct ProfileIconDetailsDto
         {

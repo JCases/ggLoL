@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ggLoL
 {
@@ -19,17 +20,18 @@ namespace ggLoL
 
         // Only 1 Search for Static Data -> CREATE CLASS STATIC DATA WHERE SAVE 
         // ALL DATA
-        public static Spells GetListChampions()
+        public static void GetListChampions()
         {
             ConnectionAPI connection =
-                new ConnectionAPI("locale=en_US&spellListData=all&dataById=true&tags=all", Spells.GetLink());
-            Spells champions = 
-                JsonConvert.DeserializeObject<Spells>(connection.json);
-            return champions;
+                new ConnectionAPI("lol/platform/v3/champions");
+            FreeChampions champions = new FreeChampions();
+            champions = JsonConvert.DeserializeObject<FreeChampions>(connection.json);
+
+            MessageBox.Show(champions.champions[0].id.ToString());
         }
 
         // DOWNLOAD FILE WITH ALL DATA (TEXTS AND IMAGES)
-        
+
         public static void DownloadData()
         {
             WebClient web = new WebClient();

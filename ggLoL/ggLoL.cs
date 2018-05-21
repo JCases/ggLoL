@@ -41,7 +41,7 @@ namespace ggLoL
         {
             Time(sender, e);
             ggLoLMain.setRegion("EUW");
-            MessageBox.Show(ggLoLMain.GetListChampions().spells[0].type.ToString());
+            ggLoLMain.GetListChampions();
         }
 
         private void ClickUserSignIn(object sender, EventArgs e)

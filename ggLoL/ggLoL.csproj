@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIKey.cs" />
-    <Compile Include="Champion.cs" />
+    <Compile Include="ChampionMastery.cs" />
     <Compile Include="Champions.cs" />
     <Compile Include="ConnectionAPI.cs" />
     <Compile Include="DataBase.cs" />
@@ -64,8 +64,8 @@
       <DependentUpon>ggLoL.cs</DependentUpon>
     </Compile>
     <Compile Include="ggLoLMain.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="Items.cs" />
+    <Compile Include="Maps.cs" />
     <Compile Include="News.cs" />
     <Compile Include="Overlay.cs">
       <SubType>Form</SubType>
@@ -86,6 +86,7 @@
     <Compile Include="Region.cs" />
     <Compile Include="Runes.cs" />
     <Compile Include="Spells.cs" />
+    <Compile Include="SummonerProfile.cs" />
     <EmbeddedResource Include="ggLoL.resx">
       <DependentUpon>ggLoL.cs</DependentUpon>
     </EmbeddedResource>

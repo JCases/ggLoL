@@ -4,9 +4,13 @@ using System.Collections.Generic;
 
 namespace ggLoL
 {
-    public class Item
+    public class Items // TO DO: FOR FIX
     {
-        public ItemListDto map { get; set; }
+        public Dictionary<string, ItemDto> data { get; set; }
+        public string version { get; set; }
+        public List<ItemTreeDto> tree { get; set; }
+        public List<GroupDto> groups { get; set; }
+        public string type { get; set; }
 
         public static string GetLink()
         {
@@ -15,30 +19,23 @@ namespace ggLoL
 
         private const string fileName = "items.json";
 
-        public void Save(Item c)
+        public void Save(Items i)
         {
-            string items = JsonConvert.SerializeObject(c);
+            string items = JsonConvert.SerializeObject(i);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(items);
             writer.Close();
         }
 
-        public Item Load()
+        public Items Load()
         {
             StreamReader reader = new StreamReader(fileName);
             string items = reader.ReadToEnd();
             reader.Close();
-            return JsonConvert.DeserializeObject<Item>(items);
+            return JsonConvert.DeserializeObject<Items>(items);
         }
 
-        public struct ItemListDto
-        {
-            public Dictionary<string, ItemDto> data;
-            public string version;
-            public List<ItemTreeDto> tree;
-            public List<GroupDto> groups;
-            public string type;
-        }
+        // -- STRUCTS -- // 
 
         public struct ItemTreeDto
         {
