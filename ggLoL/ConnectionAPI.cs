@@ -15,6 +15,8 @@ namespace ggLoL
         // If you need a parameter
         public ConnectionAPI(string parameter, string link)
         {
+            LoadData ld = new LoadData();
+            ld.Show();
             try
             {
                 WebClient client = new WebClient();
@@ -30,9 +32,9 @@ namespace ggLoL
                 else
                 {
                     stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
-                        + link + parameter + "&api_key=" + key);
+                        + link + parameter + "?api_key=" + key);
                     MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                        + link + parameter + "&api_key=" + key);
+                        + link + parameter + "?api_key=" + key);
                 }
 
                 StreamReader reader = new StreamReader(stream);
@@ -44,7 +46,8 @@ namespace ggLoL
                 reader.Close();
                 stream.Close();
             }
-            catch (Exception) { }
+            catch (Exception e) { MessageBox.Show(e.Message); }
+            ld.Close();
         }
 
         // If you don't need a parameter

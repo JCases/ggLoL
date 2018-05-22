@@ -42,3 +42,10 @@ C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\MaterialSkin.dll
 C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.csproj.CopyComplete
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\PdfSharp.Charting.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\PdfSharp.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\PdfSharp.xml
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\PdfSharp.Charting.xml
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.LoadData.resources

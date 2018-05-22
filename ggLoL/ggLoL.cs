@@ -41,7 +41,6 @@ namespace ggLoL
         {
             Time(sender, e);
             ggLoLMain.setRegion("EUW");
-            ggLoLMain.GetListChampions();
         }
 
         private void ClickUserSignIn(object sender, EventArgs e)
@@ -62,7 +61,7 @@ namespace ggLoL
         private void ShowIndexScreen()
         {
             // Show Options Sign Off & Profile
-            //signOffOption.Visible = profileOption.Visible = true;
+            // signOffOption.Visible = profileOption.Visible = true;
 
             cntrlSignLogin.Visible = false;
             slctrHeader.Visible = false;
@@ -107,6 +106,25 @@ namespace ggLoL
                 else // Show Sign In & Login
                     cntrlSignLogin.Visible = true;
             }
+        }
+
+        private void ClickSearchPlayer(object sender, EventArgs e)
+        {
+            SummonerProfile s;
+            if (txtPlayerSearch.Text.Length > 0)
+            {
+                if (ggLoLMain.SearchPlayer(txtPlayerSearch.Text, out s))
+                    ShowSummonerProfile(s);
+            }
+            else
+                MessageBox.Show("Enter a Summoner Name.");
+        }
+
+        private void ShowSummonerProfile(SummonerProfile s)
+        {
+            pnlSearchPlayer.Visible = false;
+            pnlResultSummonerProfile.Visible = true;
+            lblNameSummonerR.Text = s.name;
         }
     }
 }

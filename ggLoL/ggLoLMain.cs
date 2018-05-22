@@ -18,16 +18,20 @@ namespace ggLoL
             region = r.linkRegion;
         }
 
-        // Only 1 Search for Static Data -> CREATE CLASS STATIC DATA WHERE SAVE 
-        // ALL DATA
-        public static void GetListChampions()
+        public static bool SearchPlayer(string name, out SummonerProfile s)
         {
-            ConnectionAPI connection =
-                new ConnectionAPI(APILinks.GetLink(APILinks.Link.FreeChampions));
-            StateChampions champions = new StateChampions();
-            champions = JsonConvert.DeserializeObject<StateChampions>(connection.json);
+            try
+            {
+                ConnectionAPI connection =
+                new ConnectionAPI(name, APILinks.GetLink(
+                APILinks.Link.SummonerProfile));
 
-            MessageBox.Show(champions.champions[0].id.ToString());
+                s = JsonConvert.DeserializeObject<SummonerProfile>(connection.json);
+
+                return true;
+            }
+            catch { s = null; return false; }
+            
         }
 
         // DOWNLOAD FILE WITH ALL DATA (TEXTS AND IMAGES)
