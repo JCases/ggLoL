@@ -2,7 +2,7 @@
 
 namespace ggLoL
 {
-    public class FreeChampions
+    public class StateChampions
     {
         public List<ChampionDto> champions { get; set; }
 

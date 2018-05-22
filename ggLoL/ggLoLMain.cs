@@ -23,9 +23,9 @@ namespace ggLoL
         public static void GetListChampions()
         {
             ConnectionAPI connection =
-                new ConnectionAPI(LinksAPI.GetLinksAPI(LinksAPI.Link.FreeChampions));
-            FreeChampions champions = new FreeChampions();
-            champions = JsonConvert.DeserializeObject<FreeChampions>(connection.json);
+                new ConnectionAPI(APILinks.GetLink(APILinks.Link.FreeChampions));
+            StateChampions champions = new StateChampions();
+            champions = JsonConvert.DeserializeObject<StateChampions>(connection.json);
 
             MessageBox.Show(champions.champions[0].id.ToString());
         }

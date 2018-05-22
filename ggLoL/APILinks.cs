@@ -1,6 +1,6 @@
 ﻿namespace ggLoL
 {
-    public class LinksAPI
+    public class APILinks
     {
         public enum Link : int
         {
@@ -14,10 +14,11 @@
             Runes = 7,
             ChampionMastery = 8,
             VerifyProfile = 9,
-            DragontailData = 10
+            DragontailData = 10,
+            Version = 11
         };
 
-        public static string GetLinksAPI(Link n)
+        public static string GetLink(Link n)
         {
             string[] link = {
                 "lol/static-data/v3/champions",
@@ -30,7 +31,8 @@
                 "lol/static-data/v3/reforged-runes",
                 "lol/static-data/v3/champion-masteries/by-summoner/",
                 "lol/platform/v3/third-party-code/by-summoner/",
-                "lol/static-data/v3/tarball-links"};
+                "lol/static-data/v3/tarball-links",
+                "/lol/static-data/v3/versions"};
 
             return link[(int)n];
         }

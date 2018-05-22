@@ -56,7 +56,7 @@
     <Compile Include="Champions.cs" />
     <Compile Include="ConnectionAPI.cs" />
     <Compile Include="DataBase.cs" />
-    <Compile Include="FreeChampions.cs" />
+    <Compile Include="StateChampions.cs" />
     <Compile Include="ggLoL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +65,7 @@
     </Compile>
     <Compile Include="ggLoLMain.cs" />
     <Compile Include="Items.cs" />
-    <Compile Include="LinksAPI.cs" />
+    <Compile Include="APILinks.cs" />
     <Compile Include="Maps.cs" />
     <Compile Include="News.cs" />
     <Compile Include="Overlay.cs">
