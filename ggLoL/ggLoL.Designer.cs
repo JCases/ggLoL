@@ -68,6 +68,7 @@
             this.tbNews = new System.Windows.Forms.TabPage();
             this.tbSummoner = new System.Windows.Forms.TabPage();
             this.pnlSearchPlayer = new System.Windows.Forms.Panel();
+            this.lblSearchPlayer = new MaterialSkin.Controls.MaterialLabel();
             this.txtSearchPlayer = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnPlayerSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pnlResultSummonerProfile = new System.Windows.Forms.Panel();
@@ -76,7 +77,7 @@
             this.lblRevisionSummoner = new MaterialSkin.Controls.MaterialLabel();
             this.lblLevelSummonerR = new MaterialSkin.Controls.MaterialLabel();
             this.lblLevelSummoner = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblIDAccountSummonerR = new MaterialSkin.Controls.MaterialLabel();
             this.lblIDAccountSummoner = new MaterialSkin.Controls.MaterialLabel();
             this.lblIDSummonerR = new MaterialSkin.Controls.MaterialLabel();
             this.lblIDSummoner = new MaterialSkin.Controls.MaterialLabel();
@@ -94,7 +95,12 @@
             this.progressBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.animationTime = new System.Windows.Forms.Timer(this.components);
-            this.lblSearchPlayer = new MaterialSkin.Controls.MaterialLabel();
+            this.pnlDownload = new System.Windows.Forms.Panel();
+            this.lblDownload = new System.Windows.Forms.Label();
+            this.progressBarDownload = new MaterialSkin.Controls.MaterialProgressBar();
+            this.btnDownloadData = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblValueDownload = new System.Windows.Forms.Label();
+            this.btnCancelDownload = new System.Windows.Forms.Label();
             this.mOption.SuspendLayout();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
@@ -108,6 +114,7 @@
             this.pnlResultSummonerProfile.SuspendLayout();
             this.tbChampions.SuspendLayout();
             this.pnlLoading.SuspendLayout();
+            this.pnlDownload.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOptions
@@ -115,6 +122,7 @@
             this.btnOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOptions.BackColor = System.Drawing.Color.Transparent;
             this.btnOptions.ContextMenuStrip = this.mOption;
+            this.btnOptions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOptions.Depth = 0;
             this.btnOptions.Font = new System.Drawing.Font("Roboto", 11F);
             this.btnOptions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -544,6 +552,7 @@
             // 
             // tbOffline
             // 
+            this.tbOffline.Controls.Add(this.btnDownloadData);
             this.tbOffline.Controls.Add(this.lblOffline);
             this.tbOffline.Controls.Add(this.btnOffline);
             this.tbOffline.Location = new System.Drawing.Point(4, 22);
@@ -651,6 +660,20 @@
             this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 581);
             this.pnlSearchPlayer.TabIndex = 0;
             // 
+            // lblSearchPlayer
+            // 
+            this.lblSearchPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSearchPlayer.AutoSize = true;
+            this.lblSearchPlayer.Depth = 0;
+            this.lblSearchPlayer.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSearchPlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSearchPlayer.Location = new System.Drawing.Point(591, 270);
+            this.lblSearchPlayer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSearchPlayer.Name = "lblSearchPlayer";
+            this.lblSearchPlayer.Size = new System.Drawing.Size(88, 19);
+            this.lblSearchPlayer.TabIndex = 3;
+            this.lblSearchPlayer.Text = "Nick Name:";
+            // 
             // txtSearchPlayer
             // 
             this.txtSearchPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -693,7 +716,7 @@
             this.pnlResultSummonerProfile.Controls.Add(this.lblRevisionSummoner);
             this.pnlResultSummonerProfile.Controls.Add(this.lblLevelSummonerR);
             this.pnlResultSummonerProfile.Controls.Add(this.lblLevelSummoner);
-            this.pnlResultSummonerProfile.Controls.Add(this.materialLabel3);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblIDAccountSummonerR);
             this.pnlResultSummonerProfile.Controls.Add(this.lblIDAccountSummoner);
             this.pnlResultSummonerProfile.Controls.Add(this.lblIDSummonerR);
             this.pnlResultSummonerProfile.Controls.Add(this.lblIDSummoner);
@@ -780,19 +803,19 @@
             this.lblLevelSummoner.Text = "Level";
             this.lblLevelSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialLabel3
+            // lblIDAccountSummonerR
             // 
-            this.materialLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(243, 241);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(0, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIDAccountSummonerR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIDAccountSummonerR.AutoSize = true;
+            this.lblIDAccountSummonerR.Depth = 0;
+            this.lblIDAccountSummonerR.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblIDAccountSummonerR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIDAccountSummonerR.Location = new System.Drawing.Point(243, 241);
+            this.lblIDAccountSummonerR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblIDAccountSummonerR.Name = "lblIDAccountSummonerR";
+            this.lblIDAccountSummonerR.Size = new System.Drawing.Size(0, 19);
+            this.lblIDAccountSummonerR.TabIndex = 5;
+            this.lblIDAccountSummonerR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblIDAccountSummoner
             // 
@@ -995,31 +1018,102 @@
             this.animationTime.Interval = 60;
             this.animationTime.Tick += new System.EventHandler(this.AnimationTimer);
             // 
-            // lblSearchPlayer
+            // pnlDownload
             // 
-            this.lblSearchPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSearchPlayer.AutoSize = true;
-            this.lblSearchPlayer.Depth = 0;
-            this.lblSearchPlayer.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblSearchPlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSearchPlayer.Location = new System.Drawing.Point(591, 270);
-            this.lblSearchPlayer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSearchPlayer.Name = "lblSearchPlayer";
-            this.lblSearchPlayer.Size = new System.Drawing.Size(88, 19);
-            this.lblSearchPlayer.TabIndex = 3;
-            this.lblSearchPlayer.Text = "Nick Name:";
+            this.pnlDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.pnlDownload.Controls.Add(this.btnCancelDownload);
+            this.pnlDownload.Controls.Add(this.lblValueDownload);
+            this.pnlDownload.Controls.Add(this.lblDownload);
+            this.pnlDownload.Controls.Add(this.progressBarDownload);
+            this.pnlDownload.Location = new System.Drawing.Point(485, 27);
+            this.pnlDownload.Name = "pnlDownload";
+            this.pnlDownload.Size = new System.Drawing.Size(631, 31);
+            this.pnlDownload.TabIndex = 3;
+            this.pnlDownload.Visible = false;
+            // 
+            // lblDownload
+            // 
+            this.lblDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDownload.AutoSize = true;
+            this.lblDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblDownload.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDownload.Location = new System.Drawing.Point(55, 7);
+            this.lblDownload.Name = "lblDownload";
+            this.lblDownload.Size = new System.Drawing.Size(95, 20);
+            this.lblDownload.TabIndex = 2;
+            this.lblDownload.Text = "Download...";
+            this.lblDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // progressBarDownload
+            // 
+            this.progressBarDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.progressBarDownload.BackColor = System.Drawing.Color.White;
+            this.progressBarDownload.Depth = 0;
+            this.progressBarDownload.Location = new System.Drawing.Point(214, 16);
+            this.progressBarDownload.MarqueeAnimationSpeed = 10;
+            this.progressBarDownload.MouseState = MaterialSkin.MouseState.HOVER;
+            this.progressBarDownload.Name = "progressBarDownload";
+            this.progressBarDownload.Size = new System.Drawing.Size(298, 5);
+            this.progressBarDownload.Step = 0;
+            this.progressBarDownload.TabIndex = 0;
+            // 
+            // btnDownloadData
+            // 
+            this.btnDownloadData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDownloadData.AutoSize = true;
+            this.btnDownloadData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDownloadData.Depth = 0;
+            this.btnDownloadData.Icon = null;
+            this.btnDownloadData.Location = new System.Drawing.Point(587, 362);
+            this.btnDownloadData.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDownloadData.Name = "btnDownloadData";
+            this.btnDownloadData.Primary = true;
+            this.btnDownloadData.Size = new System.Drawing.Size(135, 36);
+            this.btnDownloadData.TabIndex = 2;
+            this.btnDownloadData.Text = "Download Data";
+            this.btnDownloadData.UseVisualStyleBackColor = true;
+            this.btnDownloadData.Click += new System.EventHandler(this.ClickDownloadDataOffline);
+            // 
+            // lblValueDownload
+            // 
+            this.lblValueDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblValueDownload.AutoSize = true;
+            this.lblValueDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblValueDownload.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblValueDownload.Location = new System.Drawing.Point(155, 6);
+            this.lblValueDownload.Name = "lblValueDownload";
+            this.lblValueDownload.Size = new System.Drawing.Size(0, 20);
+            this.lblValueDownload.TabIndex = 3;
+            this.lblValueDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCancelDownload
+            // 
+            this.btnCancelDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelDownload.AutoSize = true;
+            this.btnCancelDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnCancelDownload.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancelDownload.Location = new System.Drawing.Point(529, 6);
+            this.btnCancelDownload.Name = "btnCancelDownload";
+            this.btnCancelDownload.Size = new System.Drawing.Size(61, 20);
+            this.btnCancelDownload.TabIndex = 4;
+            this.btnCancelDownload.Text = "Cancel";
+            this.btnCancelDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelDownload.Click += new System.EventHandler(this.ClickCancelDownload);
             // 
             // ggLoL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.pnlDownload);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.pnlLoading);
-            this.Controls.Add(this.cntrlIndex);
-            this.Controls.Add(this.cntrlSignLogin);
             this.Controls.Add(this.slctrHeader);
             this.Controls.Add(this.btnOptions);
+            this.Controls.Add(this.cntrlIndex);
+            this.Controls.Add(this.cntrlSignLogin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "ggLoL";
@@ -1047,6 +1141,8 @@
             this.tbChampions.PerformLayout();
             this.pnlLoading.ResumeLayout(false);
             this.pnlLoading.PerformLayout();
+            this.pnlDownload.ResumeLayout(false);
+            this.pnlDownload.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1109,7 +1205,7 @@
         private MaterialSkin.Controls.MaterialLabel lblRevisionSummoner;
         private MaterialSkin.Controls.MaterialLabel lblLevelSummonerR;
         private MaterialSkin.Controls.MaterialLabel lblLevelSummoner;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel lblIDAccountSummonerR;
         private MaterialSkin.Controls.MaterialLabel lblIDAccountSummoner;
         private MaterialSkin.Controls.MaterialLabel lblIDSummonerR;
         private MaterialSkin.Controls.MaterialLabel lblIDSummoner;
@@ -1117,6 +1213,12 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchPlayer;
         private System.Windows.Forms.ToolStripMenuItem exitOption;
         private MaterialSkin.Controls.MaterialLabel lblSearchPlayer;
+        private System.Windows.Forms.Panel pnlDownload;
+        private System.Windows.Forms.Label lblDownload;
+        private MaterialSkin.Controls.MaterialProgressBar progressBarDownload;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDownloadData;
+        private System.Windows.Forms.Label lblValueDownload;
+        private System.Windows.Forms.Label btnCancelDownload;
     }
 }
 

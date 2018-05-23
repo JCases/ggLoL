@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Net;
+using System.ComponentModel;
+using System.Deployment.Application;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
+
 
 namespace ggLoL
 {
@@ -147,6 +152,82 @@ namespace ggLoL
             }
         }
 
+        // Download File (Events and Animations)
+
+        WebClient web;
+        string path;
+
+        private void ClickDownloadDataOffline(object sender, EventArgs e)
+        {
+            // Reset Progress Bar
+            progressBarDownload.Value = 0;
+
+            progressBarDownload.RightToLeft = RightToLeft.Yes;
+            progressBarDownload.RightToLeftLayout = true;
+
+            pnlDownload.Visible = true;
+
+            DownloadFile();
+        }
+
+        private void DownloadFile()
+        {
+            btnDownloadData.Visible = false;
+
+            string url = ggLoLMain.GetLinkFileData();
+
+            Uri uri = new Uri(url);
+
+            string desktopPath =
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            string filename = Path.GetFileName(uri.LocalPath);
+
+            web = new WebClient();
+
+            path = desktopPath + "/" + filename;
+
+            web.DownloadProgressChanged += 
+                new DownloadProgressChangedEventHandler (DownloadFileChanged);
+            web.DownloadFileCompleted += 
+                new AsyncCompletedEventHandler (DownloadFileCompleted);
+            web.DownloadFileAsync(uri, desktopPath  + "/"  + filename);        
+        }
+
+        private void DownloadFileChanged(object sender, 
+            System.Net.DownloadProgressChangedEventArgs e)
+        {
+            progressBarDownload.Value = e.ProgressPercentage;
+            lblValueDownload.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            pnlDownload.Visible = false;
+            btnDownloadData.Visible = true;
+            if (e.Cancelled)
+            {
+                MessageBox.Show("The download has been cancelled");
+                File.Delete(path);
+                return;
+            }
+
+            if (e.Error != null)
+            {
+                MessageBox.Show("An error ocurred while trying to download file");
+                return;
+            }
+
+            MessageBox.Show("File succesfully downloaded");
+        }
+
+        private void ClickCancelDownload(object sender, EventArgs e)
+        {
+            web.CancelAsync();
+        }
+
+
+        // Events with Data
         private void ClickSearchPlayer(object sender, EventArgs e)
         {
             SummonerProfile s;
@@ -164,7 +245,10 @@ namespace ggLoL
             pnlSearchPlayer.Visible = false;
             pnlResultSummonerProfile.Visible = true;
             lblNameSummonerR.Text = s.name;
-            // TERMINAR PERFIL PERSONAL
+            lblIDSummonerR.Text = s.id.ToString();
+            lblIDAccountSummonerR.Text = s.accountId.ToString();
+            lblLevelSummonerR.Text = s.summonerLevel.ToString();
+            lblRevisionSummonerR.Text = s.revisionDate.ToString();
         }
 
         private void ClickSearchOtherPlayer(object sender, EventArgs e)

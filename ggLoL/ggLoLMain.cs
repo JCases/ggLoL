@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using Newtonsoft.Json;
 using System.Windows.Forms;
+using System;
 
 namespace ggLoL
 {
@@ -33,24 +34,15 @@ namespace ggLoL
             
         }
 
-        // DOWNLOAD FILE WITH ALL DATA (TEXTS AND IMAGES)
-
-        public static void DownloadFile()
-        {
-            WebClient web = new WebClient();
-
-            web.DownloadFile(GetLinkFileData(), "dragontail");
-
-        }
-
+        // For Download File Data
         public static string GetLinkFileData()
         {
-            const string link = "";
-
             ConnectionAPI connection =
-                new ConnectionAPI(region, link);
+                new ConnectionAPI(APILinks.GetLink(APILinks.Link.DragontailData));
 
-            return connection.json;
+            string link = JsonConvert.DeserializeObject<string>(connection.json);
+
+            return link;
         }
     }
 }
