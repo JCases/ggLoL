@@ -2,7 +2,7 @@
 {
     public class APIKey
     {
-        const string apiKey = "RGAPI-e6ba2833-29f3-4d85-9934-bd7a4ea09c9c";
+        const string apiKey = "RGAPI-fea562de-abd8-4a8f-8253-e80541e9335e";
 
         public static string GetKey() { return apiKey; }
     }

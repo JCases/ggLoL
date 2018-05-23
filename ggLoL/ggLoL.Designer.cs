@@ -37,7 +37,6 @@
             this.darkOptionTheme = new System.Windows.Forms.ToolStripMenuItem();
             this.profileOption = new System.Windows.Forms.ToolStripMenuItem();
             this.signOffOption = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitOption = new System.Windows.Forms.ToolStripMenuItem();
             this.slctrHeader = new MaterialSkin.Controls.MaterialTabSelector();
             this.cntrlSignLogin = new MaterialSkin.Controls.MaterialTabControl();
             this.tbLogin = new System.Windows.Forms.TabPage();
@@ -61,6 +60,7 @@
             this.lblSIUserName = new MaterialSkin.Controls.MaterialLabel();
             this.txtSIUserName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tbOffline = new System.Windows.Forms.TabPage();
+            this.btnDownloadData = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblOffline = new MaterialSkin.Controls.MaterialLabel();
             this.btnOffline = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblTime = new MaterialSkin.Controls.MaterialLabel();
@@ -96,11 +96,10 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.animationTime = new System.Windows.Forms.Timer(this.components);
             this.pnlDownload = new System.Windows.Forms.Panel();
+            this.btnCancelDownload = new System.Windows.Forms.Label();
+            this.lblValueDownload = new System.Windows.Forms.Label();
             this.lblDownload = new System.Windows.Forms.Label();
             this.progressBarDownload = new MaterialSkin.Controls.MaterialProgressBar();
-            this.btnDownloadData = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lblValueDownload = new System.Windows.Forms.Label();
-            this.btnCancelDownload = new System.Windows.Forms.Label();
             this.mOption.SuspendLayout();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
@@ -143,12 +142,11 @@
             this.mOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.themeOption,
             this.profileOption,
-            this.signOffOption,
-            this.exitOption});
+            this.signOffOption});
             this.mOption.MouseState = MaterialSkin.MouseState.HOVER;
             this.mOption.Name = "mOption";
             this.mOption.ShowCheckMargin = true;
-            this.mOption.Size = new System.Drawing.Size(145, 92);
+            this.mOption.Size = new System.Drawing.Size(145, 70);
             this.mOption.TabStop = true;
             // 
             // themeOption
@@ -203,12 +201,6 @@
             this.signOffOption.Text = "Sign Off";
             this.signOffOption.Visible = false;
             this.signOffOption.Click += new System.EventHandler(this.ClickSignOff);
-            // 
-            // exitOption
-            // 
-            this.exitOption.Name = "exitOption";
-            this.exitOption.Size = new System.Drawing.Size(144, 22);
-            this.exitOption.Text = "Exit";
             // 
             // slctrHeader
             // 
@@ -561,6 +553,23 @@
             this.tbOffline.TabIndex = 2;
             this.tbOffline.Text = "Offline Mode";
             this.tbOffline.UseVisualStyleBackColor = true;
+            // 
+            // btnDownloadData
+            // 
+            this.btnDownloadData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDownloadData.AutoSize = true;
+            this.btnDownloadData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDownloadData.Depth = 0;
+            this.btnDownloadData.Icon = null;
+            this.btnDownloadData.Location = new System.Drawing.Point(587, 362);
+            this.btnDownloadData.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDownloadData.Name = "btnDownloadData";
+            this.btnDownloadData.Primary = true;
+            this.btnDownloadData.Size = new System.Drawing.Size(135, 36);
+            this.btnDownloadData.TabIndex = 2;
+            this.btnDownloadData.Text = "Download Data";
+            this.btnDownloadData.UseVisualStyleBackColor = true;
+            this.btnDownloadData.Click += new System.EventHandler(this.ClickDownloadDataOffline);
             // 
             // lblOffline
             // 
@@ -1032,6 +1041,33 @@
             this.pnlDownload.TabIndex = 3;
             this.pnlDownload.Visible = false;
             // 
+            // btnCancelDownload
+            // 
+            this.btnCancelDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelDownload.AutoSize = true;
+            this.btnCancelDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.btnCancelDownload.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancelDownload.Location = new System.Drawing.Point(529, 6);
+            this.btnCancelDownload.Name = "btnCancelDownload";
+            this.btnCancelDownload.Size = new System.Drawing.Size(61, 20);
+            this.btnCancelDownload.TabIndex = 4;
+            this.btnCancelDownload.Text = "Cancel";
+            this.btnCancelDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelDownload.Click += new System.EventHandler(this.ClickCancelDownload);
+            // 
+            // lblValueDownload
+            // 
+            this.lblValueDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblValueDownload.AutoSize = true;
+            this.lblValueDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.lblValueDownload.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblValueDownload.Location = new System.Drawing.Point(155, 6);
+            this.lblValueDownload.Name = "lblValueDownload";
+            this.lblValueDownload.Size = new System.Drawing.Size(0, 20);
+            this.lblValueDownload.TabIndex = 3;
+            this.lblValueDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblDownload
             // 
             this.lblDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1057,50 +1093,6 @@
             this.progressBarDownload.Size = new System.Drawing.Size(298, 5);
             this.progressBarDownload.Step = 0;
             this.progressBarDownload.TabIndex = 0;
-            // 
-            // btnDownloadData
-            // 
-            this.btnDownloadData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDownloadData.AutoSize = true;
-            this.btnDownloadData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDownloadData.Depth = 0;
-            this.btnDownloadData.Icon = null;
-            this.btnDownloadData.Location = new System.Drawing.Point(587, 362);
-            this.btnDownloadData.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnDownloadData.Name = "btnDownloadData";
-            this.btnDownloadData.Primary = true;
-            this.btnDownloadData.Size = new System.Drawing.Size(135, 36);
-            this.btnDownloadData.TabIndex = 2;
-            this.btnDownloadData.Text = "Download Data";
-            this.btnDownloadData.UseVisualStyleBackColor = true;
-            this.btnDownloadData.Click += new System.EventHandler(this.ClickDownloadDataOffline);
-            // 
-            // lblValueDownload
-            // 
-            this.lblValueDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblValueDownload.AutoSize = true;
-            this.lblValueDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblValueDownload.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblValueDownload.Location = new System.Drawing.Point(155, 6);
-            this.lblValueDownload.Name = "lblValueDownload";
-            this.lblValueDownload.Size = new System.Drawing.Size(0, 20);
-            this.lblValueDownload.TabIndex = 3;
-            this.lblValueDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCancelDownload
-            // 
-            this.btnCancelDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelDownload.AutoSize = true;
-            this.btnCancelDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnCancelDownload.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancelDownload.Location = new System.Drawing.Point(529, 6);
-            this.btnCancelDownload.Name = "btnCancelDownload";
-            this.btnCancelDownload.Size = new System.Drawing.Size(61, 20);
-            this.btnCancelDownload.TabIndex = 4;
-            this.btnCancelDownload.Text = "Cancel";
-            this.btnCancelDownload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelDownload.Click += new System.EventHandler(this.ClickCancelDownload);
             // 
             // ggLoL
             // 
@@ -1211,7 +1203,6 @@
         private MaterialSkin.Controls.MaterialLabel lblIDSummoner;
         private MaterialSkin.Controls.MaterialRaisedButton btnSearchAnotherPlayer;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchPlayer;
-        private System.Windows.Forms.ToolStripMenuItem exitOption;
         private MaterialSkin.Controls.MaterialLabel lblSearchPlayer;
         private System.Windows.Forms.Panel pnlDownload;
         private System.Windows.Forms.Label lblDownload;
