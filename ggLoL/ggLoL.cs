@@ -29,6 +29,45 @@ namespace ggLoL
 
         ~ggLoL() { }
 
+        // Open Menu
+        private void clickMenu(object sender, EventArgs e)
+        {
+            mOption.Show(Cursor.Position);
+        }
+
+        // Themes for Application
+        private void lightTheme(object sender, EventArgs e)
+        {
+
+            msm.Theme = MaterialSkinManager.Themes.LIGHT;
+            lightOptionTheme.CheckState = CheckState.Checked;
+            darkOptionTheme.CheckState = CheckState.Unchecked;
+        }
+        private void darkTheme(object sender, EventArgs e)
+        {
+            msm.Theme = MaterialSkinManager.Themes.DARK;
+            darkOptionTheme.CheckState = CheckState.Checked;
+            lightOptionTheme.CheckState = CheckState.Unchecked;
+        }
+
+        // Options Profile or Sign Off
+        private void ClickProfile(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.ShowDialog();
+        }
+        private void ClickSignOff(object sender, EventArgs e)
+        {
+            // NOT Show Option Sign Off & Profile
+            signOffOption.Visible = profileOption.Visible = false;
+
+            cntrlIndex.Visible = false;
+            slctrHeader.Visible = false;
+            slctrHeader.BaseTabControl = cntrlSignLogin;
+
+            Loading();
+        }
+
         // Timers
         private void Time(object sender, EventArgs e)
         {
@@ -61,7 +100,7 @@ namespace ggLoL
         private void ShowIndexScreen()
         {
             // Show Options Sign Off & Profile
-            // signOffOption.Visible = profileOption.Visible = true;
+            signOffOption.Visible = profileOption.Visible = true;
 
             cntrlSignLogin.Visible = false;
             slctrHeader.Visible = false;
@@ -111,9 +150,9 @@ namespace ggLoL
         private void ClickSearchPlayer(object sender, EventArgs e)
         {
             SummonerProfile s;
-            if (txtPlayerSearch.Text.Length > 0)
+            if (txtSearchPlayer.Text.Length > 0)
             {
-                if (ggLoLMain.SearchPlayer(txtPlayerSearch.Text, out s))
+                if (ggLoLMain.SearchPlayer(txtSearchPlayer.Text, out s))
                     ShowSummonerProfile(s);
             }
             else
@@ -125,6 +164,14 @@ namespace ggLoL
             pnlSearchPlayer.Visible = false;
             pnlResultSummonerProfile.Visible = true;
             lblNameSummonerR.Text = s.name;
+            // TERMINAR PERFIL PERSONAL
+        }
+
+        private void ClickSearchOtherPlayer(object sender, EventArgs e)
+        {
+            txtSearchPlayer.Text = "";
+            pnlSearchPlayer.Visible = true;
+            pnlResultSummonerProfile.Visible = false;
         }
     }
 }

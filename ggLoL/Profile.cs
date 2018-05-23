@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using System;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 
@@ -10,5 +11,6 @@ namespace ggLoL
         {
             InitializeComponent();
         }
+        ~Profile() { }
     }
 }

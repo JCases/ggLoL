@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Windows.Forms;
 
 namespace ggLoL
 {
@@ -15,39 +14,29 @@ namespace ggLoL
         // If you need a parameter
         public ConnectionAPI(string parameter, string link)
         {
+            // Show Form for Loading
             LoadData ld = new LoadData();
-            ld.Show();
+            ld.ShowDialog();
             try
             {
                 WebClient client = new WebClient();
 
-                // Show Link - DELETE IN FINAL VERSION - TO DO
                 if (parameter.Length == 0)
-                {
                     stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
                         + link  + "?api_key=" + key);
-                    MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                        + link + "?api_key=" + key);
-                }   
                 else
-                {
                     stream = client.OpenRead("https://" + region + ".api.riotgames.com/"
                         + link + parameter + "?api_key=" + key);
-                    MessageBox.Show("https://" + region + ".api.riotgames.com/"
-                        + link + parameter + "?api_key=" + key);
-                }
 
                 StreamReader reader = new StreamReader(stream);
 
                 json = reader.ReadToEnd();
 
-                MessageBox.Show(json);
-
                 reader.Close();
                 stream.Close();
             }
-            catch (Exception e) { MessageBox.Show(e.Message); }
-            ld.Close();
+            catch (Exception) { }
+            // Close Form for Loading
         }
 
         // If you don't need a parameter

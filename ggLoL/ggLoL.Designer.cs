@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ggLoL));
+            this.btnOptions = new MaterialSkin.Controls.MaterialLabel();
+            this.mOption = new MaterialSkin.Controls.MaterialContextMenuStrip();
+            this.themeOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightOptionTheme = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkOptionTheme = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.signOffOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitOption = new System.Windows.Forms.ToolStripMenuItem();
             this.slctrHeader = new MaterialSkin.Controls.MaterialTabSelector();
             this.cntrlSignLogin = new MaterialSkin.Controls.MaterialTabControl();
             this.tbLogin = new System.Windows.Forms.TabPage();
@@ -57,11 +66,22 @@
             this.lblTime = new MaterialSkin.Controls.MaterialLabel();
             this.cntrlIndex = new MaterialSkin.Controls.MaterialTabControl();
             this.tbNews = new System.Windows.Forms.TabPage();
-            this.txtPatch = new System.Windows.Forms.TextBox();
             this.tbSummoner = new System.Windows.Forms.TabPage();
             this.pnlSearchPlayer = new System.Windows.Forms.Panel();
+            this.txtSearchPlayer = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnPlayerSearch = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtPlayerSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pnlResultSummonerProfile = new System.Windows.Forms.Panel();
+            this.btnSearchAnotherPlayer = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblRevisionSummonerR = new MaterialSkin.Controls.MaterialLabel();
+            this.lblRevisionSummoner = new MaterialSkin.Controls.MaterialLabel();
+            this.lblLevelSummonerR = new MaterialSkin.Controls.MaterialLabel();
+            this.lblLevelSummoner = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblIDAccountSummoner = new MaterialSkin.Controls.MaterialLabel();
+            this.lblIDSummonerR = new MaterialSkin.Controls.MaterialLabel();
+            this.lblIDSummoner = new MaterialSkin.Controls.MaterialLabel();
+            this.lblNameSummonerR = new MaterialSkin.Controls.MaterialLabel();
+            this.lblNameSummoner = new MaterialSkin.Controls.MaterialLabel();
             this.tbChampions = new System.Windows.Forms.TabPage();
             this.btnChampion = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtChampion = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -74,9 +94,8 @@
             this.progressBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.animationTime = new System.Windows.Forms.Timer(this.components);
-            this.pnlResultSummonerProfile = new System.Windows.Forms.Panel();
-            this.lblNameSummoner = new MaterialSkin.Controls.MaterialLabel();
-            this.lblNameSummonerR = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSearchPlayer = new MaterialSkin.Controls.MaterialLabel();
+            this.mOption.SuspendLayout();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
             this.pnlLogin.SuspendLayout();
@@ -84,13 +103,104 @@
             this.pnlSingIn.SuspendLayout();
             this.tbOffline.SuspendLayout();
             this.cntrlIndex.SuspendLayout();
-            this.tbNews.SuspendLayout();
             this.tbSummoner.SuspendLayout();
             this.pnlSearchPlayer.SuspendLayout();
+            this.pnlResultSummonerProfile.SuspendLayout();
             this.tbChampions.SuspendLayout();
             this.pnlLoading.SuspendLayout();
-            this.pnlResultSummonerProfile.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnOptions
+            // 
+            this.btnOptions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOptions.BackColor = System.Drawing.Color.Transparent;
+            this.btnOptions.ContextMenuStrip = this.mOption;
+            this.btnOptions.Depth = 0;
+            this.btnOptions.Font = new System.Drawing.Font("Roboto", 11F);
+            this.btnOptions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOptions.Image")));
+            this.btnOptions.Location = new System.Drawing.Point(1244, 32);
+            this.btnOptions.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnOptions.Name = "btnOptions";
+            this.btnOptions.Size = new System.Drawing.Size(24, 26);
+            this.btnOptions.TabIndex = 0;
+            this.btnOptions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnOptions.Click += new System.EventHandler(this.clickMenu);
+            // 
+            // mOption
+            // 
+            this.mOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mOption.Depth = 0;
+            this.mOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.themeOption,
+            this.profileOption,
+            this.signOffOption,
+            this.exitOption});
+            this.mOption.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mOption.Name = "mOption";
+            this.mOption.ShowCheckMargin = true;
+            this.mOption.Size = new System.Drawing.Size(145, 92);
+            this.mOption.TabStop = true;
+            // 
+            // themeOption
+            // 
+            this.themeOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.themeOption.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lightOptionTheme,
+            this.darkOptionTheme});
+            this.themeOption.MergeIndex = 0;
+            this.themeOption.Name = "themeOption";
+            this.themeOption.ShowShortcutKeys = false;
+            this.themeOption.Size = new System.Drawing.Size(144, 22);
+            this.themeOption.Text = "Theme";
+            // 
+            // lightOptionTheme
+            // 
+            this.lightOptionTheme.AutoSize = false;
+            this.lightOptionTheme.BackColor = System.Drawing.Color.Transparent;
+            this.lightOptionTheme.Checked = true;
+            this.lightOptionTheme.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.lightOptionTheme.Name = "lightOptionTheme";
+            this.lightOptionTheme.Padding = new System.Windows.Forms.Padding(0);
+            this.lightOptionTheme.Size = new System.Drawing.Size(180, 20);
+            this.lightOptionTheme.Text = "Light";
+            this.lightOptionTheme.Click += new System.EventHandler(this.lightTheme);
+            // 
+            // darkOptionTheme
+            // 
+            this.darkOptionTheme.AutoSize = false;
+            this.darkOptionTheme.BackColor = System.Drawing.SystemColors.Control;
+            this.darkOptionTheme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.darkOptionTheme.Name = "darkOptionTheme";
+            this.darkOptionTheme.Padding = new System.Windows.Forms.Padding(0);
+            this.darkOptionTheme.Size = new System.Drawing.Size(148, 24);
+            this.darkOptionTheme.Text = "Dark";
+            this.darkOptionTheme.Click += new System.EventHandler(this.darkTheme);
+            // 
+            // profileOption
+            // 
+            this.profileOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.profileOption.Name = "profileOption";
+            this.profileOption.Size = new System.Drawing.Size(144, 22);
+            this.profileOption.Text = "Profile";
+            this.profileOption.Visible = false;
+            this.profileOption.Click += new System.EventHandler(this.ClickProfile);
+            // 
+            // signOffOption
+            // 
+            this.signOffOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.signOffOption.Name = "signOffOption";
+            this.signOffOption.Size = new System.Drawing.Size(144, 22);
+            this.signOffOption.Text = "Sign Off";
+            this.signOffOption.Visible = false;
+            this.signOffOption.Click += new System.EventHandler(this.ClickSignOff);
+            // 
+            // exitOption
+            // 
+            this.exitOption.Name = "exitOption";
+            this.exitOption.Size = new System.Drawing.Size(144, 22);
+            this.exitOption.Text = "Exit";
             // 
             // slctrHeader
             // 
@@ -512,29 +622,18 @@
             // tbNews
             // 
             this.tbNews.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tbNews.Controls.Add(this.txtPatch);
             this.tbNews.Location = new System.Drawing.Point(4, 22);
             this.tbNews.Name = "tbNews";
             this.tbNews.Size = new System.Drawing.Size(1272, 581);
             this.tbNews.TabIndex = 2;
             this.tbNews.Text = "News";
             // 
-            // txtPatch
-            // 
-            this.txtPatch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPatch.Location = new System.Drawing.Point(3, 3);
-            this.txtPatch.Multiline = true;
-            this.txtPatch.Name = "txtPatch";
-            this.txtPatch.ReadOnly = true;
-            this.txtPatch.Size = new System.Drawing.Size(1266, 575);
-            this.txtPatch.TabIndex = 0;
-            // 
             // tbSummoner
             // 
             this.tbSummoner.AutoScroll = true;
             this.tbSummoner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tbSummoner.Controls.Add(this.pnlResultSummonerProfile);
             this.tbSummoner.Controls.Add(this.pnlSearchPlayer);
+            this.tbSummoner.Controls.Add(this.pnlResultSummonerProfile);
             this.tbSummoner.Location = new System.Drawing.Point(4, 22);
             this.tbSummoner.Name = "tbSummoner";
             this.tbSummoner.Padding = new System.Windows.Forms.Padding(3);
@@ -544,45 +643,229 @@
             // 
             // pnlSearchPlayer
             // 
+            this.pnlSearchPlayer.Controls.Add(this.lblSearchPlayer);
+            this.pnlSearchPlayer.Controls.Add(this.txtSearchPlayer);
             this.pnlSearchPlayer.Controls.Add(this.btnPlayerSearch);
-            this.pnlSearchPlayer.Controls.Add(this.txtPlayerSearch);
-            this.pnlSearchPlayer.Location = new System.Drawing.Point(0, 310);
+            this.pnlSearchPlayer.Location = new System.Drawing.Point(0, 0);
             this.pnlSearchPlayer.Name = "pnlSearchPlayer";
-            this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 271);
+            this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 581);
             this.pnlSearchPlayer.TabIndex = 0;
+            // 
+            // txtSearchPlayer
+            // 
+            this.txtSearchPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearchPlayer.Depth = 0;
+            this.txtSearchPlayer.Hint = "";
+            this.txtSearchPlayer.Location = new System.Drawing.Point(445, 309);
+            this.txtSearchPlayer.MaxLength = 100;
+            this.txtSearchPlayer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearchPlayer.Name = "txtSearchPlayer";
+            this.txtSearchPlayer.PasswordChar = '\0';
+            this.txtSearchPlayer.SelectedText = "";
+            this.txtSearchPlayer.SelectionLength = 0;
+            this.txtSearchPlayer.SelectionStart = 0;
+            this.txtSearchPlayer.Size = new System.Drawing.Size(400, 23);
+            this.txtSearchPlayer.TabIndex = 1;
+            this.txtSearchPlayer.TabStop = false;
+            this.txtSearchPlayer.UseSystemPasswordChar = false;
             // 
             // btnPlayerSearch
             // 
+            this.btnPlayerSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPlayerSearch.AutoSize = true;
             this.btnPlayerSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPlayerSearch.Depth = 0;
             this.btnPlayerSearch.Icon = null;
-            this.btnPlayerSearch.Location = new System.Drawing.Point(400, 211);
+            this.btnPlayerSearch.Location = new System.Drawing.Point(573, 368);
             this.btnPlayerSearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPlayerSearch.Name = "btnPlayerSearch";
             this.btnPlayerSearch.Primary = true;
-            this.btnPlayerSearch.Size = new System.Drawing.Size(73, 36);
-            this.btnPlayerSearch.TabIndex = 1;
-            this.btnPlayerSearch.Text = "Search";
+            this.btnPlayerSearch.Size = new System.Drawing.Size(127, 36);
+            this.btnPlayerSearch.TabIndex = 2;
+            this.btnPlayerSearch.Text = "Search Player";
             this.btnPlayerSearch.UseVisualStyleBackColor = true;
             this.btnPlayerSearch.Click += new System.EventHandler(this.ClickSearchPlayer);
             // 
-            // txtPlayerSearch
+            // pnlResultSummonerProfile
             // 
-            this.txtPlayerSearch.Depth = 0;
-            this.txtPlayerSearch.Hint = "";
-            this.txtPlayerSearch.Location = new System.Drawing.Point(323, 140);
-            this.txtPlayerSearch.MaxLength = 32767;
-            this.txtPlayerSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtPlayerSearch.Name = "txtPlayerSearch";
-            this.txtPlayerSearch.PasswordChar = '\0';
-            this.txtPlayerSearch.SelectedText = "";
-            this.txtPlayerSearch.SelectionLength = 0;
-            this.txtPlayerSearch.SelectionStart = 0;
-            this.txtPlayerSearch.Size = new System.Drawing.Size(218, 23);
-            this.txtPlayerSearch.TabIndex = 1;
-            this.txtPlayerSearch.TabStop = false;
-            this.txtPlayerSearch.UseSystemPasswordChar = false;
+            this.pnlResultSummonerProfile.Controls.Add(this.btnSearchAnotherPlayer);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblRevisionSummonerR);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblRevisionSummoner);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblLevelSummonerR);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblLevelSummoner);
+            this.pnlResultSummonerProfile.Controls.Add(this.materialLabel3);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblIDAccountSummoner);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblIDSummonerR);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblIDSummoner);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblNameSummonerR);
+            this.pnlResultSummonerProfile.Controls.Add(this.lblNameSummoner);
+            this.pnlResultSummonerProfile.Location = new System.Drawing.Point(0, 0);
+            this.pnlResultSummonerProfile.Name = "pnlResultSummonerProfile";
+            this.pnlResultSummonerProfile.Size = new System.Drawing.Size(1272, 581);
+            this.pnlResultSummonerProfile.TabIndex = 1;
+            this.pnlResultSummonerProfile.Visible = false;
+            // 
+            // btnSearchAnotherPlayer
+            // 
+            this.btnSearchAnotherPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchAnotherPlayer.AutoSize = true;
+            this.btnSearchAnotherPlayer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearchAnotherPlayer.Depth = 0;
+            this.btnSearchAnotherPlayer.Icon = null;
+            this.btnSearchAnotherPlayer.Location = new System.Drawing.Point(1089, 535);
+            this.btnSearchAnotherPlayer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearchAnotherPlayer.Name = "btnSearchAnotherPlayer";
+            this.btnSearchAnotherPlayer.Primary = true;
+            this.btnSearchAnotherPlayer.Size = new System.Drawing.Size(127, 36);
+            this.btnSearchAnotherPlayer.TabIndex = 10;
+            this.btnSearchAnotherPlayer.Text = "Search Player";
+            this.btnSearchAnotherPlayer.UseVisualStyleBackColor = true;
+            this.btnSearchAnotherPlayer.Click += new System.EventHandler(this.ClickSearchOtherPlayer);
+            // 
+            // lblRevisionSummonerR
+            // 
+            this.lblRevisionSummonerR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRevisionSummonerR.AutoSize = true;
+            this.lblRevisionSummonerR.Depth = 0;
+            this.lblRevisionSummonerR.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblRevisionSummonerR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblRevisionSummonerR.Location = new System.Drawing.Point(243, 351);
+            this.lblRevisionSummonerR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblRevisionSummonerR.Name = "lblRevisionSummonerR";
+            this.lblRevisionSummonerR.Size = new System.Drawing.Size(0, 19);
+            this.lblRevisionSummonerR.TabIndex = 9;
+            this.lblRevisionSummonerR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRevisionSummoner
+            // 
+            this.lblRevisionSummoner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRevisionSummoner.AutoSize = true;
+            this.lblRevisionSummoner.Depth = 0;
+            this.lblRevisionSummoner.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblRevisionSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblRevisionSummoner.Location = new System.Drawing.Point(133, 351);
+            this.lblRevisionSummoner.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblRevisionSummoner.Name = "lblRevisionSummoner";
+            this.lblRevisionSummoner.Size = new System.Drawing.Size(101, 19);
+            this.lblRevisionSummoner.TabIndex = 8;
+            this.lblRevisionSummoner.Text = "Revision Date";
+            this.lblRevisionSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblLevelSummonerR
+            // 
+            this.lblLevelSummonerR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLevelSummonerR.AutoSize = true;
+            this.lblLevelSummonerR.Depth = 0;
+            this.lblLevelSummonerR.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblLevelSummonerR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLevelSummonerR.Location = new System.Drawing.Point(243, 298);
+            this.lblLevelSummonerR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblLevelSummonerR.Name = "lblLevelSummonerR";
+            this.lblLevelSummonerR.Size = new System.Drawing.Size(0, 19);
+            this.lblLevelSummonerR.TabIndex = 7;
+            this.lblLevelSummonerR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblLevelSummoner
+            // 
+            this.lblLevelSummoner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLevelSummoner.AutoSize = true;
+            this.lblLevelSummoner.Depth = 0;
+            this.lblLevelSummoner.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblLevelSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLevelSummoner.Location = new System.Drawing.Point(133, 298);
+            this.lblLevelSummoner.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblLevelSummoner.Name = "lblLevelSummoner";
+            this.lblLevelSummoner.Size = new System.Drawing.Size(44, 19);
+            this.lblLevelSummoner.TabIndex = 6;
+            this.lblLevelSummoner.Text = "Level";
+            this.lblLevelSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(243, 241);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(0, 19);
+            this.materialLabel3.TabIndex = 5;
+            this.materialLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblIDAccountSummoner
+            // 
+            this.lblIDAccountSummoner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIDAccountSummoner.AutoSize = true;
+            this.lblIDAccountSummoner.Depth = 0;
+            this.lblIDAccountSummoner.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblIDAccountSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIDAccountSummoner.Location = new System.Drawing.Point(133, 241);
+            this.lblIDAccountSummoner.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblIDAccountSummoner.Name = "lblIDAccountSummoner";
+            this.lblIDAccountSummoner.Size = new System.Drawing.Size(83, 19);
+            this.lblIDAccountSummoner.TabIndex = 4;
+            this.lblIDAccountSummoner.Text = "ID Account";
+            this.lblIDAccountSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblIDSummonerR
+            // 
+            this.lblIDSummonerR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIDSummonerR.AutoSize = true;
+            this.lblIDSummonerR.Depth = 0;
+            this.lblIDSummonerR.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblIDSummonerR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIDSummonerR.Location = new System.Drawing.Point(243, 186);
+            this.lblIDSummonerR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblIDSummonerR.Name = "lblIDSummonerR";
+            this.lblIDSummonerR.Size = new System.Drawing.Size(0, 19);
+            this.lblIDSummonerR.TabIndex = 3;
+            this.lblIDSummonerR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblIDSummoner
+            // 
+            this.lblIDSummoner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIDSummoner.AutoSize = true;
+            this.lblIDSummoner.Depth = 0;
+            this.lblIDSummoner.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblIDSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIDSummoner.Location = new System.Drawing.Point(133, 186);
+            this.lblIDSummoner.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblIDSummoner.Name = "lblIDSummoner";
+            this.lblIDSummoner.Size = new System.Drawing.Size(23, 19);
+            this.lblIDSummoner.TabIndex = 2;
+            this.lblIDSummoner.Text = "ID";
+            this.lblIDSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNameSummonerR
+            // 
+            this.lblNameSummonerR.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNameSummonerR.AutoSize = true;
+            this.lblNameSummonerR.Depth = 0;
+            this.lblNameSummonerR.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNameSummonerR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNameSummonerR.Location = new System.Drawing.Point(242, 102);
+            this.lblNameSummonerR.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNameSummonerR.Name = "lblNameSummonerR";
+            this.lblNameSummonerR.Size = new System.Drawing.Size(0, 19);
+            this.lblNameSummonerR.TabIndex = 1;
+            this.lblNameSummonerR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNameSummoner
+            // 
+            this.lblNameSummoner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNameSummoner.AutoSize = true;
+            this.lblNameSummoner.Depth = 0;
+            this.lblNameSummoner.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNameSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNameSummoner.Location = new System.Drawing.Point(132, 102);
+            this.lblNameSummoner.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNameSummoner.Name = "lblNameSummoner";
+            this.lblNameSummoner.Size = new System.Drawing.Size(49, 19);
+            this.lblNameSummoner.TabIndex = 0;
+            this.lblNameSummoner.Text = "Name";
+            this.lblNameSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbChampions
             // 
@@ -712,39 +995,19 @@
             this.animationTime.Interval = 60;
             this.animationTime.Tick += new System.EventHandler(this.AnimationTimer);
             // 
-            // pnlResultSummonerProfile
+            // lblSearchPlayer
             // 
-            this.pnlResultSummonerProfile.Controls.Add(this.lblNameSummonerR);
-            this.pnlResultSummonerProfile.Controls.Add(this.lblNameSummoner);
-            this.pnlResultSummonerProfile.Location = new System.Drawing.Point(0, 0);
-            this.pnlResultSummonerProfile.Name = "pnlResultSummonerProfile";
-            this.pnlResultSummonerProfile.Size = new System.Drawing.Size(1252, 238);
-            this.pnlResultSummonerProfile.TabIndex = 1;
-            // 
-            // lblNameSummoner
-            // 
-            this.lblNameSummoner.AutoSize = true;
-            this.lblNameSummoner.Depth = 0;
-            this.lblNameSummoner.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblNameSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNameSummoner.Location = new System.Drawing.Point(285, 102);
-            this.lblNameSummoner.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblNameSummoner.Name = "lblNameSummoner";
-            this.lblNameSummoner.Size = new System.Drawing.Size(49, 19);
-            this.lblNameSummoner.TabIndex = 0;
-            this.lblNameSummoner.Text = "Name";
-            // 
-            // lblNameSummonerR
-            // 
-            this.lblNameSummonerR.AutoSize = true;
-            this.lblNameSummonerR.Depth = 0;
-            this.lblNameSummonerR.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblNameSummonerR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNameSummonerR.Location = new System.Drawing.Point(365, 102);
-            this.lblNameSummonerR.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblNameSummonerR.Name = "lblNameSummonerR";
-            this.lblNameSummonerR.Size = new System.Drawing.Size(0, 19);
-            this.lblNameSummonerR.TabIndex = 1;
+            this.lblSearchPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSearchPlayer.AutoSize = true;
+            this.lblSearchPlayer.Depth = 0;
+            this.lblSearchPlayer.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSearchPlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSearchPlayer.Location = new System.Drawing.Point(591, 270);
+            this.lblSearchPlayer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSearchPlayer.Name = "lblSearchPlayer";
+            this.lblSearchPlayer.Size = new System.Drawing.Size(88, 19);
+            this.lblSearchPlayer.TabIndex = 3;
+            this.lblSearchPlayer.Text = "Nick Name:";
             // 
             // ggLoL
             // 
@@ -756,6 +1019,7 @@
             this.Controls.Add(this.cntrlIndex);
             this.Controls.Add(this.cntrlSignLogin);
             this.Controls.Add(this.slctrHeader);
+            this.Controls.Add(this.btnOptions);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "ggLoL";
@@ -763,6 +1027,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ggLoL";
             this.Load += new System.EventHandler(this.LoadApp);
+            this.mOption.ResumeLayout(false);
             this.cntrlSignLogin.ResumeLayout(false);
             this.tbLogin.ResumeLayout(false);
             this.pnlLogin.ResumeLayout(false);
@@ -773,22 +1038,27 @@
             this.tbOffline.ResumeLayout(false);
             this.tbOffline.PerformLayout();
             this.cntrlIndex.ResumeLayout(false);
-            this.tbNews.ResumeLayout(false);
-            this.tbNews.PerformLayout();
             this.tbSummoner.ResumeLayout(false);
             this.pnlSearchPlayer.ResumeLayout(false);
             this.pnlSearchPlayer.PerformLayout();
+            this.pnlResultSummonerProfile.ResumeLayout(false);
+            this.pnlResultSummonerProfile.PerformLayout();
             this.tbChampions.ResumeLayout(false);
             this.tbChampions.PerformLayout();
             this.pnlLoading.ResumeLayout(false);
             this.pnlLoading.PerformLayout();
-            this.pnlResultSummonerProfile.ResumeLayout(false);
-            this.pnlResultSummonerProfile.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private MaterialSkin.Controls.MaterialLabel btnOptions;
+        private MaterialSkin.Controls.MaterialContextMenuStrip mOption;
+        private System.Windows.Forms.ToolStripMenuItem themeOption;
+        private System.Windows.Forms.ToolStripMenuItem lightOptionTheme;
+        private System.Windows.Forms.ToolStripMenuItem darkOptionTheme;
+        private System.Windows.Forms.ToolStripMenuItem signOffOption;
+        private System.Windows.Forms.ToolStripMenuItem profileOption;
         private MaterialSkin.Controls.MaterialTabSelector slctrHeader;
         private MaterialSkin.Controls.MaterialTabControl cntrlSignLogin;
         private System.Windows.Forms.TabPage tbLogin;
@@ -829,14 +1099,24 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnOffline;
         private MaterialSkin.Controls.MaterialLabel lblOffline;
         private System.Windows.Forms.Panel pnlSearchPlayer;
-        private System.Windows.Forms.TextBox txtPatch;
         private MaterialSkin.Controls.MaterialRaisedButton btnChampion;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtChampion;
         private MaterialSkin.Controls.MaterialRaisedButton btnPlayerSearch;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtPlayerSearch;
         private System.Windows.Forms.Panel pnlResultSummonerProfile;
         private MaterialSkin.Controls.MaterialLabel lblNameSummonerR;
         private MaterialSkin.Controls.MaterialLabel lblNameSummoner;
+        private MaterialSkin.Controls.MaterialLabel lblRevisionSummonerR;
+        private MaterialSkin.Controls.MaterialLabel lblRevisionSummoner;
+        private MaterialSkin.Controls.MaterialLabel lblLevelSummonerR;
+        private MaterialSkin.Controls.MaterialLabel lblLevelSummoner;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel lblIDAccountSummoner;
+        private MaterialSkin.Controls.MaterialLabel lblIDSummonerR;
+        private MaterialSkin.Controls.MaterialLabel lblIDSummoner;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSearchAnotherPlayer;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchPlayer;
+        private System.Windows.Forms.ToolStripMenuItem exitOption;
+        private MaterialSkin.Controls.MaterialLabel lblSearchPlayer;
     }
 }
 

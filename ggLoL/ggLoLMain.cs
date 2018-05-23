@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ggLoL
@@ -30,7 +29,7 @@ namespace ggLoL
 
                 return true;
             }
-            catch { s = null; return false; }
+            catch { s = null; MessageBox.Show("Player don't found!"); return false;  }
             
         }
 
