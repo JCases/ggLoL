@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ggLoL
 {
-    class DataBase
+    public class DataBase
     {
         private SqlConnection connection;
 

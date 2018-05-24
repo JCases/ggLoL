@@ -14,7 +14,7 @@ namespace ggLoL
 {
     public partial class ggLoL : MaterialForm
     {
-        private MaterialSkinManager msm;
+        public static MaterialSkinManager msm { get; set; }
 
         public ggLoL()
         {
@@ -89,6 +89,8 @@ namespace ggLoL
 
         private void ClickUserSignIn(object sender, EventArgs e)
         {
+            User user = new User("Javier", "hola", "arriba españa", "rojos", false);
+            user.Save();
             ShowIndexScreen();
         }
 

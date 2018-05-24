@@ -99,6 +99,7 @@
     <Compile Include="Runes.cs" />
     <Compile Include="Spells.cs" />
     <Compile Include="SummonerProfile.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="VerifyProfile.cs" />
     <EmbeddedResource Include="ggLoL.resx">
       <DependentUpon>ggLoL.cs</DependentUpon>
