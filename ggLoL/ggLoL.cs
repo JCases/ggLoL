@@ -87,21 +87,32 @@ namespace ggLoL
             ggLoLMain.setRegion("EUW");
         }
 
+        // Login, Sign In and Mode Offline
+        private bool offline;
         private void ClickUserSignIn(object sender, EventArgs e)
         {
+            offline = false;
+
             User user = new User("Javier", "hola", "arriba españa", "rojos", false);
             user.Save();
+            
             ShowIndexScreen();
         }
 
         private void ClickUserLogin(object sender, EventArgs e)
         {
+            offline = false;
+
             ShowIndexScreen();
         }
 
         private void ClickOfflineMode(object sender, EventArgs e)
         {
+            offline = true;
+
             ShowIndexScreen();
+
+            profileOption.Visible = false;
         }
 
         private void ShowIndexScreen()
@@ -167,33 +178,36 @@ namespace ggLoL
             progressBarDownload.RightToLeft = RightToLeft.Yes;
             progressBarDownload.RightToLeftLayout = true;
 
-            pnlDownload.Visible = true;
-
             DownloadFile();
         }
 
         private void DownloadFile()
         {
-            btnDownloadData.Visible = false;
+            string url;
 
-            string url = ggLoLMain.GetLinkFileData();
+            if (ggLoLMain.GetLinkFileData(out url))
+            {
+                // Show Panel and Disable Button Download
+                pnlDownload.Visible = true;
+                btnDownloadData.Visible = false;
 
-            Uri uri = new Uri(url);
+                Uri uri = new Uri(url);
 
-            string desktopPath =
-                Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string desktopPath =
+                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            string filename = Path.GetFileName(uri.LocalPath);
+                string filename = Path.GetFileName(uri.LocalPath);
 
-            web = new WebClient();
+                web = new WebClient();
 
-            path = desktopPath + "/" + filename;
+                path = desktopPath + "/" + filename;
 
-            web.DownloadProgressChanged += 
-                new DownloadProgressChangedEventHandler (DownloadFileChanged);
-            web.DownloadFileCompleted += 
-                new AsyncCompletedEventHandler (DownloadFileCompleted);
-            web.DownloadFileAsync(uri, desktopPath  + "/"  + filename);        
+                web.DownloadProgressChanged +=
+                    new DownloadProgressChangedEventHandler(DownloadFileChanged);
+                web.DownloadFileCompleted +=
+                    new AsyncCompletedEventHandler(DownloadFileCompleted);
+                web.DownloadFileAsync(uri, desktopPath + "/" + filename);
+            }
         }
 
         private void DownloadFileChanged(object sender, 
@@ -230,10 +244,17 @@ namespace ggLoL
 
 
         // Events with Data
+
+        private bool VerifyString(string text)
+        {
+            return text.Length > 0;
+        }
+
+            // Summoners Players
         private void ClickSearchPlayer(object sender, EventArgs e)
         {
             SummonerProfile s;
-            if (txtSearchPlayer.Text.Length > 0)
+            if (VerifyString(txtSearchPlayer.Text))
             {
                 if (ggLoLMain.SearchPlayer(txtSearchPlayer.Text, out s))
                     ShowSummonerProfile(s);
@@ -258,6 +279,20 @@ namespace ggLoL
             txtSearchPlayer.Text = "";
             pnlSearchPlayer.Visible = true;
             pnlResultSummonerProfile.Visible = false;
+        }
+            
+            // Champions
+        private void ClickSearchChampion(object sender, EventArgs e)
+        {
+            Champions c;
+            if (VerifyString(txtSearchChampion.Text))
+            {
+                if (ggLoLMain.SearchChampion(out c))
+                    MessageBox.Show("ID: " + c.data["Jinx"].id.ToString());
+                    
+            }
+            else
+                MessageBox.Show("Enter a Champion Name.");
         }
     }
 }

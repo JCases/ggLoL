@@ -84,8 +84,8 @@
             this.lblNameSummonerR = new MaterialSkin.Controls.MaterialLabel();
             this.lblNameSummoner = new MaterialSkin.Controls.MaterialLabel();
             this.tbChampions = new System.Windows.Forms.TabPage();
-            this.btnChampion = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtChampion = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnChampionSearch = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSearchChampion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tbTeams = new System.Windows.Forms.TabPage();
             this.tbTournaments = new System.Windows.Forms.TabPage();
             this.tbGameInfo = new System.Windows.Forms.TabPage();
@@ -100,6 +100,8 @@
             this.lblValueDownload = new System.Windows.Forms.Label();
             this.lblDownload = new System.Windows.Forms.Label();
             this.progressBarDownload = new MaterialSkin.Controls.MaterialProgressBar();
+            this.lblSearchChampion = new MaterialSkin.Controls.MaterialLabel();
+            this.freeChampionsImg = new System.Windows.Forms.ImageList(this.components);
             this.mOption.SuspendLayout();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
@@ -676,7 +678,7 @@
             this.lblSearchPlayer.Depth = 0;
             this.lblSearchPlayer.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblSearchPlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSearchPlayer.Location = new System.Drawing.Point(591, 270);
+            this.lblSearchPlayer.Location = new System.Drawing.Point(598, 250);
             this.lblSearchPlayer.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSearchPlayer.Name = "lblSearchPlayer";
             this.lblSearchPlayer.Size = new System.Drawing.Size(88, 19);
@@ -688,7 +690,7 @@
             this.txtSearchPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSearchPlayer.Depth = 0;
             this.txtSearchPlayer.Hint = "";
-            this.txtSearchPlayer.Location = new System.Drawing.Point(445, 309);
+            this.txtSearchPlayer.Location = new System.Drawing.Point(445, 293);
             this.txtSearchPlayer.MaxLength = 100;
             this.txtSearchPlayer.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSearchPlayer.Name = "txtSearchPlayer";
@@ -708,7 +710,7 @@
             this.btnPlayerSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPlayerSearch.Depth = 0;
             this.btnPlayerSearch.Icon = null;
-            this.btnPlayerSearch.Location = new System.Drawing.Point(573, 368);
+            this.btnPlayerSearch.Location = new System.Drawing.Point(580, 343);
             this.btnPlayerSearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPlayerSearch.Name = "btnPlayerSearch";
             this.btnPlayerSearch.Primary = true;
@@ -902,8 +904,9 @@
             // tbChampions
             // 
             this.tbChampions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tbChampions.Controls.Add(this.btnChampion);
-            this.tbChampions.Controls.Add(this.txtChampion);
+            this.tbChampions.Controls.Add(this.lblSearchChampion);
+            this.tbChampions.Controls.Add(this.btnChampionSearch);
+            this.tbChampions.Controls.Add(this.txtSearchChampion);
             this.tbChampions.Location = new System.Drawing.Point(4, 22);
             this.tbChampions.Name = "tbChampions";
             this.tbChampions.Padding = new System.Windows.Forms.Padding(3);
@@ -911,37 +914,40 @@
             this.tbChampions.TabIndex = 1;
             this.tbChampions.Text = "Champions";
             // 
-            // btnChampion
+            // btnChampionSearch
             // 
-            this.btnChampion.AutoSize = true;
-            this.btnChampion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnChampion.Depth = 0;
-            this.btnChampion.Icon = null;
-            this.btnChampion.Location = new System.Drawing.Point(442, 270);
-            this.btnChampion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnChampion.Name = "btnChampion";
-            this.btnChampion.Primary = true;
-            this.btnChampion.Size = new System.Drawing.Size(73, 36);
-            this.btnChampion.TabIndex = 1;
-            this.btnChampion.Text = "Search";
-            this.btnChampion.UseVisualStyleBackColor = true;
+            this.btnChampionSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChampionSearch.AutoSize = true;
+            this.btnChampionSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnChampionSearch.Depth = 0;
+            this.btnChampionSearch.Icon = null;
+            this.btnChampionSearch.Location = new System.Drawing.Point(561, 342);
+            this.btnChampionSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnChampionSearch.Name = "btnChampionSearch";
+            this.btnChampionSearch.Primary = true;
+            this.btnChampionSearch.Size = new System.Drawing.Size(149, 36);
+            this.btnChampionSearch.TabIndex = 1;
+            this.btnChampionSearch.Text = "Search Champion";
+            this.btnChampionSearch.UseVisualStyleBackColor = true;
+            this.btnChampionSearch.Click += new System.EventHandler(this.ClickSearchChampion);
             // 
-            // txtChampion
+            // txtSearchChampion
             // 
-            this.txtChampion.Depth = 0;
-            this.txtChampion.Hint = "";
-            this.txtChampion.Location = new System.Drawing.Point(359, 224);
-            this.txtChampion.MaxLength = 32767;
-            this.txtChampion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtChampion.Name = "txtChampion";
-            this.txtChampion.PasswordChar = '\0';
-            this.txtChampion.SelectedText = "";
-            this.txtChampion.SelectionLength = 0;
-            this.txtChampion.SelectionStart = 0;
-            this.txtChampion.Size = new System.Drawing.Size(237, 23);
-            this.txtChampion.TabIndex = 0;
-            this.txtChampion.TabStop = false;
-            this.txtChampion.UseSystemPasswordChar = false;
+            this.txtSearchChampion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearchChampion.Depth = 0;
+            this.txtSearchChampion.Hint = "";
+            this.txtSearchChampion.Location = new System.Drawing.Point(430, 281);
+            this.txtSearchChampion.MaxLength = 32767;
+            this.txtSearchChampion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearchChampion.Name = "txtSearchChampion";
+            this.txtSearchChampion.PasswordChar = '\0';
+            this.txtSearchChampion.SelectedText = "";
+            this.txtSearchChampion.SelectionLength = 0;
+            this.txtSearchChampion.SelectionStart = 0;
+            this.txtSearchChampion.Size = new System.Drawing.Size(400, 23);
+            this.txtSearchChampion.TabIndex = 0;
+            this.txtSearchChampion.TabStop = false;
+            this.txtSearchChampion.UseSystemPasswordChar = false;
             // 
             // tbTeams
             // 
@@ -1031,10 +1037,10 @@
             // 
             this.pnlDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.pnlDownload.Controls.Add(this.progressBarDownload);
             this.pnlDownload.Controls.Add(this.btnCancelDownload);
             this.pnlDownload.Controls.Add(this.lblValueDownload);
             this.pnlDownload.Controls.Add(this.lblDownload);
-            this.pnlDownload.Controls.Add(this.progressBarDownload);
             this.pnlDownload.Location = new System.Drawing.Point(485, 27);
             this.pnlDownload.Name = "pnlDownload";
             this.pnlDownload.Size = new System.Drawing.Size(631, 31);
@@ -1094,6 +1100,34 @@
             this.progressBarDownload.Step = 0;
             this.progressBarDownload.TabIndex = 0;
             // 
+            // lblSearchChampion
+            // 
+            this.lblSearchChampion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSearchChampion.AutoSize = true;
+            this.lblSearchChampion.Depth = 0;
+            this.lblSearchChampion.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSearchChampion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSearchChampion.Location = new System.Drawing.Point(567, 250);
+            this.lblSearchChampion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSearchChampion.Name = "lblSearchChampion";
+            this.lblSearchChampion.Size = new System.Drawing.Size(133, 19);
+            this.lblSearchChampion.TabIndex = 2;
+            this.lblSearchChampion.Text = "Champion Name...";
+            this.lblSearchChampion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // freeChampionsImg
+            // 
+            this.freeChampionsImg.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("freeChampionsImg.ImageStream")));
+            this.freeChampionsImg.TransparentColor = System.Drawing.Color.Transparent;
+            this.freeChampionsImg.Images.SetKeyName(0, "BB-8.png");
+            this.freeChampionsImg.Images.SetKeyName(1, "El Libro de la Selva.jpg");
+            this.freeChampionsImg.Images.SetKeyName(2, "Juego de Tronos.jpg");
+            this.freeChampionsImg.Images.SetKeyName(3, "Kimi no na wa.jpg");
+            this.freeChampionsImg.Images.SetKeyName(4, "LoL Jinx.jpg");
+            this.freeChampionsImg.Images.SetKeyName(5, "Mr Robot.png");
+            this.freeChampionsImg.Images.SetKeyName(6, "Overwatch Reaper.png");
+            this.freeChampionsImg.Images.SetKeyName(7, "Star Wars.jpg");
+            // 
             // ggLoL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1101,11 +1135,11 @@
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pnlDownload);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.pnlLoading);
-            this.Controls.Add(this.slctrHeader);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.cntrlIndex);
             this.Controls.Add(this.cntrlSignLogin);
+            this.Controls.Add(this.pnlLoading);
+            this.Controls.Add(this.slctrHeader);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "ggLoL";
@@ -1187,8 +1221,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnOffline;
         private MaterialSkin.Controls.MaterialLabel lblOffline;
         private System.Windows.Forms.Panel pnlSearchPlayer;
-        private MaterialSkin.Controls.MaterialRaisedButton btnChampion;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtChampion;
+        private MaterialSkin.Controls.MaterialRaisedButton btnChampionSearch;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchChampion;
         private MaterialSkin.Controls.MaterialRaisedButton btnPlayerSearch;
         private System.Windows.Forms.Panel pnlResultSummonerProfile;
         private MaterialSkin.Controls.MaterialLabel lblNameSummonerR;
@@ -1210,6 +1244,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnDownloadData;
         private System.Windows.Forms.Label lblValueDownload;
         private System.Windows.Forms.Label btnCancelDownload;
+        private MaterialSkin.Controls.MaterialLabel lblSearchChampion;
+        private System.Windows.Forms.ImageList freeChampionsImg;
     }
 }
 

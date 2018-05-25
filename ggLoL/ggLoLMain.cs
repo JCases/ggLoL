@@ -23,26 +23,45 @@ namespace ggLoL
             try
             {
                 ConnectionAPI connection =
-                new ConnectionAPI(name, APILinks.GetLink(
-                APILinks.Link.SummonerProfile));
+                    new ConnectionAPI(name, APILinks.GetLink(
+                    APILinks.Link.SummonerProfile));
 
                 s = JsonConvert.DeserializeObject<SummonerProfile>(connection.json);
 
                 return true;
             }
-            catch { s = null; MessageBox.Show("Player don't found!"); return false;  }
-            
+            catch { s = null; MessageBox.Show("Player don't found!"); return false;  }   
+        }
+
+        public static bool SearchChampion(out Champions c)
+        {
+            try
+            {
+                ConnectionAPI connection =
+                    new ConnectionAPI(APILinks.GetLink(
+                    APILinks.Link.Champions));
+
+                c = JsonConvert.DeserializeObject<Champions>(connection.json);
+
+                return true;
+            }
+            catch { c = null; MessageBox.Show("Champion don't found!"); return false; }
         }
 
         // For Download File Data
-        public static string GetLinkFileData()
+        public static bool GetLinkFileData(out string link)
         {
-            ConnectionAPI connection =
-                new ConnectionAPI(APILinks.GetLink(APILinks.Link.DragontailData));
+            try
+            {
+                ConnectionAPI connection =
+                    new ConnectionAPI(APILinks.GetLink(APILinks.Link.DragontailData));
 
-            string link = JsonConvert.DeserializeObject<string>(connection.json);
+                link = JsonConvert.DeserializeObject<string>(connection.json);
 
-            return link;
+                return true;
+            }
+            catch { link = null; MessageBox.Show("Connection error"); return false; }
+            
         }
     }
 }
