@@ -58,7 +58,7 @@ namespace ggLoL
         // Options Profile or Sign Off
         private void ClickProfile(object sender, EventArgs e)
         {
-            Profile profile = new Profile();
+            Profile profile = new Profile(msm);
             profile.ShowDialog();
         }
         private void ClickSignOff(object sender, EventArgs e)
@@ -245,10 +245,7 @@ namespace ggLoL
 
         // Events with Data
 
-        private bool VerifyString(string text)
-        {
-            return text.Length > 0;
-        }
+        private bool VerifyString(string text) { return text.Length > 0; }
 
             // Summoners Players
         private void ClickSearchPlayer(object sender, EventArgs e)
@@ -288,11 +285,31 @@ namespace ggLoL
             if (VerifyString(txtSearchChampion.Text))
             {
                 if (ggLoLMain.SearchChampion(out c))
-                    MessageBox.Show("ID: " + c.data["Jinx"].id.ToString());
-                    
+                    ShowChampion(c, txtSearchChampion.Text);
             }
             else
                 MessageBox.Show("Enter a Champion Name.");
+        }
+
+        private void ShowChampion(Champions c, string text)
+        {
+            try
+            {
+                lblChampionIDR.Text = c.data[text].id.ToString();
+                lblChampionNameR.Text = c.data[text].name;
+
+                pnlSearchChampion.Visible = false;
+                pnlResultChampion.Visible = true;
+            }
+            catch (Exception) { MessageBox.Show("Error"); }
+            
+        }
+
+        private void ClickSearchOtherChampion(object sender, EventArgs e)
+        {
+            txtSearchChampion.Text = "";
+            pnlSearchChampion.Visible = true;
+            pnlResultChampion.Visible = false;
         }
     }
 }

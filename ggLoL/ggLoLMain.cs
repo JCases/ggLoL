@@ -1,7 +1,5 @@
-﻿using System.Net;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Windows.Forms;
-using System;
 
 namespace ggLoL
 {
@@ -30,7 +28,7 @@ namespace ggLoL
 
                 return true;
             }
-            catch { s = null; MessageBox.Show("Player don't found!"); return false;  }   
+            catch { s = null; MessageBox.Show("Player don't found!"); return false;  }
         }
 
         public static bool SearchChampion(out Champions c)
