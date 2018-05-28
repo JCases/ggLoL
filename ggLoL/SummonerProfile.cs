@@ -37,7 +37,7 @@ namespace ggLoL
 
         public void CreateAndSavePDF()
         {
-            string fileName = "SummonerProfile-" + this.name + "-" + this.id;
+            string fileName = "SummonerProfile-" + this.name + "-" + this.id + ".pdf";
             
             // Initialize Component
             PdfDocument pdf = new PdfDocument();

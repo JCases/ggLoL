@@ -32,6 +32,21 @@ namespace ggLoL
             timer.Start();
         }
 
+        public ggLoL(MaterialSkinManager.Themes theme, Primary colorP, 
+            Primary darkP, Primary lightP, Accent accent, TextShade shade)
+        {
+            InitializeComponent();
+
+            msm = MaterialSkinManager.Instance;
+            msm.AddFormToManage(this);
+            msm.Theme = theme;
+
+            msm.ColorScheme = new ColorScheme(
+                colorP, darkP, lightP, accent, shade);
+
+            timer.Start();
+        }
+
         ~ggLoL() { }
         
         // Prefixed Data
@@ -102,8 +117,6 @@ namespace ggLoL
         {
         }
 
-
-
         // Options Profile or Sign Off
         private void ClickProfile(object sender, EventArgs e)
         {
@@ -125,7 +138,8 @@ namespace ggLoL
         // Login, Sign In and Mode Offline
         private void ClickUserSignIn(object sender, EventArgs e)
         {
-            User user = new User("Javier", "hola", "arriba españa", "rojos", false);
+            User user = new User("Pasidnaso", "hola", "arriba españa", "rojos", false);
+            user.Save();
             ShowIndexScreen();
         }
 
