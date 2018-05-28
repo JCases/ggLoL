@@ -1,48 +1,48 @@
 ﻿namespace ggLoL
 {
-    public class Region
+    abstract public class Region
     {
-        public string linkRegion { get; set; }
+        public static string linkRegion { get; set; }
 
-        public Region(string region)
+        public static void SetRegion(string region)
         {
             switch(region.ToUpper())
             {
                 case "BR":
-                    this.linkRegion = "br1";
+                    linkRegion = "br1";
                     break;
                 case "EUNE":
-                    this.linkRegion = "eun1";
+                    linkRegion = "eun1";
                     break;
                 case "EUW":
-                    this.linkRegion = "euw1";
+                    linkRegion = "euw1";
                     break;
                 case "JP":
-                    this.linkRegion = "jp1";
+                    linkRegion = "jp1";
                     break;
                 case "KR":
-                    this.linkRegion = "kr";
+                    linkRegion = "kr";
                     break;
                 case "LAN":
-                    this.linkRegion = "la1";
+                    linkRegion = "la1";
                     break;
                 case "LAS":
-                    this.linkRegion = "la2";
+                    linkRegion = "la2";
                     break;
                 case "NA":
-                    this.linkRegion = "na1";
+                    linkRegion = "na1";
                     break;
                 case "OCE":
-                    this.linkRegion = "oc1";
+                    linkRegion = "oc1";
                     break;
                 case "TR":
-                    this.linkRegion = "tr1";
+                    linkRegion = "tr1";
                     break;
                 case "RU":
-                    this.linkRegion = "ru";
+                    linkRegion = "ru";
                     break;
                 case "PBE":
-                    this.linkRegion = "pbe1";
+                    linkRegion = "pbe1";
                     break;
             }
         }

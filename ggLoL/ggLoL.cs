@@ -33,6 +33,27 @@ namespace ggLoL
         }
 
         ~ggLoL() { }
+        
+        // Prefixed Data
+        private void LoadApp(object sender, EventArgs e)
+        {
+            Time(sender, e);
+            ggLoLMain.setRegion("EUW");
+            CurrentRegion("EUW");
+
+            // Delete Tab Pages don't use in project
+            cntrlIndex.TabPages.RemoveByKey("tbTeams");
+            cntrlIndex.TabPages.RemoveByKey("tbTournaments");
+            cntrlIndex.TabPages.RemoveByKey("tbOverlay");
+        }
+
+        // Timers
+        private void Time(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblTime.BackColor = Color.FromArgb(55, 71, 79);
+            lblTime.ForeColor = Color.FromArgb(255, 255, 255);
+        }
 
         // Open Menu
         private void clickMenu(object sender, EventArgs e)
@@ -55,6 +76,34 @@ namespace ggLoL
             lightOptionTheme.CheckState = CheckState.Unchecked;
         }
 
+        // Select Region
+        private void SetRegion(object sender, EventArgs e)
+        {
+            // Reset Check State
+            foreach (ToolStripMenuItem i in regionOption.DropDownItems)
+                if (sender.Equals(i))
+                    i.CheckState = CheckState.Checked;
+                else
+                    i.CheckState = CheckState.Unchecked;
+
+            ggLoLMain.setRegion(sender.ToString());
+
+            CurrentRegion(sender.ToString());
+        }
+
+        private void CurrentRegion(string region)
+        {
+            lblRegionSP.Text = region;
+            lblRegionC.Text = region;
+            lblRegionGI.Text = region;
+        }
+
+        private void ClickChangeRegion(object sender, EventArgs e)
+        {
+        }
+
+
+
         // Options Profile or Sign Off
         private void ClickProfile(object sender, EventArgs e)
         {
@@ -73,43 +122,20 @@ namespace ggLoL
             Loading();
         }
 
-        // Timers
-        private void Time(object sender, EventArgs e)
-        {
-            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
-            lblTime.BackColor = Color.FromArgb(55, 71, 79);
-            lblTime.ForeColor = Color.FromArgb(255, 255, 255);
-        }
-
-        private void LoadApp(object sender, EventArgs e)
-        {
-            Time(sender, e);
-            ggLoLMain.setRegion("EUW");
-        }
-
         // Login, Sign In and Mode Offline
-        private bool offline;
         private void ClickUserSignIn(object sender, EventArgs e)
         {
-            offline = false;
-
             User user = new User("Javier", "hola", "arriba españa", "rojos", false);
-            user.Save();
-            
             ShowIndexScreen();
         }
 
         private void ClickUserLogin(object sender, EventArgs e)
         {
-            offline = false;
-
             ShowIndexScreen();
         }
 
         private void ClickOfflineMode(object sender, EventArgs e)
         {
-            offline = true;
-
             ShowIndexScreen();
 
             profileOption.Visible = false;
@@ -118,7 +144,7 @@ namespace ggLoL
         private void ShowIndexScreen()
         {
             // Show Options Sign Off & Profile
-            signOffOption.Visible = profileOption.Visible = true;
+            signOffOption.Visible = profileOption.Visible = regionOption.Visible = true;
 
             cntrlSignLogin.Visible = false;
             slctrHeader.Visible = false;

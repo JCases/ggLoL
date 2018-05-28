@@ -12,8 +12,8 @@ namespace ggLoL
         public static void setRegion(string txtRegion)
         {
             // SELECT FROM CHECKBOX PREDEFINED VALUES
-            Region r = new Region(txtRegion);
-            region = r.linkRegion;
+            Region.SetRegion(txtRegion);
+            region = Region.linkRegion;
         }
 
         public static bool SearchPlayer(string name, out SummonerProfile s)
