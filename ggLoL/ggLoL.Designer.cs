@@ -82,6 +82,7 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tbSummoner = new System.Windows.Forms.TabPage();
             this.pnlSearchPlayer = new System.Windows.Forms.Panel();
+            this.btnChangeRegionSP = new MaterialSkin.Controls.MaterialFlatButton();
             this.lblRegionSP = new MaterialSkin.Controls.MaterialLabel();
             this.lblCurrentRegionSP = new MaterialSkin.Controls.MaterialLabel();
             this.lblSearchPlayer = new MaterialSkin.Controls.MaterialLabel();
@@ -101,6 +102,7 @@
             this.lblNameSummoner = new MaterialSkin.Controls.MaterialLabel();
             this.tbChampions = new System.Windows.Forms.TabPage();
             this.pnlSearchChampion = new System.Windows.Forms.Panel();
+            this.btnChangeRegionC = new MaterialSkin.Controls.MaterialFlatButton();
             this.lblRegionC = new MaterialSkin.Controls.MaterialLabel();
             this.lblCurrentRegionC = new MaterialSkin.Controls.MaterialLabel();
             this.lblSearchChampion = new MaterialSkin.Controls.MaterialLabel();
@@ -115,6 +117,12 @@
             this.tbTeams = new System.Windows.Forms.TabPage();
             this.tbTournaments = new System.Windows.Forms.TabPage();
             this.tbGameInfo = new System.Windows.Forms.TabPage();
+            this.btnChangeRegionGI = new MaterialSkin.Controls.MaterialFlatButton();
+            this.lblRegionGI = new MaterialSkin.Controls.MaterialLabel();
+            this.lblCurrentRegionGI = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSearchStaticInfo = new MaterialSkin.Controls.MaterialLabel();
+            this.txtSearchStaticInfo = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnSearchStaticInfo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tbOverlay = new System.Windows.Forms.TabPage();
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -127,14 +135,6 @@
             this.lblValueDownload = new System.Windows.Forms.Label();
             this.lblDownload = new System.Windows.Forms.Label();
             this.freeChampionsImg = new System.Windows.Forms.ImageList(this.components);
-            this.lblRegionGI = new MaterialSkin.Controls.MaterialLabel();
-            this.lblCurrentRegionGI = new MaterialSkin.Controls.MaterialLabel();
-            this.lblSearchStaticInfo = new MaterialSkin.Controls.MaterialLabel();
-            this.txtSearchStaticInfo = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnSearchStaticInfo = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnChangeRegionSP = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnChangeRegionC = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnChangeRegionGI = new MaterialSkin.Controls.MaterialFlatButton();
             this.mOption.SuspendLayout();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
@@ -765,7 +765,7 @@
             // lblTime
             // 
             this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Depth = 0;
             this.lblTime.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -859,6 +859,24 @@
             this.pnlSearchPlayer.Name = "pnlSearchPlayer";
             this.pnlSearchPlayer.Size = new System.Drawing.Size(1272, 578);
             this.pnlSearchPlayer.TabIndex = 0;
+            // 
+            // btnChangeRegionSP
+            // 
+            this.btnChangeRegionSP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeRegionSP.AutoSize = true;
+            this.btnChangeRegionSP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnChangeRegionSP.Depth = 0;
+            this.btnChangeRegionSP.Icon = null;
+            this.btnChangeRegionSP.Location = new System.Drawing.Point(581, 453);
+            this.btnChangeRegionSP.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnChangeRegionSP.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnChangeRegionSP.Name = "btnChangeRegionSP";
+            this.btnChangeRegionSP.Primary = false;
+            this.btnChangeRegionSP.Size = new System.Drawing.Size(128, 36);
+            this.btnChangeRegionSP.TabIndex = 6;
+            this.btnChangeRegionSP.Text = "Change Region";
+            this.btnChangeRegionSP.UseVisualStyleBackColor = true;
+            this.btnChangeRegionSP.Click += new System.EventHandler(this.ClickChangeRegion);
             // 
             // lblRegionSP
             // 
@@ -1144,6 +1162,24 @@
             this.pnlSearchChampion.Size = new System.Drawing.Size(1272, 581);
             this.pnlSearchChampion.TabIndex = 3;
             // 
+            // btnChangeRegionC
+            // 
+            this.btnChangeRegionC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeRegionC.AutoSize = true;
+            this.btnChangeRegionC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnChangeRegionC.Depth = 0;
+            this.btnChangeRegionC.Icon = null;
+            this.btnChangeRegionC.Location = new System.Drawing.Point(580, 451);
+            this.btnChangeRegionC.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnChangeRegionC.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnChangeRegionC.Name = "btnChangeRegionC";
+            this.btnChangeRegionC.Primary = false;
+            this.btnChangeRegionC.Size = new System.Drawing.Size(128, 36);
+            this.btnChangeRegionC.TabIndex = 8;
+            this.btnChangeRegionC.Text = "Change Region";
+            this.btnChangeRegionC.UseVisualStyleBackColor = true;
+            this.btnChangeRegionC.Click += new System.EventHandler(this.ClickChangeRegion);
+            // 
             // lblRegionC
             // 
             this.lblRegionC.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1344,6 +1380,102 @@
             this.tbGameInfo.TabIndex = 5;
             this.tbGameInfo.Text = "Game Information";
             // 
+            // btnChangeRegionGI
+            // 
+            this.btnChangeRegionGI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeRegionGI.AutoSize = true;
+            this.btnChangeRegionGI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnChangeRegionGI.Depth = 0;
+            this.btnChangeRegionGI.Icon = null;
+            this.btnChangeRegionGI.Location = new System.Drawing.Point(579, 448);
+            this.btnChangeRegionGI.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnChangeRegionGI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnChangeRegionGI.Name = "btnChangeRegionGI";
+            this.btnChangeRegionGI.Primary = false;
+            this.btnChangeRegionGI.Size = new System.Drawing.Size(128, 36);
+            this.btnChangeRegionGI.TabIndex = 13;
+            this.btnChangeRegionGI.Text = "Change Region";
+            this.btnChangeRegionGI.UseVisualStyleBackColor = true;
+            this.btnChangeRegionGI.Click += new System.EventHandler(this.ClickChangeRegion);
+            // 
+            // lblRegionGI
+            // 
+            this.lblRegionGI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRegionGI.AutoSize = true;
+            this.lblRegionGI.Depth = 0;
+            this.lblRegionGI.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblRegionGI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblRegionGI.Location = new System.Drawing.Point(691, 398);
+            this.lblRegionGI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblRegionGI.Name = "lblRegionGI";
+            this.lblRegionGI.Size = new System.Drawing.Size(0, 19);
+            this.lblRegionGI.TabIndex = 12;
+            this.lblRegionGI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCurrentRegionGI
+            // 
+            this.lblCurrentRegionGI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCurrentRegionGI.AutoSize = true;
+            this.lblCurrentRegionGI.Depth = 0;
+            this.lblCurrentRegionGI.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCurrentRegionGI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCurrentRegionGI.Location = new System.Drawing.Point(577, 398);
+            this.lblCurrentRegionGI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCurrentRegionGI.Name = "lblCurrentRegionGI";
+            this.lblCurrentRegionGI.Size = new System.Drawing.Size(108, 19);
+            this.lblCurrentRegionGI.TabIndex = 11;
+            this.lblCurrentRegionGI.Text = "Current Region";
+            this.lblCurrentRegionGI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSearchStaticInfo
+            // 
+            this.lblSearchStaticInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSearchStaticInfo.AutoSize = true;
+            this.lblSearchStaticInfo.Depth = 0;
+            this.lblSearchStaticInfo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSearchStaticInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSearchStaticInfo.Location = new System.Drawing.Point(575, 239);
+            this.lblSearchStaticInfo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSearchStaticInfo.Name = "lblSearchStaticInfo";
+            this.lblSearchStaticInfo.Size = new System.Drawing.Size(126, 19);
+            this.lblSearchStaticInfo.TabIndex = 10;
+            this.lblSearchStaticInfo.Text = "Info Data Name...";
+            this.lblSearchStaticInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSearchStaticInfo
+            // 
+            this.txtSearchStaticInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearchStaticInfo.Depth = 0;
+            this.txtSearchStaticInfo.Hint = "";
+            this.txtSearchStaticInfo.Location = new System.Drawing.Point(438, 270);
+            this.txtSearchStaticInfo.MaxLength = 32767;
+            this.txtSearchStaticInfo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearchStaticInfo.Name = "txtSearchStaticInfo";
+            this.txtSearchStaticInfo.PasswordChar = '\0';
+            this.txtSearchStaticInfo.SelectedText = "";
+            this.txtSearchStaticInfo.SelectionLength = 0;
+            this.txtSearchStaticInfo.SelectionStart = 0;
+            this.txtSearchStaticInfo.Size = new System.Drawing.Size(400, 23);
+            this.txtSearchStaticInfo.TabIndex = 8;
+            this.txtSearchStaticInfo.TabStop = false;
+            this.txtSearchStaticInfo.UseSystemPasswordChar = false;
+            // 
+            // btnSearchStaticInfo
+            // 
+            this.btnSearchStaticInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchStaticInfo.AutoSize = true;
+            this.btnSearchStaticInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSearchStaticInfo.Depth = 0;
+            this.btnSearchStaticInfo.Icon = null;
+            this.btnSearchStaticInfo.Location = new System.Drawing.Point(600, 335);
+            this.btnSearchStaticInfo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearchStaticInfo.Name = "btnSearchStaticInfo";
+            this.btnSearchStaticInfo.Primary = true;
+            this.btnSearchStaticInfo.Size = new System.Drawing.Size(73, 36);
+            this.btnSearchStaticInfo.TabIndex = 9;
+            this.btnSearchStaticInfo.Text = "Search";
+            this.btnSearchStaticInfo.UseVisualStyleBackColor = true;
+            // 
             // tbOverlay
             // 
             this.tbOverlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1356,7 +1488,7 @@
             // pnlLoading
             // 
             this.pnlLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.pnlLoading.BackColor = System.Drawing.Color.Transparent;
             this.pnlLoading.Controls.Add(this.lblLoading);
             this.pnlLoading.Controls.Add(this.progressBar);
             this.pnlLoading.Location = new System.Drawing.Point(0, 61);
@@ -1480,138 +1612,6 @@
             this.freeChampionsImg.Images.SetKeyName(5, "Mr Robot.png");
             this.freeChampionsImg.Images.SetKeyName(6, "Overwatch Reaper.png");
             this.freeChampionsImg.Images.SetKeyName(7, "Star Wars.jpg");
-            // 
-            // lblRegionGI
-            // 
-            this.lblRegionGI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRegionGI.AutoSize = true;
-            this.lblRegionGI.Depth = 0;
-            this.lblRegionGI.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblRegionGI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRegionGI.Location = new System.Drawing.Point(691, 398);
-            this.lblRegionGI.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblRegionGI.Name = "lblRegionGI";
-            this.lblRegionGI.Size = new System.Drawing.Size(0, 19);
-            this.lblRegionGI.TabIndex = 12;
-            this.lblRegionGI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblCurrentRegionGI
-            // 
-            this.lblCurrentRegionGI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCurrentRegionGI.AutoSize = true;
-            this.lblCurrentRegionGI.Depth = 0;
-            this.lblCurrentRegionGI.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblCurrentRegionGI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCurrentRegionGI.Location = new System.Drawing.Point(577, 398);
-            this.lblCurrentRegionGI.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblCurrentRegionGI.Name = "lblCurrentRegionGI";
-            this.lblCurrentRegionGI.Size = new System.Drawing.Size(108, 19);
-            this.lblCurrentRegionGI.TabIndex = 11;
-            this.lblCurrentRegionGI.Text = "Current Region";
-            this.lblCurrentRegionGI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSearchStaticInfo
-            // 
-            this.lblSearchStaticInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSearchStaticInfo.AutoSize = true;
-            this.lblSearchStaticInfo.Depth = 0;
-            this.lblSearchStaticInfo.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblSearchStaticInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSearchStaticInfo.Location = new System.Drawing.Point(575, 239);
-            this.lblSearchStaticInfo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSearchStaticInfo.Name = "lblSearchStaticInfo";
-            this.lblSearchStaticInfo.Size = new System.Drawing.Size(126, 19);
-            this.lblSearchStaticInfo.TabIndex = 10;
-            this.lblSearchStaticInfo.Text = "Info Data Name...";
-            this.lblSearchStaticInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtSearchStaticInfo
-            // 
-            this.txtSearchStaticInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearchStaticInfo.Depth = 0;
-            this.txtSearchStaticInfo.Hint = "";
-            this.txtSearchStaticInfo.Location = new System.Drawing.Point(438, 270);
-            this.txtSearchStaticInfo.MaxLength = 32767;
-            this.txtSearchStaticInfo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtSearchStaticInfo.Name = "txtSearchStaticInfo";
-            this.txtSearchStaticInfo.PasswordChar = '\0';
-            this.txtSearchStaticInfo.SelectedText = "";
-            this.txtSearchStaticInfo.SelectionLength = 0;
-            this.txtSearchStaticInfo.SelectionStart = 0;
-            this.txtSearchStaticInfo.Size = new System.Drawing.Size(400, 23);
-            this.txtSearchStaticInfo.TabIndex = 8;
-            this.txtSearchStaticInfo.TabStop = false;
-            this.txtSearchStaticInfo.UseSystemPasswordChar = false;
-            // 
-            // btnSearchStaticInfo
-            // 
-            this.btnSearchStaticInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchStaticInfo.AutoSize = true;
-            this.btnSearchStaticInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSearchStaticInfo.Depth = 0;
-            this.btnSearchStaticInfo.Icon = null;
-            this.btnSearchStaticInfo.Location = new System.Drawing.Point(600, 335);
-            this.btnSearchStaticInfo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearchStaticInfo.Name = "btnSearchStaticInfo";
-            this.btnSearchStaticInfo.Primary = true;
-            this.btnSearchStaticInfo.Size = new System.Drawing.Size(73, 36);
-            this.btnSearchStaticInfo.TabIndex = 9;
-            this.btnSearchStaticInfo.Text = "Search";
-            this.btnSearchStaticInfo.UseVisualStyleBackColor = true;
-            // 
-            // btnChangeRegionSP
-            // 
-            this.btnChangeRegionSP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChangeRegionSP.AutoSize = true;
-            this.btnChangeRegionSP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnChangeRegionSP.Depth = 0;
-            this.btnChangeRegionSP.Icon = null;
-            this.btnChangeRegionSP.Location = new System.Drawing.Point(581, 453);
-            this.btnChangeRegionSP.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnChangeRegionSP.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnChangeRegionSP.Name = "btnChangeRegionSP";
-            this.btnChangeRegionSP.Primary = false;
-            this.btnChangeRegionSP.Size = new System.Drawing.Size(128, 36);
-            this.btnChangeRegionSP.TabIndex = 6;
-            this.btnChangeRegionSP.Text = "Change Region";
-            this.btnChangeRegionSP.UseVisualStyleBackColor = true;
-            this.btnChangeRegionSP.Click += new System.EventHandler(this.ClickChangeRegion);
-            // 
-            // btnChangeRegionC
-            // 
-            this.btnChangeRegionC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChangeRegionC.AutoSize = true;
-            this.btnChangeRegionC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnChangeRegionC.Depth = 0;
-            this.btnChangeRegionC.Icon = null;
-            this.btnChangeRegionC.Location = new System.Drawing.Point(580, 451);
-            this.btnChangeRegionC.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnChangeRegionC.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnChangeRegionC.Name = "btnChangeRegionC";
-            this.btnChangeRegionC.Primary = false;
-            this.btnChangeRegionC.Size = new System.Drawing.Size(128, 36);
-            this.btnChangeRegionC.TabIndex = 8;
-            this.btnChangeRegionC.Text = "Change Region";
-            this.btnChangeRegionC.UseVisualStyleBackColor = true;
-            this.btnChangeRegionC.Click += new System.EventHandler(this.ClickChangeRegion);
-            // 
-            // btnChangeRegionGI
-            // 
-            this.btnChangeRegionGI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChangeRegionGI.AutoSize = true;
-            this.btnChangeRegionGI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnChangeRegionGI.Depth = 0;
-            this.btnChangeRegionGI.Icon = null;
-            this.btnChangeRegionGI.Location = new System.Drawing.Point(579, 448);
-            this.btnChangeRegionGI.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnChangeRegionGI.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnChangeRegionGI.Name = "btnChangeRegionGI";
-            this.btnChangeRegionGI.Primary = false;
-            this.btnChangeRegionGI.Size = new System.Drawing.Size(128, 36);
-            this.btnChangeRegionGI.TabIndex = 13;
-            this.btnChangeRegionGI.Text = "Change Region";
-            this.btnChangeRegionGI.UseVisualStyleBackColor = true;
-            this.btnChangeRegionGI.Click += new System.EventHandler(this.ClickChangeRegion);
             // 
             // ggLoL
             // 

@@ -66,7 +66,7 @@ namespace ggLoL
         private void Time(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
-            lblTime.BackColor = Color.FromArgb(55, 71, 79);
+            //lblTime.BackColor = Color.FromArgb(55, 71, 79);
             lblTime.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
@@ -115,12 +115,17 @@ namespace ggLoL
 
         private void ClickChangeRegion(object sender, EventArgs e)
         {
+            Point point = new Point(Cursor.Position.X - 120, Cursor.Position.Y);
+            mOption.Show(point);
+            mOption.Visible = false;
+            regionOption.ShowDropDown();
         }
 
         // Options Profile or Sign Off
+        private User currentUser;
         private void ClickProfile(object sender, EventArgs e)
         {
-            Profile profile = new Profile(msm);
+            Profile profile = new Profile(msm, currentUser);
             profile.ShowDialog();
         }
         private void ClickSignOff(object sender, EventArgs e)
@@ -138,13 +143,15 @@ namespace ggLoL
         // Login, Sign In and Mode Offline
         private void ClickUserSignIn(object sender, EventArgs e)
         {
-            User user = new User("Pasidnaso", "hola", "arriba españa", "rojos", false);
-            user.Save();
+            currentUser = new User(txtSIUserName.Text, txtSIPassword.Text, 
+                txtSIEmail.Text, "", false);
+            currentUser.Save();
             ShowIndexScreen();
         }
 
         private void ClickUserLogin(object sender, EventArgs e)
         {
+            currentUser = new User(txtLUserName.Text, txtLPassword.Text);
             ShowIndexScreen();
         }
 
@@ -157,9 +164,6 @@ namespace ggLoL
 
         private void ShowIndexScreen()
         {
-            // Show Options Sign Off & Profile
-            signOffOption.Visible = profileOption.Visible = regionOption.Visible = true;
-
             cntrlSignLogin.Visible = false;
             slctrHeader.Visible = false;
             slctrHeader.BaseTabControl = cntrlIndex;
@@ -175,6 +179,7 @@ namespace ggLoL
         // Start Animation
         private void Loading()
         {
+            pnlLoading.BackColor = msm.ColorScheme.PrimaryColor;
             // Reset Progress Bar
             progressBar.Value = 0;
 
@@ -202,6 +207,9 @@ namespace ggLoL
                     cntrlIndex.Visible = true;
                 else // Show Sign In & Login
                     cntrlSignLogin.Visible = true;
+
+                // Show Options Sign Off & Profile
+                signOffOption.Visible = profileOption.Visible = regionOption.Visible = true;
             }
         }
 

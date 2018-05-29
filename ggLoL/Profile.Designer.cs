@@ -37,14 +37,11 @@
             this.lblProfileNickR = new MaterialSkin.Controls.MaterialLabel();
             this.lblProfileVerifyCodeR = new MaterialSkin.Controls.MaterialLabel();
             this.btnVerifyProfile = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dvdrProfileH = new MaterialSkin.Controls.MaterialDivider();
-            this.dvdrProfileV = new MaterialSkin.Controls.MaterialDivider();
-            this.btnProfileLight = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnProfileDark = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lblProfileTheme = new MaterialSkin.Controls.MaterialLabel();
             this.lblProfileColour = new MaterialSkin.Controls.MaterialLabel();
-            this.btnProfileColourBlue = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnProfileColourGreen = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.chckBxGreen = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chckBxGray = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chckBxBlue = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chckBxRed = new MaterialSkin.Controls.MaterialCheckBox();
             this.SuspendLayout();
             // 
             // lblProfileName
@@ -54,7 +51,7 @@
             this.lblProfileName.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileName.Depth = 0;
             this.lblProfileName.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProfileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblProfileName.Location = new System.Drawing.Point(34, 99);
             this.lblProfileName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileName.Name = "lblProfileName";
@@ -70,7 +67,7 @@
             this.lblProfileEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileEmail.Depth = 0;
             this.lblProfileEmail.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileEmail.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProfileEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblProfileEmail.Location = new System.Drawing.Point(34, 148);
             this.lblProfileEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileEmail.Name = "lblProfileEmail";
@@ -86,7 +83,7 @@
             this.lblProfileNick.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileNick.Depth = 0;
             this.lblProfileNick.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileNick.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProfileNick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblProfileNick.Location = new System.Drawing.Point(34, 200);
             this.lblProfileNick.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileNick.Name = "lblProfileNick";
@@ -102,8 +99,8 @@
             this.lblProfileVerifyCode.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileVerifyCode.Depth = 0;
             this.lblProfileVerifyCode.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileVerifyCode.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProfileVerifyCode.Location = new System.Drawing.Point(53, 401);
+            this.lblProfileVerifyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblProfileVerifyCode.Location = new System.Drawing.Point(242, 383);
             this.lblProfileVerifyCode.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileVerifyCode.Name = "lblProfileVerifyCode";
             this.lblProfileVerifyCode.Size = new System.Drawing.Size(135, 19);
@@ -118,7 +115,7 @@
             this.lblProfileNameR.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileNameR.Depth = 0;
             this.lblProfileNameR.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileNameR.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProfileNameR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblProfileNameR.Location = new System.Drawing.Point(195, 99);
             this.lblProfileNameR.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileNameR.Name = "lblProfileNameR";
@@ -134,7 +131,7 @@
             this.lblProfileEmailR.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileEmailR.Depth = 0;
             this.lblProfileEmailR.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileEmailR.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProfileEmailR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblProfileEmailR.Location = new System.Drawing.Point(195, 148);
             this.lblProfileEmailR.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileEmailR.Name = "lblProfileEmailR";
@@ -150,7 +147,7 @@
             this.lblProfileNickR.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileNickR.Depth = 0;
             this.lblProfileNickR.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileNickR.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProfileNickR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblProfileNickR.Location = new System.Drawing.Point(195, 200);
             this.lblProfileNickR.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileNickR.Name = "lblProfileNickR";
@@ -166,8 +163,8 @@
             this.lblProfileVerifyCodeR.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileVerifyCodeR.Depth = 0;
             this.lblProfileVerifyCodeR.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileVerifyCodeR.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProfileVerifyCodeR.Location = new System.Drawing.Point(214, 401);
+            this.lblProfileVerifyCodeR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblProfileVerifyCodeR.Location = new System.Drawing.Point(403, 383);
             this.lblProfileVerifyCodeR.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileVerifyCodeR.Name = "lblProfileVerifyCodeR";
             this.lblProfileVerifyCodeR.Size = new System.Drawing.Size(139, 19);
@@ -182,7 +179,7 @@
             this.btnVerifyProfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnVerifyProfile.Depth = 0;
             this.btnVerifyProfile.Icon = null;
-            this.btnVerifyProfile.Location = new System.Drawing.Point(140, 340);
+            this.btnVerifyProfile.Location = new System.Drawing.Point(329, 322);
             this.btnVerifyProfile.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnVerifyProfile.Name = "btnVerifyProfile";
             this.btnVerifyProfile.Primary = true;
@@ -191,77 +188,6 @@
             this.btnVerifyProfile.Text = "Verify Profile";
             this.btnVerifyProfile.UseVisualStyleBackColor = true;
             // 
-            // dvdrProfileH
-            // 
-            this.dvdrProfileH.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dvdrProfileH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dvdrProfileH.Depth = 0;
-            this.dvdrProfileH.Location = new System.Drawing.Point(0, 284);
-            this.dvdrProfileH.MouseState = MaterialSkin.MouseState.HOVER;
-            this.dvdrProfileH.Name = "dvdrProfileH";
-            this.dvdrProfileH.Size = new System.Drawing.Size(800, 20);
-            this.dvdrProfileH.TabIndex = 9;
-            // 
-            // dvdrProfileV
-            // 
-            this.dvdrProfileV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dvdrProfileV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dvdrProfileV.Depth = 0;
-            this.dvdrProfileV.Location = new System.Drawing.Point(450, 300);
-            this.dvdrProfileV.MouseState = MaterialSkin.MouseState.HOVER;
-            this.dvdrProfileV.Name = "dvdrProfileV";
-            this.dvdrProfileV.Size = new System.Drawing.Size(20, 150);
-            this.dvdrProfileV.TabIndex = 10;
-            // 
-            // btnProfileLight
-            // 
-            this.btnProfileLight.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProfileLight.AutoSize = true;
-            this.btnProfileLight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileLight.Depth = 0;
-            this.btnProfileLight.Icon = null;
-            this.btnProfileLight.Location = new System.Drawing.Point(564, 331);
-            this.btnProfileLight.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProfileLight.Name = "btnProfileLight";
-            this.btnProfileLight.Primary = true;
-            this.btnProfileLight.Size = new System.Drawing.Size(60, 36);
-            this.btnProfileLight.TabIndex = 11;
-            this.btnProfileLight.Text = "Light";
-            this.btnProfileLight.UseVisualStyleBackColor = true;
-            this.btnProfileLight.Click += new System.EventHandler(this.lightTheme);
-            // 
-            // btnProfileDark
-            // 
-            this.btnProfileDark.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProfileDark.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileDark.Depth = 0;
-            this.btnProfileDark.Icon = null;
-            this.btnProfileDark.Location = new System.Drawing.Point(564, 393);
-            this.btnProfileDark.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProfileDark.Name = "btnProfileDark";
-            this.btnProfileDark.Primary = true;
-            this.btnProfileDark.Size = new System.Drawing.Size(60, 36);
-            this.btnProfileDark.TabIndex = 12;
-            this.btnProfileDark.Text = "Dark";
-            this.btnProfileDark.UseVisualStyleBackColor = true;
-            this.btnProfileDark.Click += new System.EventHandler(this.darkTheme);
-            // 
-            // lblProfileTheme
-            // 
-            this.lblProfileTheme.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblProfileTheme.AutoSize = true;
-            this.lblProfileTheme.BackColor = System.Drawing.Color.Transparent;
-            this.lblProfileTheme.Depth = 0;
-            this.lblProfileTheme.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileTheme.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProfileTheme.Location = new System.Drawing.Point(493, 369);
-            this.lblProfileTheme.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblProfileTheme.Name = "lblProfileTheme";
-            this.lblProfileTheme.Size = new System.Drawing.Size(55, 19);
-            this.lblProfileTheme.TabIndex = 13;
-            this.lblProfileTheme.Text = "Theme";
-            this.lblProfileTheme.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblProfileColour
             // 
             this.lblProfileColour.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -269,8 +195,8 @@
             this.lblProfileColour.BackColor = System.Drawing.Color.Transparent;
             this.lblProfileColour.Depth = 0;
             this.lblProfileColour.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProfileColour.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProfileColour.Location = new System.Drawing.Point(650, 369);
+            this.lblProfileColour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblProfileColour.Location = new System.Drawing.Point(533, 151);
             this.lblProfileColour.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblProfileColour.Name = "lblProfileColour";
             this.lblProfileColour.Size = new System.Drawing.Size(54, 19);
@@ -278,49 +204,93 @@
             this.lblProfileColour.Text = "Colour";
             this.lblProfileColour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnProfileColourBlue
+            // chckBxGreen
             // 
-            this.btnProfileColourBlue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProfileColourBlue.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileColourBlue.Depth = 0;
-            this.btnProfileColourBlue.Icon = null;
-            this.btnProfileColourBlue.Location = new System.Drawing.Point(723, 393);
-            this.btnProfileColourBlue.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProfileColourBlue.Name = "btnProfileColourBlue";
-            this.btnProfileColourBlue.Primary = true;
-            this.btnProfileColourBlue.Size = new System.Drawing.Size(65, 36);
-            this.btnProfileColourBlue.TabIndex = 16;
-            this.btnProfileColourBlue.Text = "Blue";
-            this.btnProfileColourBlue.UseVisualStyleBackColor = true;
+            this.chckBxGreen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chckBxGreen.BackColor = System.Drawing.SystemColors.Control;
+            this.chckBxGreen.Depth = 0;
+            this.chckBxGreen.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chckBxGreen.Location = new System.Drawing.Point(617, 99);
+            this.chckBxGreen.Margin = new System.Windows.Forms.Padding(0);
+            this.chckBxGreen.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chckBxGreen.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chckBxGreen.Name = "chckBxGreen";
+            this.chckBxGreen.Ripple = true;
+            this.chckBxGreen.Size = new System.Drawing.Size(150, 30);
+            this.chckBxGreen.TabIndex = 17;
+            this.chckBxGreen.Text = "Green";
+            this.chckBxGreen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chckBxGreen.UseVisualStyleBackColor = false;
+            this.chckBxGreen.Click += new System.EventHandler(this.colourGreen);
             // 
-            // btnProfileColourGreen
+            // chckBxGray
             // 
-            this.btnProfileColourGreen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProfileColourGreen.AutoSize = true;
-            this.btnProfileColourGreen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnProfileColourGreen.Depth = 0;
-            this.btnProfileColourGreen.Icon = null;
-            this.btnProfileColourGreen.Location = new System.Drawing.Point(723, 331);
-            this.btnProfileColourGreen.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnProfileColourGreen.Name = "btnProfileColourGreen";
-            this.btnProfileColourGreen.Primary = true;
-            this.btnProfileColourGreen.Size = new System.Drawing.Size(64, 36);
-            this.btnProfileColourGreen.TabIndex = 15;
-            this.btnProfileColourGreen.Text = "Green";
-            this.btnProfileColourGreen.UseVisualStyleBackColor = true;
+            this.chckBxGray.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chckBxGray.BackColor = System.Drawing.SystemColors.Control;
+            this.chckBxGray.Checked = true;
+            this.chckBxGray.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chckBxGray.Depth = 0;
+            this.chckBxGray.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chckBxGray.Location = new System.Drawing.Point(617, 144);
+            this.chckBxGray.Margin = new System.Windows.Forms.Padding(0);
+            this.chckBxGray.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chckBxGray.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chckBxGray.Name = "chckBxGray";
+            this.chckBxGray.Ripple = true;
+            this.chckBxGray.Size = new System.Drawing.Size(150, 30);
+            this.chckBxGray.TabIndex = 18;
+            this.chckBxGray.Text = "Gray";
+            this.chckBxGray.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chckBxGray.UseVisualStyleBackColor = false;
+            this.chckBxGray.Click += new System.EventHandler(this.colourGray);
+            // 
+            // chckBxBlue
+            // 
+            this.chckBxBlue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chckBxBlue.BackColor = System.Drawing.SystemColors.Control;
+            this.chckBxBlue.Depth = 0;
+            this.chckBxBlue.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chckBxBlue.Location = new System.Drawing.Point(617, 189);
+            this.chckBxBlue.Margin = new System.Windows.Forms.Padding(0);
+            this.chckBxBlue.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chckBxBlue.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chckBxBlue.Name = "chckBxBlue";
+            this.chckBxBlue.Ripple = true;
+            this.chckBxBlue.Size = new System.Drawing.Size(150, 30);
+            this.chckBxBlue.TabIndex = 19;
+            this.chckBxBlue.Text = "Blue";
+            this.chckBxBlue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chckBxBlue.UseVisualStyleBackColor = false;
+            this.chckBxBlue.Click += new System.EventHandler(this.colourBlue);
+            // 
+            // chckBxRed
+            // 
+            this.chckBxRed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chckBxRed.BackColor = System.Drawing.SystemColors.Control;
+            this.chckBxRed.Depth = 0;
+            this.chckBxRed.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chckBxRed.Location = new System.Drawing.Point(617, 232);
+            this.chckBxRed.Margin = new System.Windows.Forms.Padding(0);
+            this.chckBxRed.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chckBxRed.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chckBxRed.Name = "chckBxRed";
+            this.chckBxRed.Ripple = true;
+            this.chckBxRed.Size = new System.Drawing.Size(150, 30);
+            this.chckBxRed.TabIndex = 20;
+            this.chckBxRed.Text = "Red";
+            this.chckBxRed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chckBxRed.UseVisualStyleBackColor = false;
+            this.chckBxRed.Click += new System.EventHandler(this.colourRed);
             // 
             // Profile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnProfileColourBlue);
-            this.Controls.Add(this.btnProfileColourGreen);
+            this.Controls.Add(this.chckBxRed);
+            this.Controls.Add(this.chckBxBlue);
+            this.Controls.Add(this.chckBxGray);
+            this.Controls.Add(this.chckBxGreen);
             this.Controls.Add(this.lblProfileColour);
-            this.Controls.Add(this.lblProfileTheme);
-            this.Controls.Add(this.btnProfileDark);
-            this.Controls.Add(this.btnProfileLight);
-            this.Controls.Add(this.dvdrProfileV);
-            this.Controls.Add(this.dvdrProfileH);
             this.Controls.Add(this.btnVerifyProfile);
             this.Controls.Add(this.lblProfileVerifyCodeR);
             this.Controls.Add(this.lblProfileNickR);
@@ -354,13 +324,10 @@
         private MaterialSkin.Controls.MaterialLabel lblProfileNickR;
         private MaterialSkin.Controls.MaterialLabel lblProfileVerifyCodeR;
         private MaterialSkin.Controls.MaterialRaisedButton btnVerifyProfile;
-        private MaterialSkin.Controls.MaterialDivider dvdrProfileH;
-        private MaterialSkin.Controls.MaterialDivider dvdrProfileV;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProfileLight;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProfileDark;
-        private MaterialSkin.Controls.MaterialLabel lblProfileTheme;
         private MaterialSkin.Controls.MaterialLabel lblProfileColour;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProfileColourBlue;
-        private MaterialSkin.Controls.MaterialRaisedButton btnProfileColourGreen;
+        private MaterialSkin.Controls.MaterialCheckBox chckBxGreen;
+        private MaterialSkin.Controls.MaterialCheckBox chckBxGray;
+        private MaterialSkin.Controls.MaterialCheckBox chckBxBlue;
+        private MaterialSkin.Controls.MaterialCheckBox chckBxRed;
     }
 }

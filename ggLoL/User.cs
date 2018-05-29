@@ -10,11 +10,11 @@ namespace ggLoL
 {
     public class User
     {
-        protected string name { get; set; }
-        private string password { get; set; }
-        protected string email { get; set; }
-        protected string nick { get; set; }
-        protected bool verify { get; set; }
+        public string name { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string nick { get; set; }
+        public bool verify { get; set; }
         // 0 NOT VERIFY
         // 1 VERIFY
 
@@ -23,6 +23,20 @@ namespace ggLoL
         {
             this.name = name;
             this.password = password;
+            this.email = email;
+            this.nick = nick;
+            this.verify = verify;
+        }
+
+        public User(string name, string password)
+        {
+            this.name = name;
+            this.password = password;
+
+            string email, nick;
+            bool verify;
+            Load(out email, out nick, out verify);
+
             this.email = email;
             this.nick = nick;
             this.verify = verify;
@@ -236,6 +250,23 @@ namespace ggLoL
             }
         }
 
+        public void Load(out string email, out string nick, out bool verify)
+        {
+            string fileName = name + "-profile.ggLoL";
+            try
+            {
+                StreamReader reader = new StreamReader(fileName);
+
+                // User Info
+                email = reader.ReadLine();
+                nick = reader.ReadLine();
+
+                verify = reader.ReadLine().Split(':')[1] == "0" ? false : true;
+            }
+            catch { email = null; nick = null; verify = false; }
+        }
+
+
         public string GetEncryptPassword() { return Encrypter(password); }
 
         // Encryption Password
@@ -246,5 +277,7 @@ namespace ggLoL
 
             return Encoding.ASCII.GetString(data);
         }
+
+        public void VerifyProfiles() { VerifyProfile.SearchKey(nick); }
     }
 }
