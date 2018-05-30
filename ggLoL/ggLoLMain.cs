@@ -58,8 +58,22 @@ namespace ggLoL
 
                 return true;
             }
-            catch { link = null; MessageBox.Show("Connection error"); return false; }
-            
+            catch { link = null; MessageBox.Show("Connection error"); return false; }   
+        }
+
+        public static bool StateLoL(out StateGame st)
+        {
+            try
+            {
+                ConnectionAPI connection =
+                    new ConnectionAPI(APILinks.GetLink(
+                    APILinks.Link.StateLoL));
+
+                st = JsonConvert.DeserializeObject<StateGame>(connection.json);
+
+                return true;
+            }
+            catch { st = null; MessageBox.Show("Error in Connection"); return false; }
         }
     }
 }

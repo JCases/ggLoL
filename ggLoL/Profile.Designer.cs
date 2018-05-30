@@ -42,6 +42,7 @@
             this.chckBxGray = new MaterialSkin.Controls.MaterialCheckBox();
             this.chckBxBlue = new MaterialSkin.Controls.MaterialCheckBox();
             this.chckBxRed = new MaterialSkin.Controls.MaterialCheckBox();
+            this.btnReLoadKeyVerify = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // lblProfileName
@@ -282,10 +283,29 @@
             this.chckBxRed.UseVisualStyleBackColor = false;
             this.chckBxRed.Click += new System.EventHandler(this.colourRed);
             // 
+            // btnReLoadKeyVerify
+            // 
+            this.btnReLoadKeyVerify.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReLoadKeyVerify.AutoSize = true;
+            this.btnReLoadKeyVerify.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReLoadKeyVerify.Depth = 0;
+            this.btnReLoadKeyVerify.Icon = null;
+            this.btnReLoadKeyVerify.Location = new System.Drawing.Point(549, 375);
+            this.btnReLoadKeyVerify.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnReLoadKeyVerify.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReLoadKeyVerify.Name = "btnReLoadKeyVerify";
+            this.btnReLoadKeyVerify.Primary = false;
+            this.btnReLoadKeyVerify.Size = new System.Drawing.Size(101, 36);
+            this.btnReLoadKeyVerify.TabIndex = 21;
+            this.btnReLoadKeyVerify.Text = "ReLoad Key";
+            this.btnReLoadKeyVerify.UseVisualStyleBackColor = true;
+            this.btnReLoadKeyVerify.Click += new System.EventHandler(this.ClickReLoadKey);
+            // 
             // Profile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReLoadKeyVerify);
             this.Controls.Add(this.chckBxRed);
             this.Controls.Add(this.chckBxBlue);
             this.Controls.Add(this.chckBxGray);
@@ -329,5 +349,6 @@
         private MaterialSkin.Controls.MaterialCheckBox chckBxGray;
         private MaterialSkin.Controls.MaterialCheckBox chckBxBlue;
         private MaterialSkin.Controls.MaterialCheckBox chckBxRed;
+        private MaterialSkin.Controls.MaterialFlatButton btnReLoadKeyVerify;
     }
 }

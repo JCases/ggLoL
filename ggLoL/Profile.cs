@@ -8,14 +8,17 @@ namespace ggLoL
     public partial class Profile : MaterialForm
     {
         private MaterialSkinManager msm { get; set; }
+        User user;
 
-        public Profile(MaterialSkinManager msm, User currentUser)
+        public Profile(MaterialSkinManager msm, User user)
         {
             InitializeComponent();
 
             this.msm = msm;
 
-            ShowInfo(currentUser);
+            this.user = user;
+
+            ShowInfo(user);
         }
         ~Profile() { }
 
@@ -30,11 +33,27 @@ namespace ggLoL
 
         // Colours for Application
 
+        // PA QUE NACHO ESTE CONTENTO - BORRAR 
         private void uncheckchckBx()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (i == 0)
+                    chckBxGreen.Checked = false;
+                else if (i == 1)
+                    chckBxGray.Checked = false;
+                else if (i == 2)
+                    chckBxBlue.Checked = false;
+                else if (i == 3)
+                    chckBxRed.Checked = false;
+            }   
+        }
+
+        /*private void uncheckchckBx()
         {
             chckBxGreen.Checked = chckBxGray.Checked =
                 chckBxBlue.Checked = chckBxRed.Checked = false;
-        }
+        }*/
 
         private void colourGreen(object sender, EventArgs e)
         {
@@ -90,6 +109,13 @@ namespace ggLoL
             chckBxRed.Checked = true;
 
             Refresh();
+        }
+
+        // ReLoad Key
+
+        private void ClickReLoadKey(object sender, EventArgs e)
+        {
+            lblProfileVerifyCodeR.Text = VerifyProfile.CreateKey();
         }
     }
 }

@@ -135,6 +135,7 @@
             this.lblValueDownload = new System.Windows.Forms.Label();
             this.lblDownload = new System.Windows.Forms.Label();
             this.freeChampionsImg = new System.Windows.Forms.ImageList(this.components);
+            this.lblStateLoL = new MaterialSkin.Controls.MaterialLabel();
             this.mOption.SuspendLayout();
             this.cntrlSignLogin.SuspendLayout();
             this.tbLogin.SuspendLayout();
@@ -1613,11 +1614,27 @@
             this.freeChampionsImg.Images.SetKeyName(6, "Overwatch Reaper.png");
             this.freeChampionsImg.Images.SetKeyName(7, "Star Wars.jpg");
             // 
+            // lblStateLoL
+            // 
+            this.lblStateLoL.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStateLoL.AutoSize = true;
+            this.lblStateLoL.Depth = 0;
+            this.lblStateLoL.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblStateLoL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStateLoL.Location = new System.Drawing.Point(114, 35);
+            this.lblStateLoL.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStateLoL.Name = "lblStateLoL";
+            this.lblStateLoL.Size = new System.Drawing.Size(40, 19);
+            this.lblStateLoL.TabIndex = 2;
+            this.lblStateLoL.Text = "Algo";
+            this.lblStateLoL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ggLoL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.lblStateLoL);
             this.Controls.Add(this.pnlDownload);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnOptions);
@@ -1662,6 +1679,7 @@
             this.pnlDownload.ResumeLayout(false);
             this.pnlDownload.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1771,6 +1789,7 @@
         private MaterialSkin.Controls.MaterialLabel lblSearchStaticInfo;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchStaticInfo;
         private MaterialSkin.Controls.MaterialRaisedButton btnSearchStaticInfo;
+        private MaterialSkin.Controls.MaterialLabel lblStateLoL;
     }
 }
 

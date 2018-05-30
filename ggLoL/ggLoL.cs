@@ -173,6 +173,8 @@ namespace ggLoL
             txtSIUserName.Text = txtSIPassword.Text = txtSIEmail.Text = "";
             chckBxStayConnected.Checked = chckBxTerms.Checked = false;
 
+            News();
+
             Loading();
         }
 
@@ -358,6 +360,16 @@ namespace ggLoL
             txtSearchChampion.Text = "";
             pnlSearchChampion.Visible = true;
             pnlResultChampion.Visible = false;
+        }
+
+            // News
+        private void News()
+        {
+            StateGame st;
+            if (ggLoLMain.StateLoL(out st))
+                lblStateLoL.Text = st.name;
+            else
+                MessageBox.Show("Error show");
         }
     }
 }

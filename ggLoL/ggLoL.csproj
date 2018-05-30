@@ -98,6 +98,7 @@
     <Compile Include="Region.cs" />
     <Compile Include="Runes.cs" />
     <Compile Include="Spells.cs" />
+    <Compile Include="StateGame.cs" />
     <Compile Include="SummonerProfile.cs" />
     <Compile Include="User.cs" />
     <Compile Include="VerifyProfile.cs" />
