@@ -22,7 +22,7 @@ namespace ggLoL
             {
                 ConnectionAPI connection =
                     new ConnectionAPI(name, APILinks.GetLink(
-                    APILinks.Link.SummonerProfile));
+                    APILinks.Link.SummonerProfile), true);
 
                 s = JsonConvert.DeserializeObject<SummonerProfile>(connection.json);
 
@@ -37,7 +37,7 @@ namespace ggLoL
             {
                 ConnectionAPI connection =
                     new ConnectionAPI(APILinks.GetLink(
-                    APILinks.Link.Champions));
+                    APILinks.Link.Champions), true);
 
                 c = JsonConvert.DeserializeObject<Champions>(connection.json);
 
@@ -46,13 +46,28 @@ namespace ggLoL
             catch { c = null; MessageBox.Show("Champion don't found!"); return false; }
         }
 
+        public static bool SearchGameInfo(out Items i)
+        {
+            try
+            {
+                ConnectionAPI connection =
+                    new ConnectionAPI(APILinks.GetLink(
+                    APILinks.Link.Items), true);
+
+                i = JsonConvert.DeserializeObject<Items>(connection.json);
+
+                return true;
+            }
+            catch { i = null; MessageBox.Show("Game Info don't found!"); return false; }
+        }
+
         // For Download File Data
         public static bool GetLinkFileData(out string link)
         {
             try
             {
                 ConnectionAPI connection =
-                    new ConnectionAPI(APILinks.GetLink(APILinks.Link.DragontailData));
+                    new ConnectionAPI(APILinks.GetLink(APILinks.Link.DragontailData), false);
 
                 link = JsonConvert.DeserializeObject<string>(connection.json);
 
@@ -67,7 +82,7 @@ namespace ggLoL
             {
                 ConnectionAPI connection =
                     new ConnectionAPI(APILinks.GetLink(
-                    APILinks.Link.StateLoL));
+                    APILinks.Link.StateLoL), false);
 
                 st = JsonConvert.DeserializeObject<StateGame>(connection.json);
 

@@ -31,7 +31,7 @@ namespace ggLoL
             {
                 ConnectionAPI connection =
                     new ConnectionAPI(nick, APILinks.GetLink(
-                    APILinks.Link.VerifyProfile));
+                    APILinks.Link.VerifyProfile), false);
 
                 string key = JsonConvert.DeserializeObject<string>(connection.json);
 

@@ -12,11 +12,14 @@ namespace ggLoL
         public string json { get; set; }
 
         // If you need a parameter
-        public ConnectionAPI(string parameter, string link)
+        public ConnectionAPI(string parameter, string link, bool LoadScreen)
         {
             // Show Form for Loading
-            LoadData ld = new LoadData();
-            ld.ShowDialog();
+            if (LoadScreen)
+            {
+                LoadData ld = new LoadData();
+                ld.ShowDialog();
+            } 
             try
             {
                 WebClient client = new WebClient();
@@ -40,7 +43,8 @@ namespace ggLoL
         }
 
         // If you don't need a parameter
-        public ConnectionAPI(string link) : 
-            this("", link) { }
+        public ConnectionAPI(string link, bool LoadScreen) :
+            this("", link, LoadScreen)
+        { }
     }
 }

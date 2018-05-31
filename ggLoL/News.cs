@@ -16,7 +16,7 @@ namespace ggLoL
             {
                 WebClient client = new WebClient();
 
-                ConnectionAPI patch = new ConnectionAPI(link);
+                ConnectionAPI patch = new ConnectionAPI(link, false);
 
                 // Get First Result
                 string numberPatch = patch.json.Split('\"')[1];

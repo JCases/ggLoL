@@ -173,8 +173,6 @@ namespace ggLoL
             txtSIUserName.Text = txtSIPassword.Text = txtSIEmail.Text = "";
             chckBxStayConnected.Checked = chckBxTerms.Checked = false;
 
-            News();
-
             Loading();
         }
 
@@ -301,10 +299,15 @@ namespace ggLoL
         private void ClickSearchPlayer(object sender, EventArgs e)
         {
             SummonerProfile s;
+            ChampionMastery cm;
             if (VerifyString(txtSearchPlayer.Text))
             {
                 if (ggLoLMain.SearchPlayer(txtSearchPlayer.Text, out s))
+                {
+                    cm = s.GetMaestry();
                     ShowSummonerProfile(s);
+                    ShowChampionMastery(cm);
+                }
             }
             else
                 MessageBox.Show("Enter a Summoner Name.");
@@ -319,6 +322,11 @@ namespace ggLoL
             lblIDAccountSummonerR.Text = s.accountId.ToString();
             lblLevelSummonerR.Text = s.summonerLevel.ToString();
             lblRevisionSummonerR.Text = s.revisionDate.ToString();
+        }
+
+        private void ShowChampionMastery(ChampionMastery cm)
+        {
+
         }
 
         private void ClickSearchOtherPlayer(object sender, EventArgs e)
@@ -362,14 +370,16 @@ namespace ggLoL
             pnlResultChampion.Visible = false;
         }
 
-            // News
-        private void News()
+        private void ClickSearchGameInfo(object sender, EventArgs e)
         {
-            StateGame st;
-            if (ggLoLMain.StateLoL(out st))
-                lblStateLoL.Text = st.name;
+            Items i;
+            if (VerifyString(txtSearchChampion.Text))
+            {
+                if (ggLoLMain.SearchGameInfo(out i))
+                { }
+            }
             else
-                MessageBox.Show("Error show");
+                MessageBox.Show("Enter a Game Info.");
         }
     }
 }

@@ -59,6 +59,22 @@ namespace ggLoL
             Process.Start(fileName);
         }
 
+        public ChampionMastery GetMaestry()
+        {
+            ChampionMastery cm;
+            try
+            {
+                ConnectionAPI connection =
+                    new ConnectionAPI(name, APILinks.GetLink(
+                    APILinks.Link.ChampionMastery), false);
+
+                cm = JsonConvert.DeserializeObject<ChampionMastery>(connection.json);
+
+                return cm;
+            }
+            catch { return null; }
+        }
+
         public void DrawPDF(PdfDocument pdf, PdfPage page, XGraphics gfx, XFont font)
         {
             int position = 0;
