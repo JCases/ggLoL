@@ -17,7 +17,7 @@ namespace ggLoL
             // Show Form for Loading
             if (LoadScreen)
             {
-                LoadData ld = new LoadData();
+                LoadData ld = new LoadData(ggLoL.language);
                 ld.ShowDialog();
             } 
             try

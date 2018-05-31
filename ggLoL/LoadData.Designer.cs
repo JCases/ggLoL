@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadData));
             this.lblWaitingData = new MaterialSkin.Controls.MaterialLabel();
             this.progressBarData = new MaterialSkin.Controls.MaterialProgressBar();
             this.animationTimerData = new System.Windows.Forms.Timer(this.components);
@@ -36,29 +37,20 @@
             // 
             // lblWaitingData
             // 
-            this.lblWaitingData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.lblWaitingData, "lblWaitingData");
             this.lblWaitingData.BackColor = System.Drawing.Color.Transparent;
             this.lblWaitingData.Depth = 0;
-            this.lblWaitingData.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblWaitingData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblWaitingData.Location = new System.Drawing.Point(92, 150);
             this.lblWaitingData.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblWaitingData.Name = "lblWaitingData";
-            this.lblWaitingData.Size = new System.Drawing.Size(210, 88);
-            this.lblWaitingData.TabIndex = 0;
-            this.lblWaitingData.Text = "Wait a Second...";
-            this.lblWaitingData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressBarData
             // 
-            this.progressBarData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.progressBarData, "progressBarData");
             this.progressBarData.Depth = 0;
-            this.progressBarData.Location = new System.Drawing.Point(24, 272);
             this.progressBarData.MarqueeAnimationSpeed = 1;
             this.progressBarData.MouseState = MaterialSkin.MouseState.HOVER;
             this.progressBarData.Name = "progressBarData";
-            this.progressBarData.Size = new System.Drawing.Size(350, 5);
-            this.progressBarData.TabIndex = 1;
             // 
             // animationTimerData
             // 
@@ -68,8 +60,8 @@
             // 
             // LoadData
             // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(400, 400);
             this.ControlBox = false;
             this.Controls.Add(this.progressBarData);
             this.Controls.Add(this.lblWaitingData);
@@ -79,8 +71,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Sizable = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoadData";
             this.Shown += new System.EventHandler(this.Show);
             this.ResumeLayout(false);
 

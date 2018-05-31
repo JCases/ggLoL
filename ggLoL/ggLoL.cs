@@ -3,7 +3,8 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.ComponentModel;
-using System.Deployment.Application;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -15,9 +16,11 @@ namespace ggLoL
     public partial class ggLoL : MaterialForm
     {
         public static MaterialSkinManager msm { get; set; }
+        public static string language = Properties.Settings.Default.Langue;
 
         public ggLoL()
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
             InitializeComponent();
 
             msm = MaterialSkinManager.Instance;
@@ -56,6 +59,11 @@ namespace ggLoL
             ggLoLMain.setRegion("EUW");
             CurrentRegion("EUW");
 
+            if (language == "en-EN")
+                englishOption.Checked = true;
+            else if (language == "es-ES")
+                spanishOption.Checked = true;
+
             // Delete Tab Pages don't use in project
             cntrlIndex.TabPages.RemoveByKey("tbTeams");
             cntrlIndex.TabPages.RemoveByKey("tbTournaments");
@@ -89,6 +97,28 @@ namespace ggLoL
             msm.Theme = MaterialSkinManager.Themes.DARK;
             darkOptionTheme.CheckState = CheckState.Checked;
             lightOptionTheme.CheckState = CheckState.Unchecked;
+        }
+
+        // Language App
+
+        private void ClickEnglishLanguage(object sender, EventArgs e)
+        {
+            spanishOption.Checked = false;
+            englishOption.Checked = true;
+            Properties.Settings.Default.Langue = "en-EN";
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Restart Aplication");
+            Application.Restart();
+        }
+
+        private void ClickSpanishLanguage(object sender, EventArgs e)
+        {
+            englishOption.Checked = false;
+            spanishOption.Checked = true;
+            Properties.Settings.Default.Langue = "es-ES";
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Reiniciando Aplicación");
+            Application.Restart();
         }
 
         // Select Region
@@ -125,7 +155,7 @@ namespace ggLoL
         private User currentUser;
         private void ClickProfile(object sender, EventArgs e)
         {
-            Profile profile = new Profile(msm, currentUser);
+            Profile profile = new Profile(language, msm, currentUser);
             profile.ShowDialog();
         }
         private void ClickSignOff(object sender, EventArgs e)
@@ -220,6 +250,7 @@ namespace ggLoL
 
         private void ClickDownloadDataOffline(object sender, EventArgs e)
         {
+            pnlDownload.BackColor = msm.ColorScheme.PrimaryColor;
             // Reset Progress Bar
             progressBarDownload.Value = 0;
 

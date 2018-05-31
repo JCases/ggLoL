@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
@@ -10,8 +12,10 @@ namespace ggLoL
         private MaterialSkinManager msm { get; set; }
         User user;
 
-        public Profile(MaterialSkinManager msm, User user)
+        public Profile(string language, MaterialSkinManager msm, User user)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             InitializeComponent();
 
             this.msm = msm;

@@ -117,4 +117,565 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblProfileEmailR.Text" xml:space="preserve">
+    <value>contact@ggLoL.com</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblProfileVerifyCodeR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 19</value>
+  </data>
+  <data name="lblProfileEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 148</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chckBxBlue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblProfileNick.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblProfileEmailR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 19</value>
+  </data>
+  <data name="lblProfileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 19</value>
+  </data>
+  <data name="chckBxGray.Text" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblProfileEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnReLoadKeyVerify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 36</value>
+  </data>
+  <data name="chckBxGray.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNameR.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblProfileNameR.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblProfileVerifyCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblProfileColour.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileEmailR.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="chckBxGreen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="chckBxGray.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;chckBxBlue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="chckBxGreen.Text" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="&gt;&gt;btnVerifyProfile.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnReLoadKeyVerify.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNick.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblProfileColour.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCode.Name" xml:space="preserve">
+    <value>lblProfileVerifyCode</value>
+  </data>
+  <data name="btnVerifyProfile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNickR.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileVerifyCode.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblProfileName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCode.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmailR.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblProfileEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="chckBxBlue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>617, 189</value>
+  </data>
+  <data name="lblProfileNick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="&gt;&gt;chckBxGreen.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chckBxGreen.Name" xml:space="preserve">
+    <value>chckBxGreen</value>
+  </data>
+  <data name="btnReLoadKeyVerify.Text" xml:space="preserve">
+    <value>ReLoad Key</value>
+  </data>
+  <data name="chckBxGreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 30</value>
+  </data>
+  <data name="chckBxGreen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>617, 99</value>
+  </data>
+  <data name="lblProfileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblProfileNameR.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnReLoadKeyVerify.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="btnReLoadKeyVerify.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;chckBxGray.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chckBxGreen.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCheckBox, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="chckBxBlue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnVerifyProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblProfileNick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 200</value>
+  </data>
+  <data name="lblProfileNickR.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="chckBxRed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;chckBxGray.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNick.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileNameR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 99</value>
+  </data>
+  <data name="&gt;&gt;lblProfileName.Name" xml:space="preserve">
+    <value>lblProfileName</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNickR.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblProfileNickR.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileNameR.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="chckBxGreen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="chckBxGreen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblProfileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 99</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNameR.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chckBxGray.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCheckBox, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chckBxRed.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCheckBox, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="lblProfileNameR.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnVerifyProfile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>403, 383</value>
+  </data>
+  <data name="chckBxGray.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="chckBxBlue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 30</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNick.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="btnReLoadKeyVerify.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chckBxGray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 30</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNameR.Name" xml:space="preserve">
+    <value>lblProfileNameR</value>
+  </data>
+  <data name="lblProfileColour.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 151</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCodeR.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileName.Text" xml:space="preserve">
+    <value>Name: </value>
+  </data>
+  <data name="chckBxRed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>617, 232</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="lblProfileVerifyCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 383</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmailR.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileColour.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 19</value>
+  </data>
+  <data name="lblProfileNickR.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCode.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileColour.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblProfileEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="chckBxRed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 30</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="lblProfileNickR.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblProfileVerifyCode.Text" xml:space="preserve">
+    <value>Verify Profile Code</value>
+  </data>
+  <data name="lblProfileNick.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnReLoadKeyVerify.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProfileEmailR.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnVerifyProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 36</value>
+  </data>
+  <data name="&gt;&gt;chckBxGray.Name" xml:space="preserve">
+    <value>chckBxGray</value>
+  </data>
+  <data name="&gt;&gt;chckBxBlue.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialCheckBox, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileVerifyCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 19</value>
+  </data>
+  <data name="chckBxRed.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="&gt;&gt;btnVerifyProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileColour.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNickR.Name" xml:space="preserve">
+    <value>lblProfileNickR</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="lblProfileColour.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="&gt;&gt;btnVerifyProfile.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialRaisedButton, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblProfileName.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileEmail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblProfileVerifyCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCodeR.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnVerifyProfile.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="lblProfileName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileNick.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileEmailR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="btnReLoadKeyVerify.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="&gt;&gt;chckBxRed.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblProfileColour.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chckBxBlue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="lblProfileName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCodeR.Name" xml:space="preserve">
+    <value>lblProfileVerifyCodeR</value>
+  </data>
+  <data name="chckBxGreen.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmail.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileColour.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileEmailR.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileEmailR.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNameR.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chckBxBlue.Name" xml:space="preserve">
+    <value>chckBxBlue</value>
+  </data>
+  <data name="&gt;&gt;lblProfileColour.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmailR.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialForm, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chckBxBlue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblProfileNameR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmail.Name" xml:space="preserve">
+    <value>lblProfileEmail</value>
+  </data>
+  <data name="chckBxGray.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;btnVerifyProfile.Name" xml:space="preserve">
+    <value>btnVerifyProfile</value>
+  </data>
+  <data name="chckBxRed.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblProfileNickR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmailR.Name" xml:space="preserve">
+    <value>lblProfileEmailR</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.Text" xml:space="preserve">
+    <value>DSIPFMASFD35351</value>
+  </data>
+  <data name="&gt;&gt;chckBxGreen.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnReLoadKeyVerify.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialFlatButton, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chckBxRed.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblProfileEmail.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnVerifyProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 322</value>
+  </data>
+  <data name="&gt;&gt;lblProfileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="chckBxGreen.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblProfileVerifyCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="chckBxBlue.Text" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="&gt;&gt;lblProfileVerifyCodeR.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblProfileEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNick.Name" xml:space="preserve">
+    <value>lblProfileNick</value>
+  </data>
+  <data name="&gt;&gt;btnReLoadKeyVerify.Name" xml:space="preserve">
+    <value>btnReLoadKeyVerify</value>
+  </data>
+  <data name="lblProfileNickR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 200</value>
+  </data>
+  <data name="lblProfileNick.Text" xml:space="preserve">
+    <value>Nick</value>
+  </data>
+  <data name="lblProfileNick.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;btnReLoadKeyVerify.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblProfileVerifyCode.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblProfileNick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 19</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="chckBxRed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="&gt;&gt;lblProfileColour.Name" xml:space="preserve">
+    <value>lblProfileColour</value>
+  </data>
+  <data name="chckBxBlue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblProfileNameR.Text" xml:space="preserve">
+    <value>Javier</value>
+  </data>
+  <data name="lblProfileVerifyCodeR.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProfileNickR.Text" xml:space="preserve">
+    <value>JCases</value>
+  </data>
+  <data name="chckBxGray.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="chckBxRed.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;lblProfileName.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="chckBxBlue.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblProfileNameR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 19</value>
+  </data>
+  <data name="lblProfileEmail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblProfileEmailR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 148</value>
+  </data>
+  <data name="chckBxRed.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="chckBxGray.Location" type="System.Drawing.Point, System.Drawing">
+    <value>617, 144</value>
+  </data>
+  <data name="lblProfileNickR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 19</value>
+  </data>
+  <data name="lblProfileEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 19</value>
+  </data>
+  <data name="lblProfileColour.Text" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="&gt;&gt;lblProfileNickR.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;chckBxRed.Name" xml:space="preserve">
+    <value>chckBxRed</value>
+  </data>
+  <data name="btnVerifyProfile.Text" xml:space="preserve">
+    <value>Verify Profile</value>
+  </data>
+  <data name="btnReLoadKeyVerify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>549, 375</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en-150</value>
+  </metadata>
 </root>

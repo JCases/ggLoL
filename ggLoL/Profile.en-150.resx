@@ -117,103 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;lblWaitingData.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="progressBarData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 272</value>
+  <data name="lblProfileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="&gt;&gt;lblWaitingData.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="lblProfileEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialForm, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="lblProfileNick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblWaitingData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblProfileVerifyCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>LoadData</value>
+  <data name="lblProfileNameR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="lblWaitingData.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="lblProfileEmailR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="&gt;&gt;animationTimerData.Name" xml:space="preserve">
-    <value>animationTimerData</value>
+  <data name="lblProfileNickR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="&gt;&gt;animationTimerData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblProfileVerifyCodeR.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 400</value>
+  <data name="lblProfileColour.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 11pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="chckBxGreen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 10pt</value>
   </data>
-  <data name="&gt;&gt;progressBarData.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="chckBxGray.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 10pt</value>
   </data>
-  <data name="lblWaitingData.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11pt</value>
+  <data name="chckBxBlue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 10pt</value>
   </data>
-  <data name="progressBarData.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="lblWaitingData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 150</value>
-  </data>
-  <data name="&gt;&gt;lblWaitingData.Name" xml:space="preserve">
-    <value>lblWaitingData</value>
-  </data>
-  <data name="progressBarData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 5</value>
-  </data>
-  <data name="progressBarData.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblWaitingData.Text" xml:space="preserve">
-    <value>Wait a Second...</value>
-  </data>
-  <data name="lblWaitingData.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;progressBarData.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;progressBarData.Name" xml:space="preserve">
-    <value>progressBarData</value>
-  </data>
-  <data name="&gt;&gt;lblWaitingData.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblWaitingData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 88</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Load Data</value>
-  </data>
-  <data name="&gt;&gt;progressBarData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="progressBarData.Locked" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblWaitingData.Locked" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.Locked" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="animationTimerData.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
-    <value>en-150</value>
+  <data name="chckBxRed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 10pt</value>
   </data>
 </root>

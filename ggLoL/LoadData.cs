@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
@@ -7,8 +9,9 @@ namespace ggLoL
 {
     public partial class LoadData : MaterialForm
     {
-        public LoadData()
+        public LoadData(string language)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
             InitializeComponent();
         }
 

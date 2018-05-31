@@ -102,11 +102,29 @@
     <Compile Include="SummonerProfile.cs" />
     <Compile Include="User.cs" />
     <Compile Include="VerifyProfile.cs" />
+    <EmbeddedResource Include="ggLoL.en-150.resx">
+      <DependentUpon>ggLoL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ggLoL.es-ES.resx">
+      <DependentUpon>ggLoL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ggLoL.resx">
       <DependentUpon>ggLoL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoadData.en-150.resx">
+      <DependentUpon>LoadData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadData.es-ES.resx">
+      <DependentUpon>LoadData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoadData.resx">
       <DependentUpon>LoadData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.en-150.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.es-ES.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -133,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnOptions.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

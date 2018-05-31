@@ -56,3 +56,13 @@ C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\PdfSharp.Charting.xml
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\JCases\Desktop\Proyectos C#\ggLoL\ggLoL\obj\Debug\ggLoL.LoadData.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\en-150\ggLoL.resources.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\bin\Debug\es-ES\ggLoL.resources.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.ggLoL.en-150.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.ggLoL.es-ES.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\en-150\ggLoL.resources.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\es-ES\ggLoL.resources.dll
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.LoadData.en-150.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.LoadData.es-ES.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.Profile.en-150.resources
+C:\Users\Javier\Desktop\ggLoL\ggLoL\obj\Debug\ggLoL.Profile.es-ES.resources
