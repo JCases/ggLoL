@@ -8,11 +8,11 @@ namespace ggLoL
     {
         public List<ReforgedRuneDto> runes { get; set; }
 
-        private const string fileName = "runes.json";
+        public static string fileName = "runes.json";
 
-        public void Save(Runes r)
+        public void Save()
         {
-            string runes = JsonConvert.SerializeObject(r);
+            string runes = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(runes);
             writer.Close();

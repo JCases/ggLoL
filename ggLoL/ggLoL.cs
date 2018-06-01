@@ -176,20 +176,29 @@ namespace ggLoL
             currentUser = new User(txtSIUserName.Text, txtSIPassword.Text, 
                 txtSIEmail.Text, "", false);
             currentUser.Save();
+            
+            ggLoLMain.online = true;
+
             ShowIndexScreen();
         }
 
         private void ClickUserLogin(object sender, EventArgs e)
         {
             currentUser = new User(txtLUserName.Text, txtLPassword.Text);
+            
+            ggLoLMain.online = true;
+
             ShowIndexScreen();
         }
 
         private void ClickOfflineMode(object sender, EventArgs e)
         {
-            ShowIndexScreen();
-
             profileOption.Visible = false;
+            signOffOption.Visible = true;
+
+            ggLoLMain.online = false;
+
+            ShowIndexScreen();
         }
 
         private void ShowIndexScreen()
@@ -239,7 +248,9 @@ namespace ggLoL
                     cntrlSignLogin.Visible = true;
 
                 // Show Options Sign Off & Profile
-                signOffOption.Visible = profileOption.Visible = regionOption.Visible = true;
+                if (ggLoLMain.online)
+                    signOffOption.Visible = profileOption.Visible 
+                        = regionOption.Visible = true;
             }
         }
 
@@ -336,6 +347,8 @@ namespace ggLoL
                 if (ggLoLMain.SearchPlayer(txtSearchPlayer.Text, out s))
                 {
                     cm = s.GetMaestry();
+                    if (ggLoLMain.online)
+                        s.Save();
                     ShowSummonerProfile(s);
                     ShowChampionMastery(cm);
                 }
@@ -363,8 +376,14 @@ namespace ggLoL
         private void ClickSearchOtherPlayer(object sender, EventArgs e)
         {
             txtSearchPlayer.Text = "";
+
             pnlSearchPlayer.Visible = true;
             pnlResultSummonerProfile.Visible = false;
+            
+            lblIDAccountSummonerR.Text = "";
+            lblIDSummonerR.Text = "";
+            lblLevelSummonerR.Text = "";
+            lblRevisionSummonerR.Text = "";
         }
             
             // Champions
@@ -374,7 +393,11 @@ namespace ggLoL
             if (VerifyString(txtSearchChampion.Text))
             {
                 if (ggLoLMain.SearchChampion(out c))
+                {
                     ShowChampion(c, txtSearchChampion.Text);
+                    if (ggLoLMain.online)
+                        c.Save();
+                }  
             }
             else
                 MessageBox.Show("Enter a Champion Name.");
@@ -397,8 +420,12 @@ namespace ggLoL
         private void ClickSearchOtherChampion(object sender, EventArgs e)
         {
             txtSearchChampion.Text = "";
+
             pnlSearchChampion.Visible = true;
             pnlResultChampion.Visible = false;
+
+            lblChampionIDR.Text = "";
+            lblChampionNameR.Text = "";
         }
 
         private void ClickSearchGameInfo(object sender, EventArgs e)
@@ -407,10 +434,18 @@ namespace ggLoL
             if (VerifyString(txtSearchChampion.Text))
             {
                 if (ggLoLMain.SearchGameInfo(out i))
-                { }
+                {
+                    ShowItems(i, txtSearchChampion.Text);
+                    if (ggLoLMain.online)
+                        i.Save();
+                }
             }
             else
                 MessageBox.Show("Enter a Game Info.");
+        }
+
+        private void ShowItems(Items i, string text)
+        {
         }
     }
 }

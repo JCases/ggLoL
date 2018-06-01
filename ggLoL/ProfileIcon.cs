@@ -10,11 +10,11 @@ namespace ggLoL
         public string version;
         public string type;
 
-        private const string fileName = "profileIcons.json";
+        public static string fileName = "profileIcons.json";
 
-        public void Save(ProfileIcon c)
+        public void Save()
         {
-            string profileIcons = JsonConvert.SerializeObject(c);
+            string profileIcons = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(profileIcons);
             writer.Close();

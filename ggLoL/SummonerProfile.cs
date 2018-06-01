@@ -16,12 +16,12 @@ namespace ggLoL
         public long id { get; set; }
         public long accountId { get; set; }
 
-        private static string fileName = "-account.json";
+        public static string fileName = "-account.json";
 
-        public void Save(SummonerProfile s)
+        public void Save()
         {
-            fileName = name + fileName;
-            string accounts = JsonConvert.SerializeObject(s);
+            fileName = name.ToLower() + "-" + Region.linkRegion + fileName;
+            string accounts = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(accounts);
             writer.Close();

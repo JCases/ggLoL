@@ -10,11 +10,11 @@ namespace ggLoL
         public string version { get; set; }
         public string type { get; set; }
 
-        private const string fileName = "maps.json";
+        public static string fileName = "maps.json";
 
-        public void Save(Maps m)
+        public void Save()
         {
-            string maps = JsonConvert.SerializeObject(m);
+            string maps = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(maps);
             writer.Close();

@@ -10,11 +10,11 @@ namespace ggLoL
         public string version { get; set; }
         public Dictionary<string, SummonerSpellDto> data { get; set; }
 
-        private const string fileName = "spells.json";
+        public static string fileName = "spells.json";
 
-        public void Save(Spells s)
+        public void Save()
         {
-            string spells = JsonConvert.SerializeObject(s);
+            string spells = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(spells);
             writer.Close();

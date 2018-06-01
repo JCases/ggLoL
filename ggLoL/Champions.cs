@@ -13,11 +13,11 @@ namespace ggLoL
         public string format { get; set; }
 
 
-        private const string fileName = "champions.json";
+        public static string fileName = "champions.json";
 
-        public void Save(Champions c)
+        public void Save()
         {
-            string champions = JsonConvert.SerializeObject(c);
+            string champions = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(champions);
             writer.Close();

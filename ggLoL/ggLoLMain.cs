@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.IO;
+using Newtonsoft.Json;
 using System.Windows.Forms;
 
 namespace ggLoL
@@ -7,7 +8,9 @@ namespace ggLoL
     {
         protected static string region { get; set; }
 
-        protected static bool online { get; set; }
+        public static bool online { get; set; }
+
+        private static string json { get; set; }
 
         public static void setRegion(string txtRegion)
         {
@@ -20,45 +23,101 @@ namespace ggLoL
         {
             try
             {
-                ConnectionAPI connection =
-                    new ConnectionAPI(name, APILinks.GetLink(
-                    APILinks.Link.SummonerProfile), true);
+                s = null;
+                if (online)
+                {
+                    ConnectionAPI connection =
+                        new ConnectionAPI(name, APILinks.GetLink(
+                        APILinks.Link.SummonerProfile), true);
 
-                s = JsonConvert.DeserializeObject<SummonerProfile>(connection.json);
+                    json = connection.json;
+                }
+                else
+                    GetOfflineData(name.ToLower() + "-" + Region.linkRegion.ToLower() +
+                        SummonerProfile.fileName);
+
+                s = JsonConvert.DeserializeObject<SummonerProfile>(json);
+
+                json = null;
 
                 return true;
             }
-            catch { s = null; MessageBox.Show("Player don't found!"); return false;  }
+            catch
+            {
+                s = null;
+                if (ggLoL.language == "en-EN")
+                    MessageBox.Show("Non-Existing Summoner Profile");
+                else if (ggLoL.language == "es-ES")
+                    MessageBox.Show("Perfil de Invocador no Existente");
+                return false;
+            }
         }
 
         public static bool SearchChampion(out Champions c)
         {
+            c = null;
             try
             {
-                ConnectionAPI connection =
-                    new ConnectionAPI(APILinks.GetLink(
-                    APILinks.Link.Champions), true);
+                if (online)
+                {
+                    ConnectionAPI connection =
+                        new ConnectionAPI(APILinks.GetLink(
+                        APILinks.Link.Champions), true);
 
-                c = JsonConvert.DeserializeObject<Champions>(connection.json);
+                    json = connection.json;
+                }
+                else
+                    GetOfflineData(Champions.fileName);
+
+                c = JsonConvert.DeserializeObject<Champions>(json);
+
+                json = null;
 
                 return true;
             }
-            catch { c = null; MessageBox.Show("Champion don't found!"); return false; }
+            catch
+            {
+                c = null;
+                if (ggLoL.language == "en-EN")
+                    MessageBox.Show("Non-Existing Champion");
+                else if (ggLoL.language == "es-ES")
+                    MessageBox.Show("Campeón no Existente");
+                return false;
+            }
         }
 
         public static bool SearchGameInfo(out Items i)
         {
+            i = null;
             try
             {
-                ConnectionAPI connection =
-                    new ConnectionAPI(APILinks.GetLink(
-                    APILinks.Link.Items), true);
+                if (online)
+                {
+                    ConnectionAPI connection =
+                        new ConnectionAPI(APILinks.GetLink(
+                        APILinks.Link.Items), true);
 
-                i = JsonConvert.DeserializeObject<Items>(connection.json);
+                    json = connection.json;
+                }
+                else
+                    GetOfflineData(Items.fileName);
+
+
+                i = JsonConvert.DeserializeObject<Items>(json);
+
+                json = null;
 
                 return true;
             }
-            catch { i = null; MessageBox.Show("Game Info don't found!"); return false; }
+            catch
+            {
+                i = null;
+                if (ggLoL.language == "en-EN")
+                    MessageBox.Show("Non-Existing Object");
+                else if (ggLoL.language == "es-ES")
+                    MessageBox.Show("Objeto no Existente");
+                return false;
+            }
         }
 
         // For Download File Data
@@ -69,11 +128,24 @@ namespace ggLoL
                 ConnectionAPI connection =
                     new ConnectionAPI(APILinks.GetLink(APILinks.Link.DragontailData), false);
 
-                link = JsonConvert.DeserializeObject<string>(connection.json);
+                json = connection.json;
+
+                link = JsonConvert.DeserializeObject<string>(json);
+
+                json = null;
 
                 return true;
             }
-            catch { link = null; MessageBox.Show("Connection error"); return false; }   
+            catch
+
+            {
+                link = null;
+                if (ggLoL.language == "en-EN")
+                    MessageBox.Show("Connection error");
+                else if (ggLoL.language == "es-ES")
+                    MessageBox.Show("Error en la Conexión");
+                return false;
+            }   
         }
 
         public static bool StateLoL(out StateGame st)
@@ -84,11 +156,40 @@ namespace ggLoL
                     new ConnectionAPI(APILinks.GetLink(
                     APILinks.Link.StateLoL), false);
 
-                st = JsonConvert.DeserializeObject<StateGame>(connection.json);
+                json = connection.json;
+
+                st = JsonConvert.DeserializeObject<StateGame>(json);
+
+                json = null;
 
                 return true;
             }
-            catch { st = null; MessageBox.Show("Error in Connection"); return false; }
+            catch
+            {
+                st = null;
+                if (ggLoL.language == "en-EN")
+                    MessageBox.Show("Connection error");
+                else if (ggLoL.language == "es-ES")
+                    MessageBox.Show("Error en la Conexión");
+                return false;
+            }
+        }
+
+        private static void GetOfflineData(string fileName)
+        {
+            if (!File.Exists(fileName))
+            {
+                if (ggLoL.language == "en-EN")
+                    MessageBox.Show("Non-Existing Local Files");
+                else if (ggLoL.language == "es-ES")
+                    MessageBox.Show("Información no guardada localmente");
+            }
+            else
+            {
+                StreamReader reader = new StreamReader(fileName);
+                json = reader.ReadToEnd();
+                reader.Close();
+            }
         }
     }
 }

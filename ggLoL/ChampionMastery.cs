@@ -15,12 +15,12 @@ namespace ggLoL
         public long championPointsSinceLastLevel { get; set; }
         public long lastPlayTime { get; set; }
 
-        private string fileName = "runes.json";
+        public static string fileName = "championMastery.json";
 
-        public void Save(ChampionMastery c)
+        public void Save()
         {
             fileName = playerId + "-" + championId + "-" + fileName;
-            string championMastery = JsonConvert.SerializeObject(c);
+            string championMastery = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(championMastery);
             writer.Close();

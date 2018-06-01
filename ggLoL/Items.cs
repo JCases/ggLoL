@@ -12,11 +12,11 @@ namespace ggLoL
         public List<GroupDto> groups { get; set; }
         public string type { get; set; }
 
-        private const string fileName = "items.json";
+        public static string fileName = "items.json";
 
-        public void Save(Items i)
+        public void Save()
         {
-            string items = JsonConvert.SerializeObject(i);
+            string items = JsonConvert.SerializeObject(this);
             StreamWriter writer = new StreamWriter(fileName);
             writer.WriteLine(items);
             writer.Close();

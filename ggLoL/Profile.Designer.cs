@@ -146,7 +146,7 @@
             this.chckBxGreen.MouseState = MaterialSkin.MouseState.HOVER;
             this.chckBxGreen.Name = "chckBxGreen";
             this.chckBxGreen.Ripple = true;
-            this.chckBxGreen.UseVisualStyleBackColor = false;
+            this.chckBxGreen.UseVisualStyleBackColor = true;
             this.chckBxGreen.Click += new System.EventHandler(this.colourGreen);
             // 
             // chckBxGray
@@ -160,7 +160,7 @@
             this.chckBxGray.MouseState = MaterialSkin.MouseState.HOVER;
             this.chckBxGray.Name = "chckBxGray";
             this.chckBxGray.Ripple = true;
-            this.chckBxGray.UseVisualStyleBackColor = false;
+            this.chckBxGray.UseVisualStyleBackColor = true;
             this.chckBxGray.Click += new System.EventHandler(this.colourGray);
             // 
             // chckBxBlue
@@ -172,7 +172,7 @@
             this.chckBxBlue.MouseState = MaterialSkin.MouseState.HOVER;
             this.chckBxBlue.Name = "chckBxBlue";
             this.chckBxBlue.Ripple = true;
-            this.chckBxBlue.UseVisualStyleBackColor = false;
+            this.chckBxBlue.UseVisualStyleBackColor = true;
             this.chckBxBlue.Click += new System.EventHandler(this.colourBlue);
             // 
             // chckBxRed
@@ -184,7 +184,7 @@
             this.chckBxRed.MouseState = MaterialSkin.MouseState.HOVER;
             this.chckBxRed.Name = "chckBxRed";
             this.chckBxRed.Ripple = true;
-            this.chckBxRed.UseVisualStyleBackColor = false;
+            this.chckBxRed.UseVisualStyleBackColor = true;
             this.chckBxRed.Click += new System.EventHandler(this.colourRed);
             // 
             // btnReLoadKeyVerify

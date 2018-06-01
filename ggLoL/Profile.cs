@@ -33,6 +33,12 @@ namespace ggLoL
             lblProfileNameR.Text = currentUser.name;
             lblProfileEmailR.Text = currentUser.password;
             lblProfileNickR.Text = currentUser.nick;
+
+            chckBxGreen.BackColor = msm.ColorScheme.PrimaryColor;
+            chckBxGray.BackColor = msm.ColorScheme.PrimaryColor;
+            chckBxBlue.BackColor = msm.ColorScheme.PrimaryColor;
+            chckBxRed.BackColor = msm.ColorScheme.PrimaryColor;
+            btnReLoadKeyVerify.BackColor = msm.ColorScheme.PrimaryColor;
         }
 
         // Colours for Application
